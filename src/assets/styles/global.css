@@ -1,0 +1,55 @@
+/* Variables */
+:root {
+    --color-primary: #35B8BE;
+    --color-primary-dark: #1B9097;
+    --color-main: #08090A;
+    --color-main-light: #546285;
+    --color-contrast: #fff;
+
+    --container-padding: 0 calc(50vw - 600px);
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+p,
+.p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-main-light);
+    letter-spacing: 0.36px;
+}
+
+h1,
+.h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 1.8px;
+    color: var(--color-main);
+}
+
+h2,
+.h2 {
+    font-weight: 400;
+    font-size: 51px;
+    line-height: 55px;
+    letter-spacing: 1.65px;
+    color: var(--color-primary);
+}
+
+.primary-color {
+    color: var(--color-primary);
+}

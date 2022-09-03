@@ -1,0 +1,53 @@
+---
+import { Image } from "@astrojs/image/components";
+import Button from "./ui/Button.astro";
+import screenImage from "../assets/img/screen2.png";
+import trustPilotLogo from "../assets/img/trustpilot-logo.svg";
+---
+
+<section>
+    <main>
+        <h2>The home of</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500.
+        </p>
+        <Button href="/">Learn about us</Button>
+    </main>
+    <Image src={screenImage} alt="screen2" width={523} height={614} />
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: minmax(min-content, 576px) 1fr;
+        gap: 72px;
+        padding: var(--container-padding);
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-image: url("img/BGShape2.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top center;
+    }
+    .screen-text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .screen-additional {
+        margin-top: 30px;
+    }
+    main {
+        padding-top: 151px;
+    }
+    h2 {
+        margin-bottom: 29px;
+    }
+    p {
+        margin-bottom: 47px;
+    }
+</style>
