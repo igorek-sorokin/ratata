@@ -1,56 +1,68 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Button from "./ui/Button.astro";
-import screenImage from "../assets/img/screen1.png";
-import trustPilotLogo from "../assets/img/trustpilot-logo.svg";
 ---
 
 <section>
     <main>
-        <h1>Beautiful food & takeaway, <span class="primary-color">delivered</span> to your door.</h1>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500.
-        </p>
-        <Button href="/">Place an Order</Button>
-        <div class="screen-additional">
-            <img src={trustPilotLogo} alt="trustpilot logo" /><br>
-
-            <span class="screen-text"><span class="primary-color">4.8 out of 5</span> based on 2000+ reviews</span>
+        <h1>
+            Научись водить как&nbsp;боженька <strong>за 2 дня</strong>
+        </h1>
+        <p>Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
+        <div class="buttons">
+            <Button href="#" style={"accent"}>Записаться</Button>
+            <Button href="#">Подробнее</Button>
         </div>
     </main>
-    <Image src={screenImage} alt="screen1" width={600} height={580} />
 </section>
 
 <style>
     section {
-        display: flex;
-        padding: var(--container-padding);
-        padding-top: 100px;
-        padding-bottom: 100px;
-        background-image: url('img/BGShape.svg');
+        background-image: url("img/screen.jpg");
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom right;
-    }
-    .screen-text {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
+        background-size: cover;
+        background-position: center;
+        height: 633px;
+        padding: var(--container-padding);
     }
 
-    .screen-additional {
-        margin-top: 30px;
-    }
     main {
-        padding-top: 57px;
+        width: 60%;
+        padding-top: 125px;
     }
+
     h1 {
-        margin-bottom: 27px;
+        font-family: var(--heading-font);
+        font-weight: bold;
+        font-size: 55px;
+        line-height: 61px;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        margin-bottom: 30px;
+    }
+
+    strong {
+        display: inline-flex;
+        vertical-align: middle;
+        padding: 9px 19px;
+        margin-left: 9px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        color: var(--color-contrast);
+        background-color: var(--color-accent);
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 33px;
     }
     p {
-        margin-bottom: 53px;
+        width: 50%;
+        margin-bottom: 46px;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 </style>
+
+<script></script>

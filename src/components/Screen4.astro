@@ -1,0 +1,115 @@
+---
+import { Image } from "@astrojs/image/components";
+import conusesImg from "../assets/img/screen4_conuses.png";
+import wheelImg from "../assets/img/screen4_wheel.png";
+---
+
+<div class="screen">
+    <div class="first-section">
+        <div class="first-section__content">
+            <div>
+                <h2>Если ты:</h2>
+                <ul>
+                    <li>Не понимаешь, как ведет себя машина</li>
+                    <li>Путаешься в руках, когда крутишь руль</li>
+                    <li>Боишься ездить быстро</li>
+                </ul>
+            </div>
+        </div>
+        <Image src={conusesImg} alt="conuses" />
+    </div>
+    <section class="second-section">
+        <Image src={wheelImg} alt="wheel" />
+        <div class="second-section__content">
+            <div>
+                <h2>Или наоборот:</h2>
+                <ul>
+                    <li>Думаешь, что все знаешь и умеешь</li>
+                    <li>Хочешь экстремальной практики</li>
+                    <li>Ищешь дорожку в автоспорт</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .screen {
+    }
+
+    h2 {
+        color: inherit;
+        margin-bottom: 35px;
+    }
+    li {
+        list-style: none;
+        color: var(--color-contrast);
+    }
+
+    li + li {
+        margin-top: 19px;
+    }
+
+    li::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 15px;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Zm1.67 14h-3.34l-1.38 1.897.554 1.706A7.991 7.991 0 0 0 12 20c.871 0 1.71-.14 2.496-.397l.553-1.706L13.669 16h.001Zm-8.376-5.128-1.292.937L4 12c0 1.73.549 3.331 1.482 4.64h1.91l1.323-1.82-1.028-3.17-2.393-.778Zm13.412 0-2.393.778-1.028 3.17 1.322 1.82h1.91A7.964 7.964 0 0 0 20 12l-.003-.191-1.291-.937ZM14.29 4.333l-1.29.94V7.79l2.694 1.957 2.239-.727.554-1.703a8.014 8.014 0 0 0-4.196-2.984h-.001Zm-4.582 0a8.014 8.014 0 0 0-4.196 2.985l.554 1.702 2.239.727L11 7.79V5.273l-1.291-.94h-.001Z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    .first-section,
+    .second-section {
+        height: 386px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .first-section {
+        margin-bottom: 22px;
+    }
+
+    .first-section__content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 35%;
+        color: var(--color-contrast);
+        background-image: url("img/screen4_blue.png");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: var(--color-accent);
+        clip-path: polygon(0% 0%,100% 0%,70% 100%,0% 100%);
+        margin-right: -35%;
+    }
+    .first-section img {
+        clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .second-section__content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 35%;
+        color: var(--color-contrast);
+        background-image: url("img/screen4_red.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-color: var(--color-primary);
+        clip-path: polygon(7% 0,100% 0%,100% 100%,29% 100%);
+        margin-left: -35%;
+    }
+
+    .second-section img {
+        clip-path: polygon(0% 0%,70% 0%,100% 100%,0 100%);
+    }
+</style>
+
+<script></script>

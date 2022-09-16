@@ -1,18 +1,19 @@
 ---
-import logo from "../assets/img/logo.svg";
-import cart from "../assets/img/cart.svg";
+import logo from "../assets/img/logo.png";
+import { Image } from "@astrojs/image/components";
+import Button from "./ui/Button.astro";
 
 const navList = [
     {
-        text: "Home",
+        text: "Для кого",
         ulr: "/home",
     },
     {
-        text: "Order",
+        text: "Программа",
         ulr: "/order",
     },
     {
-        text: "Company",
+        text: "Тренеры",
         ulr: "/company",
     },
     {
@@ -20,56 +21,65 @@ const navList = [
         ulr: "/faq",
     },
     {
-        text: "Contact",
+        text: "Контакты",
         ulr: "/contact",
     },
 ];
 ---
 
 <header>
-    <img src={logo} alt="logo" />
+    <Image src={logo} alt="logo" />
     <nav>
-        <ul>
+        <ul class="nav__ul">
             {
                 navList.map((navItem) => (
-                    <li>
-                        <a href={navItem.ulr}>{navItem.text}</a>
+                    <li class="nav__li">
+                        <a class="nav__link" href={navItem.ulr}>
+                            {navItem.text}
+                        </a>
                     </li>
                 ))
             }
         </ul>
     </nav>
+    <a href="tel:+79991112233" class="header__tel">+7 (999) 111–22–33</a>
+    <Button href="/go" style={"outline"}>Записаться</Button>
 </header>
 <style>
     header {
+        height: 70px;
         display: flex;
         align-items: center;
-        height: 100px;
-        padding: 0 calc(50vw - 600px);
+        justify-content: space-between;
+        padding: var(--container-padding);
     }
-    nav {
-        margin-left: auto;
-    }
-    nav > ul {
-        display: flex;
-        align-items: center;
+    .header__tel {
     }
 
-    nav > ul > li {
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    .nav__ul {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav__li {
         list-style: none;
     }
 
-    nav > ul > li > a {
-        display: inline-block;
-        text-decoration: none;
+    .nav__link {
         color: var(--color-main);
-        font-weight: 400;
-        font-size: 15px;
-        line-height: 20px;
-        padding: 20px 16px;
+        text-decoration: none;
     }
 
-    nav > ul > li > a:is(:hover) {
-        color: var(--color-primary);
+    .header__tel {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+        color: var(--color-accent-dark);
+        text-decoration: none;
     }
 </style>

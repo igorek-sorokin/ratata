@@ -1,53 +1,71 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Button from "./ui/Button.astro";
-import screenImage from "../assets/img/screen2.png";
-import trustPilotLogo from "../assets/img/trustpilot-logo.svg";
+import carImage from "../assets/img/screen2_car.jpg";
+import deerImage from "../assets/img/screen2_deer.jpg";
 ---
 
 <section>
     <main>
-        <h2>The home of</h2>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500.
-        </p>
-        <Button href="/">Learn about us</Button>
+        <h2>Что лучше:</h2>
+        <div class="first-option">
+            <div class="first-option__content">
+                <h3 class="accent-text">Оказаться в незнакомых дорожных&nbsp;условиях</h3>
+                <p>С высоким риском ДТП и реагировать по ситуации</p>
+            </div>
+            <Image class="first-option__img" src={deerImage} alt="" />
+        </div>
+        <div class="second-option">
+            <Image src={carImage} alt="" class="second-option__img"/>
+            <div class="second-option__content">
+                <h3>Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
+                <p>И закрепить это на практике</p>
+            </div>
+        </div>
     </main>
-    <Image src={screenImage} alt="screen2" width={523} height={614} />
 </section>
 
 <style>
     section {
-        display: grid;
-        grid-template-columns: minmax(min-content, 576px) 1fr;
-        gap: 72px;
         padding: var(--container-padding);
-        padding-top: 100px;
-        padding-bottom: 100px;
-        background-image: url("img/BGShape2.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: top center;
-    }
-    .screen-text {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
     }
 
-    .screen-additional {
-        margin-top: 30px;
-    }
     main {
-        padding-top: 151px;
+        padding-top: 150px;
     }
+
     h2 {
-        margin-bottom: 29px;
+        margin-bottom: 40px;
     }
-    p {
-        margin-bottom: 47px;
+
+    h3 {
+        margin-bottom: 25px;
+    }
+
+    .first-option {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .first-option__img {
+        clip-path: polygon(22% 0, 100% 0, 100% 60%, 100% 100%, 100% 100%, 0 73%, 0 20%);
+    }
+
+    .second-option__img {
+        clip-path: polygon(0 0, 0 30%, 100% 0, 100% 100%, 100% 100%, 26% 100%, 0 75%);
+    }
+
+    .second-option {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .second-option__content {
+        padding-left: 57px;
+        padding-top: 90px;
     }
 </style>
+
+<script></script>

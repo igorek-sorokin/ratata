@@ -1,36 +1,45 @@
 ---
 export interface Props {
     href: string;
-    isContrast?: boolean;
+    style?: 'primary' | 'accent' | 'outline'
 }
 
-const { href, isContrast = false } = Astro.props as Props;
+const { href, style = 'primary' } = Astro.props as Props;
 ---
 
-<a href="{href}" class={isContrast ? "button button--contrast" : "button"}>
+<a href="{href}" class={`button button--${style}`}>
     <slot />
 </a>
 
-<style>
+<style is:global>
     .button {
-        border-radius: 6px;
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         height: 60px;
-        background-color: var(--color-primary);
-        background-image: url("/img/ButtonWave.png");
-        background-repeat: no-repeat;
-        padding: 0 35px;
         color: var(--color-contrast);
         text-decoration: none;
-        font-size: 17px;
-        font-weight: 400;
+        font-size: 16px;
+        font-weight: normal;
         line-height: 20px;
-        letter-spacing: 0em;
     }
 
-    .button--contrast {
-        color: var(--color-primary);
+    .button--primary {
+        background-color: var(--color-primary);
+        width: 230px;
         color: var(--color-contrast);
+    }
+
+    .button--accent {
+        background-color: var(--color-accent);
+        width: 300px;
+        color: var(--color-contrast);
+    }
+
+    .button--outline {
+        background-color: transparent;
+        width: 200px;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
     }
 </style>

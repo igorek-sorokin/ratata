@@ -1,10 +1,13 @@
 /* Variables */
 :root {
-    --color-primary: #35B8BE;
+    --color-primary: #46A5FF;
     --color-primary-dark: #1B9097;
-    --color-main: #08090A;
+    --color-accent: hsla(353, 70%, 53%, 1);
+    --color-accent-dark: hsla(353, 71%, 43%, 1);
+    --color-main: #646464;
     --color-main-light: #546285;
     --color-contrast: #fff;
+    --color-contrast-low: #D9D9D9;
 
     --container-padding: 0 calc(50vw - 600px);
 }
@@ -29,25 +32,6 @@ p,
     line-height: 24px;
     color: var(--color-main-light);
     letter-spacing: 0.36px;
-}
-
-h1,
-.h1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 60px;
-    letter-spacing: 1.8px;
-    color: var(--color-main);
-}
-
-h2,
-.h2 {
-    font-weight: 400;
-    font-size: 51px;
-    line-height: 55px;
-    letter-spacing: 1.65px;
-    color: var(--color-primary);
 }
 
 .primary-color {

@@ -2,11 +2,61 @@
 import Layout from "../layouts/Layout.astro";
 import Screen from "../components/Screen.astro";
 import Screen2 from "../components/Screen2.astro";
+import Screen3 from "../components/Screen3.astro";
+import Screen4 from "../components/Screen4.astro";
 import HowItWorks from "../components/How-it-works.astro";
 ---
 
 <Layout title="Home">
-	<Screen></Screen>
-	<Screen2></Screen2>
-	<HowItWorks></HowItWorks>
+	<div id="wrapper">
+		<div id="content">
+			<Screen />
+			<Screen2 />
+			<Screen3 />
+			<Screen4 />
+
+			<!-- <HowItWorks /> -->
+		</div>
+	</div>
 </Layout>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	// ScrollSmoother.create({
+	// 	wrapper: "#wrapper",
+	// 	content: "#content",
+	// });
+
+	const fadeInElements = gsap.utils.toArray(".fade-in");
+	fadeInElements.forEach((fadeInElement: any) => {
+		gsap.from(fadeInElement, {
+			scrollTrigger: {
+				trigger: fadeInElement,
+				start: "top 90%",
+				end: "top center",
+				scrub: true,
+			},
+			y: 75,
+			opacity: 0,
+			duration: 0.5,
+		});
+	});
+
+	// ScrollTrigger.create({
+	//     trigger: ".howitworks",
+	//     start: "top top",
+	//     pin: true,
+	//     pinSpacing: false,
+	// });
+
+	// ScrollTrigger.create({
+	//     trigger: ".footer",
+	//     start: "top top",
+	//     pin: true,
+	//     pinSpacing: false,
+	// });
+</script>
