@@ -10,9 +10,9 @@ import HowItWorks from "../components/How-it-works.astro";
 <Layout title="Home">
 	<div id="wrapper">
 		<div id="content">
-			<Screen />
+			<!-- <Screen />
 			<Screen2 />
-			<Screen3 />
+			<Screen3 /> -->
 			<Screen4 />
 
 			<!-- <HowItWorks /> -->
@@ -36,22 +36,67 @@ import HowItWorks from "../components/How-it-works.astro";
 		gsap.from(fadeInElement, {
 			scrollTrigger: {
 				trigger: fadeInElement,
-				start: "top 90%",
-				end: "top center",
-				scrub: true,
+				start: "center bottom",
 			},
-			y: 75,
+			y: 100,
 			opacity: 0,
 			duration: 0.5,
 		});
 	});
 
-	// ScrollTrigger.create({
-	//     trigger: ".howitworks",
-	//     start: "top top",
-	//     pin: true,
-	//     pinSpacing: false,
-	// });
+	const fadeInScrubElements = gsap.utils.toArray(".fade-in-scrub");
+	fadeInScrubElements.forEach((fadeInElement: any) => {
+		gsap.from(fadeInElement, {
+			scrollTrigger: {
+				trigger: fadeInElement,
+				start: "center bottom",
+				scrub: false,
+			},
+			y: 100,
+			opacity: 0,
+			duration: 0.5,
+		});
+	});
+
+	const fadeInRightElements = gsap.utils.toArray(".fade-in-right");
+	fadeInRightElements.forEach((fadeInElement: any) => {
+		gsap.from(fadeInElement, {
+			scrollTrigger: {
+				trigger: fadeInElement,
+				start: "center bottom",
+				scrub: false,
+				
+			},
+			x: 100,
+			opacity: 0,
+			duration: 0.5,
+		});
+	});
+
+	const fadeInLeftElements = gsap.utils.toArray(".fade-in-left");
+	fadeInLeftElements.forEach((fadeInElement: any) => {
+		gsap.from(fadeInElement, {
+			scrollTrigger: {
+				trigger: fadeInElement,
+				start: "center bottom",
+				scrub: false,
+				
+			},
+			x: -100,
+			opacity: 0,
+			duration: 0.5,
+		});
+	});
+
+
+
+	ScrollTrigger.create({
+	    trigger: ".screen3",
+	    start: "-50px center",
+		end: "180px center",
+	    pin: ".second-option",
+	    pinSpacing: false,
+	});
 
 	// ScrollTrigger.create({
 	//     trigger: ".footer",

@@ -6,7 +6,7 @@ import wheelImg from "../assets/img/screen4_wheel.png";
 
 <div class="screen">
     <div class="first-section">
-        <div class="first-section__content">
+        <div class="first-section__content fade-in-left">
             <div>
                 <h2>Если ты:</h2>
                 <ul>
@@ -16,11 +16,11 @@ import wheelImg from "../assets/img/screen4_wheel.png";
                 </ul>
             </div>
         </div>
-        <Image src={conusesImg} alt="conuses" />
+        <Image src={conusesImg} alt="conuses" class="fade-in-right"/>
     </div>
     <section class="second-section">
-        <Image src={wheelImg} alt="wheel" />
-        <div class="second-section__content">
+        <Image src={wheelImg} alt="wheel" class="fade-in-left"/>
+        <div class="second-section__content fade-in-right">
             <div>
                 <h2>Или наоборот:</h2>
                 <ul>
@@ -31,10 +31,59 @@ import wheelImg from "../assets/img/screen4_wheel.png";
             </div>
         </div>
     </section>
+    <div class="screen4__title-wrapper fade-in-left">
+        <p class="screen4__title">
+            тебе срочно нужно ратата
+        </p>
+        <a href="#" class="screen4__link">Что такое “РАТАТА”</a>
+    </div>
 </div>
 
 <style>
     .screen {
+    }
+
+    .second-section {
+        margin-bottom: 180px;
+    }
+
+    .screen4__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 150px;
+    }
+
+    .screen4__title {
+        font-family: var(--heading-font);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1.2;
+        color: var(--color-accent);
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+
+    .screen4__title::after {
+        content: '';
+        display: block;
+        height: 25px;
+        background: linear-gradient(270.01deg, #53ABFF 0.01%, rgba(83, 171, 255, 0) 99.41%);
+        width: 100%;
+    }
+
+    .screen4__link {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+        text-decoration-line: underline;
+        transition: all .28s ease-in-out;
+        color: #B0B0B0;
+    }
+
+    .screen4__link:is(:hover) {
+        color: var(--color-primary)
     }
 
     h2 {
