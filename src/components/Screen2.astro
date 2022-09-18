@@ -10,13 +10,15 @@ import deerImage from "../assets/img/screen2_deer.jpg";
         <h2>Что лучше:</h2>
         <div class="first-option fade-in-right">
             <div class="first-option__content">
-                <h3 class="accent-text">Оказаться в незнакомых дорожных&nbsp;условиях</h3>
+                <h3 class="accent-text">
+                    Оказаться в незнакомых дорожных&nbsp;условиях
+                </h3>
                 <p>С высоким риском ДТП и реагировать по ситуации</p>
             </div>
             <Image class="first-option__img" src={deerImage} alt="" />
         </div>
         <div class="second-option fade-in-left">
-            <Image src={carImage} alt="" class="second-option__img"/>
+            <Image src={carImage} alt="" class="second-option__img" />
             <div class="second-option__content">
                 <h3>Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
                 <p>И закрепить это на практике</p>
@@ -49,11 +51,27 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     }
 
     .first-option__img {
-        clip-path: polygon(22% 0, 100% 0, 100% 60%, 100% 100%, 100% 100%, 0 73%, 0 20%);
+        clip-path: polygon(
+            22% 0,
+            100% 0,
+            100% 60%,
+            100% 100%,
+            100% 100%,
+            0 73%,
+            0 20%
+        );
     }
 
     .second-option__img {
-        clip-path: polygon(0 0, 0 30%, 100% 0, 100% 100%, 100% 100%, 26% 100%, 0 75%);
+        clip-path: polygon(
+            0 0,
+            0 30%,
+            100% 0,
+            100% 100%,
+            100% 100%,
+            26% 100%,
+            0 75%
+        );
     }
 
     .second-option {
@@ -68,4 +86,17 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     }
 </style>
 
-<script></script>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+        trigger: ".screen3",
+        start: "-50px center",
+        end: "bottom center",
+        pin: ".second-option",
+        pinSpacing: true,
+    });
+</script>
