@@ -1,0 +1,92 @@
+---
+import StarIcon from "./ui/Star-icon.astro";
+import Button from "./ui/Button.astro";
+---
+
+<section class="programs-section">
+    <h2>Две программы разного уровня</h2>
+    <a href="#" class="link">Хочу узнать больше о&nbsp;программах</a>
+    <div class="programs">
+        <div class="program">
+            <div class="program__stars">
+                <StarIcon filled={true}></StarIcon>
+                <StarIcon></StarIcon>
+                <StarIcon></StarIcon>
+            </div>
+            <h3>Для начинающих</h3>
+            <ul class="wheel-list">
+                <li>Меньше упражнений</li>
+                <li>Больше времени отработки</li>
+                <li>Крепче закрепить результат</li>
+            </ul>
+        </div>
+        <div class="program program--second">
+            <div class="program__stars">
+                <StarIcon filled={true}></StarIcon>
+                <StarIcon filled={true}></StarIcon>
+                <StarIcon filled={true}></StarIcon>
+            </div>
+            <h3>Для опытных</h3>
+            <ul class="wheel-list">
+                <li>Больше упражнений</li>
+                <li>Повышенная сложность</li>
+                <li>Больше опыта и драйва</li>
+            </ul>
+        </div>
+    </div>
+    <Button href="#" style={'accent'}>Я готов, запишите меня</Button>
+</section>
+
+<style>
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        color: var(--color-contrast);
+        margin-bottom: 22px;
+    }
+
+    .program__stars {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+        margin-bottom: 74px;
+        color: hsla(0, 0%, 100%, 0.5);
+    }
+    .link {
+        margin-bottom: 36px;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--container-padding);
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .programs {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 458px;
+        gap: 42px;
+        margin-bottom: 40px;
+    }
+
+    .program {
+        padding: 40px 47px;
+        background-image: url('img/program_blue.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center right;
+        background-color: var(--color-primary);
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 25%);
+    }
+
+    .program--second {
+        background-image: url('img/program_red.png');
+        clip-path: polygon(100% 0, 100% 75%, 75% 100%, 0 100%, 0 0);
+    }
+</style>

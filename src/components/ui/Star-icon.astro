@@ -1,0 +1,13 @@
+---
+export interface Props {
+    filled?: boolean;
+}
+
+const { filled = false} = Astro.props as Props;
+---
+
+
+<svg viewBox="0 0 107 102" width="111" height="112" xmlns="http://www.w3.org/2000/svg">
+    <!-- <path d="m53.5 0 12.46 38.695h40.324L73.662 62.61l12.46 38.695L53.5 77.39l-32.622 23.915 12.46-38.695L.716 38.695H41.04L53.5 0Z" fill="currentColor"/> -->
+    <path d="m53.5 1.631 11.985 37.217.111.347h39.16l-31.39 23.012-.29.213.11.343L85.173 99.99 53.796 76.987l-.296-.217-.296.217-31.377 23.002 11.987-37.226.11-.343-.29-.213-31.39-23.012h39.16l.111-.347L53.5 1.631Z" fill={filled ? 'currentColor' : 'none' } stroke="currentColor"/>
+</svg>
