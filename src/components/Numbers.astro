@@ -1,0 +1,136 @@
+---
+const numbers: {
+    value: string;
+    text: string;
+}[] = [
+    {
+        value: "02",
+        text: "Дня тренировок",
+    },
+    {
+        value: "04",
+        text: `Часа чистого времени за&nbsp;рулем`,
+    },
+    {
+        value: "10",
+        text: `Максимальное количество упражнений от&nbsp;мастера автоспорта`,
+    },
+    {
+        value: "50",
+        text: `Километров пробега по&nbsp;полигону`,
+    },
+    {
+        value: "90",
+        text: "Км/ч — максимальная скорость маневров",
+    },
+];
+---
+
+<section class="numbers-screen">
+    <main class="numbers">
+        {
+            numbers.map((number) => (
+                <div class="number">
+                    <div class="number__value">{number.value}</div>
+                    <div class="number__text" set:html={number.text} />
+                </div>
+            ))
+        }
+        <h2 class="numbers-screen__title">
+            <span class="first-line">дадут тебе больше,</span><span
+                class="second-line">чем годы за рулем</span
+            >
+            <span class="title-line"></span>
+        </h2>
+    </main>
+</section>
+
+<style>
+    .numbers-screen {
+        margin-bottom: 180px;
+    }
+    h2 {
+        flex-shrink: 0;
+        font-size: 70px;
+        position: relative;
+    }
+    h2 > span {
+        display: block;
+        white-space: nowrap;
+    }
+    .first-line {
+        color: var(--color-accent);
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .title-line {
+        z-index: 0;
+        display: block;
+        position: absolute;
+        background: #a1d2ff;
+        height: 25px;
+        width: 767px;
+        left: -10px;
+        top: 52px;
+    }
+
+    .second-line {
+        padding-left: 100px;
+    }
+
+    .numbers-screen {
+        padding: var(--container-padding);
+        padding-right: 0;
+        color: #e4f2ff;
+    }
+
+    .numbers {
+        display: flex;
+        gap: 40px;
+        transform: translateX(100%);
+    }
+    .number__value {
+        font-family: var(--heading-font);
+        font-weight: 700;
+        font-size: 180px;
+        line-height: 1.2;
+
+        color: inherit;
+        width: 260px;
+        flex-shrink: 0;
+    }
+
+    .number__text {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: #646464;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let pinWrap: HTMLElement = document.querySelector(".numbers-screen");
+    let title: HTMLElement = document.querySelector(".numbers-screen__title");
+    let pinWrapWidth =
+        pinWrap.offsetWidth + window.innerWidth / 2 + title.offsetWidth / 2;
+
+    gsap.to(".numbers-screen", {
+        scrollTrigger: {
+            scrub: 0.5,
+            trigger: ".numbers-screen",
+            pin: true,
+            start: "center center",
+            end: pinWrapWidth,
+        },
+        color: "#3CA0FF",
+        x: -pinWrapWidth,
+        ease: "none",
+    });
+</script>
