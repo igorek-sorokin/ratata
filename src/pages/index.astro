@@ -7,18 +7,19 @@ import Screen4 from "../components/Screen4.astro";
 import Numbers from "../components/Numbers.astro";
 import Programs from "../components/Programs.astro";
 import HowItWorks from "../components/How-it-works.astro";
+import LearnList from "../components/Learn-list.astro";
 ---
 
 <Layout title="Home">
 	<div id="wrapper">
 		<div id="content">
-			<Screen />
+			<!-- <Screen />
 			<Screen2 />
 			<Screen3 />
 			<Screen4 />
 			<Numbers></Numbers>
-			<Programs></Programs>
-
+			<Programs></Programs> -->
+			<LearnList />
 			<!-- <HowItWorks /> -->
 		</div>
 	</div>
@@ -69,7 +70,6 @@ import HowItWorks from "../components/How-it-works.astro";
 				trigger: fadeInElement,
 				start: "center bottom",
 				scrub: false,
-				
 			},
 			x: 100,
 			opacity: 0,
@@ -84,7 +84,6 @@ import HowItWorks from "../components/How-it-works.astro";
 				trigger: fadeInElement,
 				start: "center bottom",
 				scrub: false,
-				
 			},
 			x: -100,
 			opacity: 0,

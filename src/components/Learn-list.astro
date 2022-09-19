@@ -1,0 +1,195 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+
+let activeIndex = 0;
+const listItems = [
+    {
+        label: "Правильно сидеть",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+    {
+        label: "Выбирать правильную скорость",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+    {
+        label: "Тормозить с максимальной эффективностью",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+    {
+        label: "Объезжать препятствия в лосином тесте",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+    {
+        label: "Рулить, когда машину сносит или заносит",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+    {
+        label: "Использовать управляемый занос для поворота",
+        imgUrl: "img/list-item.jpg",
+        text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    },
+];
+---
+
+<section class="learn-list-section">
+    <h2>Мы научим тебя:</h2>
+    <div class="learn-list-wrapper">
+        <div class="learn-list">
+            {
+                listItems.map((item, index) => (
+                    <div class="learn-list-item">
+                        <div class="learn-list-item__content">
+                            <svg viewBox="0 0 106 57" width="106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M.673 55.947 17.372.5h87.961L89.125 55.947H.673Z" class="item-box" stroke="#DB3549"/>
+                                <path d="M32 24.5 48.5 41l26-26" class="item-check" stroke-width="5"/>
+                            </svg>                            <span class="item-label">{item.label}</span>
+                        </div>
+                        <div class="learn-list-card">
+                            <Image
+                                src={item.imgUrl}
+                                width={460}
+                                height={207}
+                                alt="asd"
+                            />
+                            <p>{item.text}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style is:global>
+    section {
+        padding: var(--container-padding);
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .learn-list-wrapper {
+        /* position: relative;; */
+    }
+
+    .learn-list-card {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 460px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .learn-list-item {
+        position: relative;
+        padding-right: 480px;
+    }
+
+    .learn-list-item__content {
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        border-top: 1px solid var(--color-contrast-low);
+        margin-top: 1px;
+        transition: all .3s ease-in-out;
+    }
+
+    .learn-list-item:last-child  > .learn-list-item__content{
+        border-bottom: 1px solid var(--color-contrast-low);
+    }
+
+    .item-label {
+        margin-left: 20px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: #828282;
+        transition: all .3s ease-in-out;
+    }
+
+    .active .item-label {
+        color: var(--color-accent);
+    }
+
+    .item-box {
+        fill: transparent;
+        transition: all .3s ease-in-out;
+    }
+
+    .active .item-box {
+        fill: var(--color-accent);
+    }
+
+    .item-check {
+        stroke: #E3E3E3;
+        transition: all .3s ease-in-out;
+    }
+
+    .active .item-check {
+        stroke: #fff;
+    }
+    .active.learn-list-item > .learn-list-item__content {
+        border-top-color: var(--color-accent);
+    }
+
+    .active + .learn-list-item > .learn-list-item__content {
+        border-top-color: var(--color-accent);
+    }
+
+    .active.learn-list-item:last-child > .learn-list-item__content  {
+        border-bottom-color: var(--color-accent);
+    }
+
+
+    .active > .learn-list-card {
+        opacity: 1;
+        top: 0;
+        visibility: visible;
+    }
+
+    p {
+        display: block;
+        background-color: #46A5FF;
+        padding: 40px 30px 50px;
+        color: var(--color-contrast);
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+    const items = gsap.utils.toArray(".learn-list-item");
+
+    items.forEach((item: HTMLElement) => {
+        ScrollTrigger.create({
+            trigger: item,
+            start: "top center",
+            end: "bottom center",
+            onEnterBack: () => {
+                item.classList.add("active");
+            },
+            onEnter: () => {
+                item.classList.add("active");
+            },
+            onLeave: () => {
+                item.classList.remove("active");
+            },
+            onLeaveBack: () => {
+                item.classList.remove("active");
+            },
+        });
+    });
+</script>
