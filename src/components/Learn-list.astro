@@ -1,5 +1,6 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
+import listItemImg from  "../assets/img/list-item.jpg";
 
 let activeIndex = 0;
 const listItems = [
@@ -51,9 +52,7 @@ const listItems = [
                         </div>
                         <div class="learn-list-card">
                             <Image
-                                src={item.imgUrl}
-                                width={460}
-                                height={207}
+                                src={listItemImg}
                                 alt="asd"
                             />
                             <p>{item.text}</p>

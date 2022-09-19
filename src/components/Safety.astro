@@ -1,5 +1,11 @@
 ---
+import safetyIcon1 from  "../assets/img/safety_icon1.png";
+import safetyIcon2 from  "../assets/img/safety_icon2.png";
+import safetyIcon3 from  "../assets/img/safety_icon3.png";
+import safetyIcon4 from  "../assets/img/safety_icon4.png";
+import safetyCar from  "../assets/img/safety_car.jpg";
 
+import { Image } from "@astrojs/image/components";
 ---
 
 <section class="safety-section">
@@ -8,30 +14,31 @@
     <div class="safety-blocks">
         <div class="safety-block">
             <div class="safety-block__icon">
-                <img src="img/safety_icon1.png" alt="">
+                <Image src={safetyIcon1} alt="icon"></Image>
             </div>
             <span class="safety-block__text">Оборудован вторым комплектом педалей</span>
         </div>
         <div class="safety-block">
             <div class="safety-block__icon">
                 <img src="img/safety_icon2.png" alt="">
+                <Image src={safetyIcon2} alt="icon"></Image>
             </div>
             <span class="safety-block__text">Тренер в машине на протяжении всей тренировки</span>
         </div>
         <div class="safety-block">
             <div class="safety-block__icon">
-                <img src="img/safety_icon3.png" alt="">
+                <Image src={safetyIcon3} alt="icon"></Image>
             </div>
             <span class="safety-block__text">Дешевле, чем на&nbsp;собственной&nbsp;машине</span>
         </div>
         <div class="safety-block">
             <div class="safety-block__icon">
-                <img src="img/safety_icon4.png" alt="">
+                <Image src={safetyIcon4} alt="icon"></Image>
             </div>
             <span class="safety-block__text">На специальном полигоне. Без&nbsp;лишних машин и людей</span>
         </div>
     </div>
-    <img src="img/safety_car.jpg" alt="car" class="safety-car">
+    <Image src={safetyCar} alt="icon"></Image>
 </section>
 
 <style>

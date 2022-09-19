@@ -1,8 +1,11 @@
 ---
 import Button from "./ui/Button.astro";
+import screen from "../assets/img/screen.jpg";
+
+
 ---
 
-<section>
+<section style={`background-image: url(${screen.src});`}>
     <main>
         <h1>
             Научись водить как&nbsp;боженька <strong>за 2 дня</strong>
@@ -17,7 +20,6 @@ import Button from "./ui/Button.astro";
 
 <style>
     section {
-        background-image: url("img/screen.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

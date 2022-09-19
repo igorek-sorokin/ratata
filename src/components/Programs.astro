@@ -1,13 +1,16 @@
 ---
 import StarIcon from "./ui/Star-icon.astro";
 import Button from "./ui/Button.astro";
+import programBlue from  "../assets/img/program_blue.png";
+import programRed from  "../assets/img/program_red.png";
+
 ---
 
 <section class="programs-section">
     <h2>Две программы разного уровня</h2>
     <a href="#" class="link">Хочу узнать больше о&nbsp;программах</a>
     <div class="programs">
-        <div class="program">
+        <div class="program" style={`background-image: url(${programBlue.src});`}>
             <div class="program__stars">
                 <StarIcon filled={true}></StarIcon>
                 <StarIcon></StarIcon>
@@ -20,7 +23,7 @@ import Button from "./ui/Button.astro";
                 <li>Крепче закрепить результат</li>
             </ul>
         </div>
-        <div class="program program--second">
+        <div class="program program--second" style={`background-image: url(${programRed.src});`}>
             <div class="program__stars">
                 <StarIcon filled={true}></StarIcon>
                 <StarIcon filled={true}></StarIcon>
@@ -77,7 +80,6 @@ import Button from "./ui/Button.astro";
 
     .program {
         padding: 40px 47px;
-        background-image: url('img/program_blue.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center right;
@@ -86,7 +88,6 @@ import Button from "./ui/Button.astro";
     }
 
     .program--second {
-        background-image: url('img/program_red.png');
         clip-path: polygon(100% 0, 100% 75%, 75% 100%, 0 100%, 0 0);
     }
 </style>
