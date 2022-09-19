@@ -1,0 +1,83 @@
+---
+
+---
+
+<section class="safety-section">
+    <h2>Это безопасно</h2>
+    <p>Volkswagen polo 1.6 АКПП — неубиваемый снаряд</p>
+    <div class="safety-blocks">
+        <div class="safety-block">
+            <div class="safety-block__icon">
+                <img src="img/safety_icon1.png" alt="">
+            </div>
+            <span class="safety-block__text">Оборудован вторым комплектом педалей</span>
+        </div>
+        <div class="safety-block">
+            <div class="safety-block__icon">
+                <img src="img/safety_icon2.png" alt="">
+            </div>
+            <span class="safety-block__text">Тренер в машине на протяжении всей тренировки</span>
+        </div>
+        <div class="safety-block">
+            <div class="safety-block__icon">
+                <img src="img/safety_icon3.png" alt="">
+            </div>
+            <span class="safety-block__text">Дешевле, чем на&nbsp;собственной&nbsp;машине</span>
+        </div>
+        <div class="safety-block">
+            <div class="safety-block__icon">
+                <img src="img/safety_icon4.png" alt="">
+            </div>
+            <span class="safety-block__text">На специальном полигоне. Без&nbsp;лишних машин и людей</span>
+        </div>
+    </div>
+    <img src="img/safety_car.jpg" alt="car" class="safety-car">
+</section>
+
+<style>
+    section {
+        padding: 90px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h2 {
+        font-size: 70px;
+        margin-bottom: 40px;
+    }
+
+    p {
+        margin-bottom: 31px;
+    }
+
+    .safety-blocks {
+        display: grid;
+        grid-template-columns: repeat(2, 377px);
+        column-gap: 24px;
+        row-gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .safety-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .safety-block__icon {
+        margin-right: 20px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 72px;
+        height: 72px;
+        background-color: var(--color-primary);
+    }
+
+    .safety-block__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: #646464;
+    }
+</style>
