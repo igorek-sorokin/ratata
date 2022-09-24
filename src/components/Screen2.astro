@@ -14,10 +14,14 @@ import deerImage from "../assets/img/screen2_deer.jpg";
                 </h3>
                 <p>С высоким риском ДТП и реагировать по ситуации</p>
             </div>
-            <Image class="first-option__img" src={deerImage} alt="" />
+            <div class="first-option__image-wrapper">
+                <Image class="first-option__img" src={deerImage} height={275} alt="" />
+            </div>
         </div>
         <div class="second-option fade-in-left">
-            <Image src={carImage} alt="" class="second-option__img" />
+            <div class="second-option__image-wrapper">
+                <Image src={carImage} alt="" class="second-option__img" height={275} />
+            </div>
             <div class="second-option__content">
                 <h3>Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
                 <p>И закрепить это на практике</p>
@@ -28,7 +32,6 @@ import deerImage from "../assets/img/screen2_deer.jpg";
 
 <style>
     section {
-        padding: var(--container-padding);
         padding-bottom: 90px;
     }
 
@@ -37,50 +40,62 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     }
 
     h2 {
-        margin-bottom: 40px;
+        padding: var(--container-padding);
+        margin-bottom: 13px;
     }
 
     h3 {
         margin-bottom: 25px;
     }
 
-    .first-option {
+    p {
+        letter-spacing: 1.05px;
+    }
+
+    .first-option {     
         display: grid;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
-        gap: 36px;
+        grid-auto-rows: 275px;
+    }
+
+    .first-option__content {
+        padding: var(--container-padding);
+        padding-right: 0;
+    }
+
+    .first-option__image-wrapper {
+        padding-right: 100px;
+    }
+
+    .second-option__image-wrapper {
+        padding-left: 100px;
     }
 
     .first-option__img {
-        clip-path: polygon(
-            22% 0,
-            100% 0,
-            100% 60%,
-            100% 100%,
-            100% 100%,
-            0 73%,
-            0 20%
-        );
+        width: 100%;
+        object-fit: cover;
+        user-select: none;
+        clip-path: polygon(26% 0%,100% 0%,74% 100%,0% 100%);
     }
 
     .second-option__img {
-        clip-path: polygon(
-            0 0,
-            0 30%,
-            100% 0,
-            100% 100%,
-            100% 100%,
-            26% 100%,
-            0 75%
-        );
+        width: 100%;
+        object-fit: cover;
+        user-select: none;
+        clip-path: polygon(26% 0%,100% 0%,74% 100%,0% 100%);
     }
 
     .second-option {
         display: grid;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
-        gap: 36px;
+        grid-auto-rows: 275px;
     }
 
     .second-option__content {
+        padding: var(--container-padding);
         padding-left: 57px;
         padding-top: 90px;
     }

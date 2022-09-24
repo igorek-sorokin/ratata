@@ -9,7 +9,7 @@
     --color-contrast: #fff;
     --color-contrast-low: #D9D9D9;
 
-    --container-padding: 0 calc(50vw - 600px);
+    --container-padding: 0 calc(50vw - 563px);
 }
 
 :root {

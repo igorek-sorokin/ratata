@@ -5,9 +5,9 @@ import screen from "../assets/img/screen.jpg";
 
 ---
 
-<section style={`background-image: url(${screen.src});`}>
+<section class="banner-section" style={`background-image: url(${screen.src});`}>
     <main>
-        <h1>
+        <h1 class="banner-section__title">
             Научись водить как&nbsp;боженька <strong>за 2 дня</strong>
         </h1>
         <p>Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
@@ -29,34 +29,39 @@ import screen from "../assets/img/screen.jpg";
 
     main {
         width: 60%;
-        padding-top: 125px;
+        padding-top: 122px;
     }
 
-    h1 {
+    .banner-section__title {
         font-family: var(--heading-font);
         font-weight: bold;
         font-size: 55px;
-        line-height: 61px;
+        font-style: italic;
+        line-height: 73px;
         text-transform: uppercase;
         color: var(--color-primary);
-        margin-bottom: 30px;
+        margin-bottom: 26px;
     }
 
     strong {
         display: inline-flex;
         vertical-align: middle;
         padding: 9px 19px;
-        margin-left: 9px;
+        margin-left: 23px;
+        font-style: normal;
         padding-bottom: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
         color: var(--color-contrast);
         background-color: var(--color-accent);
         font-weight: 700;
         font-size: 30px;
-        line-height: 33px;
+        line-height: 37px;
     }
     p {
-        width: 50%;
+        width: 75%;
+        padding-left: 6px;
+        font-size: 18px;
+        letter-spacing: 1.1px;
         margin-bottom: 46px;
     }
 

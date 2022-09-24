@@ -94,10 +94,10 @@ const numbers: {
     }
     .number__value {
         font-family: var(--heading-font);
+        font-style: italic;
         font-weight: 700;
         font-size: 180px;
-        line-height: 1.2;
-
+        line-height: 198px;
         color: inherit;
         width: 260px;
         flex-shrink: 0;
@@ -120,7 +120,7 @@ const numbers: {
     let pinWrap: HTMLElement = document.querySelector(".numbers-screen");
     let title: HTMLElement = document.querySelector(".numbers-screen__title");
     let pinWrapWidth =
-        pinWrap.offsetWidth + window.innerWidth / 2 + title.offsetWidth / 2;
+        pinWrap.offsetWidth + (pinWrap.offsetWidth / 2) + title.offsetWidth - 1000;
 
     gsap.to(".numbers-screen", {
         scrollTrigger: {
@@ -128,7 +128,7 @@ const numbers: {
             trigger: ".numbers-screen",
             pin: true,
             start: "center center",
-            end: `${pinWrapWidth / 2}px center`,
+            end: `${pinWrapWidth}px center`,
         },
         color: "#3CA0FF",
         x: -pinWrapWidth,

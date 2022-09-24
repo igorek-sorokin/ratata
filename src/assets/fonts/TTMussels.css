@@ -7,7 +7,22 @@
 
 @font-face {
     font-family: 'TT Mussels';
+    src: url('fonts/TTMussels-RegularItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'TT Mussels';
     src: url('fonts/TTMussels-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Mussels';
+    src: url('fonts/TTMussels-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
 }
