@@ -1,0 +1,107 @@
+---
+import Button from "./ui/Button.astro";
+---
+
+<section class="map-section">
+  <h2 class="map-section__title">Ищи нас здесь</h2>
+
+  <div class="map-section__main">
+    <div class="map-section__content">
+      <p class="map-section__address">
+        Адрес: Московская область, Быково, Промзона, 17 ангар
+      </p>
+      <p class="map-section__hint">Слева и направо до упора</p>
+      <div class="map-section__buttons">
+        <Button href="#" style={"accent"}>Оставить заявку</Button>
+        <Button href="#" style={"primary"}>Как добраться</Button>
+      </div>
+      <p class="map-section__phone">+7 (999) 111–22–33</p>
+    </div>
+    <div id="js-map" class="map-section__map"></div>
+  </div>
+</section>
+
+<style>
+  .map-section__title {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .map-section__map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-section__address {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+
+  .map-section__phone {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: #000000;
+  }
+
+  .map-section__hint {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    /* identical to box height */
+
+    color: #b5b5b5;
+    margin-bottom: 25px;
+  }
+
+  .map-section__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .map-section {
+    margin: 90px 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    gap: 75px;
+  }
+
+  .map-section__main {
+    display: flex;
+    align-items: center;
+    padding: var(--container-padding);
+    padding-right: 0;
+  }
+  .map-section__content {
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+  }
+</style>
+<script>
+  import ymaps from "ymaps";
+  ymaps
+    .load("https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+    .then((maps) => {
+      const map = new maps.Map("js-map", {
+        center: [55.470745, 37.605957],
+        zoom: 7,
+        сontrols: ["zoomControl", "routeButtonControl"],
+      });
+    })
+    .catch((error) => console.log("Failed to load Yandex Maps", error));
+</script>
