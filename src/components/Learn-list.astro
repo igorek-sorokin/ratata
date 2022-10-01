@@ -38,7 +38,7 @@ const listItems = [
 ---
 
 <section class="learn-list-section">
-    <h2>Мы научим тебя:</h2>
+    <h2 class="learn-list-section__title">Мы научим тебя:</h2>
     <div class="learn-list-wrapper">
         <div class="learn-list">
             {
@@ -71,8 +71,14 @@ const listItems = [
         padding-bottom: 90px;
     }
 
-    h2 {
+    .learn-list-section__title {
+        font-style: italic;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 50px;
+
         text-align: center;
+        text-transform: uppercase;
         margin-bottom: 55px;
     }
 

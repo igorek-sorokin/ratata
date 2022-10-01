@@ -1,73 +1,167 @@
 ---
-import safetyIcon1 from  "../assets/img/safety_icon1.png";
-import safetyIcon2 from  "../assets/img/safety_icon2.png";
-import safetyIcon3 from  "../assets/img/safety_icon3.png";
-import safetyIcon4 from  "../assets/img/safety_icon4.png";
-import safetyCar from  "../assets/img/safety_car.jpg";
-
+import safetyIcon1 from "../assets/img/safety_icon1.png";
 import { Image } from "@astrojs/image/components";
+import RoadIcon from "./ui/road-icon.astro";
+import Road2Icon from "./ui/road2-icon.astro";
+import Road3Icon from "./ui/road3-icon.astro";
+import StarIcon from "./ui/Star-icon.astro";
 ---
 
 <section class="two-days-section">
-    <h2 class="safety-section__title">2 дня — и ты сможешь:</h2>
+  <h2 class="two-days-section__title">2 дня — и ты сможешь:</h2>
+  <div class="td-options">
+    <div class="td-option td-option--newbee">
+      <div class="td-option__stars">
+        <StarIcon filled={true} width={37} height={38} />
+      </div>
+      <RoadIcon />
+      <h3 class="td-option__label">Для начинающих</h3>
+      <ul class="td-option__list">
+        <li>Перестать бояться скорости</li>
+        <li>Правильно сидеть в кресле водителя</li>
+        <li>Эффективно разгоняться и тормозить</li>
+      </ul>
+    </div>
+    <div class="td-option td-option--all">
+      <div class="td-option__stars">
+        <StarIcon filled={true} width={37} height={38} />
+        <StarIcon filled={true} width={37} height={38} />
+      </div>
+      <Road2Icon />
+      <h3 class="td-option__label">Для всех</h3>
+      <ul class="td-option__list">
+        <li><span>Снизить риск ДТП</span></li>
+        <li><span>Меньше уставать за рулем</span></li>
+        <li><span>Оценивать дорожные условия</span></li>
+      </ul>
+    </div>
+    <div class="td-option td-option--expirienced">
+      <div class="td-option__stars">
+        <StarIcon filled={true} width={37} height={38} />
+        <StarIcon filled={true} width={37} height={38} />
+        <StarIcon filled={true} width={37} height={38} />
+      </div>
+      <Road3Icon />
+      <h3 class="td-option__label">Для опытных</h3>
+      <ul class="td-option__list">
+        <li><span>Безопасно маневрировать на высокой скорости</span></li>
+        <li><span>Смотреть на дорогу как автогонщик</span></li>
+        <li><span>Совершить свой старт в автоспорте</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <style>
-    section {
-        padding: 90px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .safety-section__title {
-        font-size: 70px;
-        margin-bottom: 40px;
-    }
+  .two-days-section__title {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 77px;
+    margin-bottom: 40px;
 
-    p {
-        margin-bottom: 31px;
-    }
+    text-align: center;
+    text-transform: uppercase;
 
-    .safety-blocks {
-        display: grid;
-        grid-template-columns: repeat(2, 377px);
-        column-gap: 24px;
-        row-gap: 30px;
-        margin-bottom: 50px;
-    }
+    color: #46a5ff;
+  }
+  .two-days-section {
+    padding: 90px calc(50vw - 590px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .safety-block {
-        display: flex;
-        align-items: center;
-    }
+  .td-option__stars {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 7px;
+  }
 
-    .safety-block__icon {
-        margin-right: calc(32px + 20px);
-        flex-shrink: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 72px;
-        height: 72px;
-        background-color: var(--color-accent);
-        position: relative;
-    }
+  .td-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* grid-auto-rows: 500px; */
+  }
 
-    .safety-block__icon::after {
-        content: '';
-        position: absolute;
-        left: 100%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width:  72px 32px 0 0;
-        border-color: var(--color-accent) transparent transparent transparent;
-    }
+  .td-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
 
-    .safety-block__text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
-        color: #646464;
-    }
+  .td-option--newbee {
+    background: #46a5ff;
+    color: #fff;
+  }
+
+  .td-option__label {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  .td-option--newbee > .td-option__label {
+    color: #fff;
+  }
+
+  .td-option--all {
+    color: #9c9c9c;
+    border: 1px solid #9c9c9c;
+  }
+
+  .td-option--all > .td-option__label {
+    color: #9c9c9c;
+  }
+
+  .td-option--expirienced {
+    background: #db3549;
+    color: #fff;
+  }
+
+  .td-option--expirienced > .td-option__label {
+    color: #fff;
+  }
+
+  .td-option__list {
+    align-self: flex-start;
+    padding: 0;
+  }
+
+  .td-option__list > li {
+    list-style: none;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+  }
+
+  .td-option__list > li + li {
+    margin-top: 15px;
+  }
+
+  .td-option__list > li::before {
+    content: "";
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    color: #116abe;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12.5 18.964 11.49-11.49 1.769 1.767-13.26 13.258-7.954-7.955 1.767-1.767 6.188 6.187Z' fill='%23116ABE'/%3E%3C/svg%3E");
+  }
+
+  .td-option--all .td-option__list > li::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12.5 18.964 11.49-11.49 1.769 1.767-13.26 13.258-7.954-7.955 1.767-1.767 6.188 6.187Z' fill='%239c9c9c'/%3E%3C/svg%3E");
+  }
+
+  .td-option--expirienced .td-option__list > li::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12.5 18.964 11.49-11.49 1.769 1.767-13.26 13.258-7.954-7.955 1.767-1.767 6.188 6.187Z' fill='%23FFE146'/%3E%3C/svg%3E");
+  }
 </style>
