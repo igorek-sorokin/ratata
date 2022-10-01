@@ -23,6 +23,7 @@ import deerImage from "../assets/img/screen2_deer.jpg";
                 <Image src={carImage} alt="" class="second-option__img" height={275} />
             </div>
             <div class="second-option__content">
+                <span class="h2 second-option__or">Или</span>
                 <h3>Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
                 <p>И закрепить это на практике</p>
             </div>
@@ -55,22 +56,29 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     .first-option {     
         display: grid;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: 275px;
+    }
+
+    .second-option__or {
+        color: var(--color-accent);
+        margin-bottom: 27px;
+        display: block;
     }
 
     .first-option__content {
         padding: var(--container-padding);
         padding-right: 0;
+        padding-top: 73px;
     }
 
     .first-option__image-wrapper {
-        padding-right: 100px;
+        padding-right: 115px;
     }
 
     .second-option__image-wrapper {
-        padding-left: 100px;
+        padding-left: 115px;
     }
 
     .first-option__img {
@@ -89,15 +97,19 @@ import deerImage from "../assets/img/screen2_deer.jpg";
 
     .second-option {
         display: grid;
-        align-items: center;
+        /* align-items: center; */
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: 275px;
     }
 
     .second-option__content {
         padding: var(--container-padding);
-        padding-left: 57px;
-        padding-top: 90px;
+        padding-left: 110px;
+        padding-top: 93px;
+    }
+
+    .second-option__content > h3 {
+        margin-bottom: 14px;
     }
 </style>
 

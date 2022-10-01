@@ -1,29 +1,140 @@
 ---
+import efim from  "../assets/img/efim.png";
+import otherTrainer from  "../assets/img/other_trainer.png";
 
 ---
 
-<section>
-    <h2>
+<section class="trainers-section">
+    <h2 class="trainers-section__title">
         Профессиональные тренеры
     </h2>
     <div class="trainers">
-        <div class="main-trainer">
-            <img src="img/efim.jpg" alt="">
-        </div>
+        <figure class="main-trainer">
+            <img src={efim.src} alt="Efim">
+            <div class="main-trainer__element"></div>
+            <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+        </figure>
         <div class="other-trainers">
-
+            <figure class="other-trainer">
+                <img src={otherTrainer.src} alt="other trainer">
+                <figcaption class="other-trainer__name">Иван Петров</figcaption>
+                <p class="other-trainer__desc">Тренер начинающих</p>
+            </figure>
+            <figure class="other-trainer">
+                <img src={otherTrainer.src} alt="other trainer">
+                <figcaption class="other-trainer__name">Иван Петров</figcaption>
+                <p class="other-trainer__desc">Тренер начинающих</p>
+            </figure>
+            <figure class="other-trainer">
+                <img src={otherTrainer.src} alt="other trainer">
+                <figcaption class="other-trainer__name">Иван Петров</figcaption>
+                <p class="other-trainer__desc">Тренер начинающих</p>
+            </figure>
         </div>
     </div>
 </section>
 
 <style>
-    section {
+
+    .trainers {
         padding: var(--container-padding);
         padding-right: 0;
+    }
+
+    .main-trainer {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-items: center;
+       width: 483px;
+       position: relative;
+    }
+
+    .trainers-section__title {
+        text-align: center;
+    }
+
+    .main-trainer > img {
+        position: relative;
+        z-index: 2;
+    }
+
+    .main-trainer__element {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 483px;
+        height: 156px;
+        background: #DB3549;
+        z-index: 1;
+        clip-path: polygon(19% 0%,100% 0%,81% 100%,0% 100%);
+    }
+
+    .main-trainer__name  {
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-primary);
+        text-align: center;
+        position: absolute;
+        width: 307.5px;
+        height: 50px;
+        bottom: 8px;
+        right: 67px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        color: #FFFFFF;
+    }
+
+    section {
         padding-top: 90px;
         padding-bottom: 90px;
     }
     h2 {
         margin-bottom: 92px;
+    }
+
+    .trainers {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+    }
+
+    .other-trainers {
+        display: flex;
+        gap: 30px;
+    }
+
+    .other-trainer {
+        width: 260px;
+        border: 1px solid #EBEBEB;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 57.5px 0;
+    }
+
+    .other-trainer > img {
+        margin-bottom: 20px;
+    }
+
+    .other-trainer__name {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+
+        color: #2D2D2D;
+        margin-bottom: 10px;
+    }
+
+    .other-trainer__desc {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+
+        color: #2D2D2D;
     }
 </style>

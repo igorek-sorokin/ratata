@@ -8,7 +8,7 @@ import screen from "../assets/img/screen.jpg";
 <section class="banner-section" style={`background-image: url(${screen.src});`}>
     <main>
         <h1 class="banner-section__title">
-            Научись водить как&nbsp;боженька <strong>за 2 дня</strong>
+          <span>Научись водить как&nbsp;боженька <strong>за 2 дня</strong></span>
         </h1>
         <p>Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
         <div class="buttons">
@@ -29,7 +29,7 @@ import screen from "../assets/img/screen.jpg";
 
     main {
         width: 60%;
-        padding-top: 122px;
+        padding-top: 118px;
     }
 
     .banner-section__title {
@@ -38,9 +38,27 @@ import screen from "../assets/img/screen.jpg";
         font-size: 55px;
         font-style: italic;
         line-height: 73px;
+        margin-left: -2px;
         text-transform: uppercase;
         color: var(--color-primary);
         margin-bottom: 26px;
+        position: relative;
+    }
+    .banner-section__title::before {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 18px;
+        top: 44px;
+        left: -20px;
+        width: 521px;
+        background: #f3f3f3;
+        z-index: 1;
+    }
+
+    .banner-section__title>span {
+        position: relative;
+        z-index: 2;
     }
 
     strong {
@@ -59,7 +77,8 @@ import screen from "../assets/img/screen.jpg";
     }
     p {
         width: 75%;
-        padding-left: 6px;
+        padding-left: 5px;
+        line-height: 25px;
         font-size: 18px;
         letter-spacing: 1.1px;
         margin-bottom: 46px;

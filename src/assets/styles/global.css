@@ -9,7 +9,7 @@
     --color-contrast: #fff;
     --color-contrast-low: #D9D9D9;
 
-    --container-padding: 0 calc(50vw - 563px);
+    --container-padding: 0 calc(50vw - 555px);
 }
 
 :root {
@@ -57,6 +57,7 @@ p,
 
 .wheel-list > li {
     list-style: none;
+    font-size: 22px;
     color: var(--color-contrast);
 }
 

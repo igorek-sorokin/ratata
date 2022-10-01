@@ -1,28 +1,29 @@
 ---
 import { Image } from "@astrojs/image/components";
-import conusesImg from "../assets/img/screen4_conuses.png";
+import conusesImg from "../assets/img/screen4_conuses.jpg";
 import wheelImg from "../assets/img/screen4_wheel.png";
-import screen4Blue from  "../assets/img/screen4_blue.png";
-import screen4Red from  "../assets/img/screen4_red.png";
-
-
+import screen4Blue from "../assets/img/screen4_blue.png";
+import screen4Red from "../assets/img/screen4_red.png";
 ---
 
 <div class="screen">
-    <div class="first-section" >
-        <div class="first-section__content fade-in-left" style={`background-image: url(${screen4Blue.src});`}>
-            <div>
-                <h2 class="screen__title">Если ты:</h2>
-                <ul class="wheel-list">
-                    <li>Не понимаешь, как ведет себя машина</li>
-                    <li>Путаешься в руках, когда крутишь руль</li>
-                    <li>Боишься ездить быстро</li>
-                </ul>
-            </div>
-        </div>
-        <Image src={conusesImg} alt="conuses" class="fade-in-right"/>
+  <div class="first-section">
+    <div
+      class="first-section__content fade-in-left"
+      style={`background-image: url(${screen4Blue.src});`}
+    >
+      <div>
+        <h2 class="screen__title">Если ты:</h2>
+        <ul class="wheel-list">
+          <li>Не понимаешь, как ведет себя машина</li>
+          <li>Путаешься в руках, когда крутишь руль</li>
+          <li>Боишься ездить быстро</li>
+        </ul>
+      </div>
     </div>
-    <section class="second-section">
+    <Image src={conusesImg} alt="conuses" class="fade-in-right" />
+  </div>
+  <!-- <section class="second-section">
         <Image src={wheelImg} alt="wheel" class="fade-in-left"/>
         <div class="second-section__content fade-in-right" style={`background-image: url(${screen4Red.src});`}>
             <div>
@@ -34,103 +35,98 @@ import screen4Red from  "../assets/img/screen4_red.png";
                 </ul>
             </div>
         </div>
-    </section>
-    <div class="screen4__title-wrapper fade-in-left">
-        <p class="screen4__title">
-            тебе срочно нужно ратата
-        </p>
-        <a href="#" class="link">Что такое “РАТАТА”</a>
-    </div>
+    </section> -->
+  <div class="screen4__title-wrapper fade-in-left">
+    <p class="screen4__title">тебе срочно нужно ратата</p>
+    <a href="#" class="link">Что такое “РАТАТА”</a>
+  </div>
 </div>
 
 <style>
-    .screen {
-        padding-top: 90px;
-    }
+  .screen {
+    padding-top: 90px;
+  }
 
-    .second-section {
-        margin-bottom: 180px;
-    }
+  .screen4__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+  }
 
-    .screen4__title-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 90px;
-    }
+  .screen4__title {
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--color-accent);
+    font-size: 70px;
+    margin-bottom: 30px;
+  }
 
-    .screen4__title {
-        font-family: var(--heading-font);
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: bold;
-        line-height: 1.2;
-        color: var(--color-accent);
-        font-size: 70px;
-        margin-bottom: 30px;
-    }
+  .screen4__title::after {
+    content: "";
+    display: block;
+    height: 25px;
+    background: linear-gradient(
+      270.01deg,
+      #53abff 0.01%,
+      rgba(83, 171, 255, 0) 99.41%
+    );
+    width: 100%;
+  }
 
-    .screen4__title::after {
-        content: '';
-        display: block;
-        height: 25px;
-        background: linear-gradient(270.01deg, #53ABFF 0.01%, rgba(83, 171, 255, 0) 99.41%);
-        width: 100%;
-    }
+  .screen__title {
+    color: inherit;
+    margin-bottom: 35px;
+  }
 
-    .screen__title {
-        color: inherit;
-        margin-bottom: 35px;
-    }
+  .first-section,
+  .second-section {
+    margin-bottom: 180px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .first-section__content {
+    display: flex;
+    padding-right: 331px;
+    padding-top: 127px;
+    justify-content: flex-end;
+    color: var(--color-contrast);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-color: var(--color-accent);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
+    margin-right: -35%;
+  }
+  .first-section img {
+    clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 
-    .first-section,
-    .second-section {
-        height: 386px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
 
-    .first-section {
-        margin-bottom: 22px;
-    }
+  .second-section__content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 35%;
+    color: var(--color-contrast);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: var(--color-primary);
+    clip-path: polygon(7% 0, 100% 0%, 100% 100%, 29% 100%);
+    margin-left: -35%;
+  }
 
-    .first-section__content {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: 35%;
-        color: var(--color-contrast);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-color: var(--color-accent);
-        clip-path: polygon(0% 0%,100% 0%,70% 100%,0% 100%);
-        margin-right: -35%;
-    }
-    .first-section img {
-        clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
-
-    img {
-        max-width: 100%;
-        object-fit: cover;
-    }
-
-    .second-section__content {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-left: 35%;
-        color: var(--color-contrast);
-        background-repeat: no-repeat;
-        background-position: left;
-        background-color: var(--color-primary);
-        clip-path: polygon(7% 0,100% 0%,100% 100%,29% 100%);
-        margin-left: -35%;
-    }
-
-    .second-section img {
-        clip-path: polygon(0% 0%,70% 0%,100% 100%,0 100%);
-    }
+  .second-section img {
+    clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0 100%);
+  }
 </style>
 
 <script></script>
