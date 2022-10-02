@@ -16,6 +16,9 @@
     "ymaps": "^0.2.1"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.5.0"
+    "@astrojs/alpinejs": "^0.1.2",
+    "@astrojs/image": "^0.5.0",
+    "@types/alpinejs": "^3.7.0",
+    "alpinejs": "^3.10.3"
   }
 }

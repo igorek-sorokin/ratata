@@ -2,6 +2,8 @@
 import logo from "../assets/img/logo.png";
 import { Image } from "@astrojs/image/components";
 import Button from "./ui/Button.astro";
+import BurgerIcon from "./ui/Burger-icon.astro";
+import BurgerCloseIcon from "./ui/burger-close-icon.astro";
 
 const navList = [
     {
@@ -27,9 +29,9 @@ const navList = [
 ];
 ---
 
-<header>
+<header class="header-desktop">
     <Image src={logo} alt="logo" />
-    <nav>
+    <nav class="header_nav">
         <ul class="nav__ul">
             {
                 navList.map((navItem) => (
@@ -45,8 +47,27 @@ const navList = [
     <a href="tel:+79991112233" class="header__tel">+7 (999) 111–22–33</a>
     <Button href="/go" style={"outline"}>Записаться</Button>
 </header>
+<header class="header-mobile" x-data="{ open: false }">
+    <Image src={logo} alt="logo" />
+    <button class="nav-trigger nav-trigger--open"  @click="open = ! open"><BurgerIcon/></button>
+    <nav class="nav-mobile" :class="open && 'nav-mobile--active'">
+        <button class="nav-trigger nav-trigger--close"  @click="open = ! open"><BurgerCloseIcon/></button>
+        <ul class="nav-mobile__ul">
+            {
+                navList.map((navItem) => (
+                    <li class="nav-mobile__li">
+                        <a class="nav-mobile__link" href={navItem.ulr}>
+                            {navItem.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <a href="tel:+79991112233" class="nav-mobile__tel">+7 (999) 111–22–33</a>
+    </nav>
+</header>
 <style>
-    header {
+    .header-desktop {
         height: 73px;
         display: flex;
         align-items: center;
@@ -56,7 +77,7 @@ const navList = [
     .header__tel {
     }
 
-    nav {
+    .header_nav {
         display: flex;
         align-items: center;
         margin-left: 49px;
@@ -69,6 +90,12 @@ const navList = [
 
     .nav__li {
         list-style: none;
+    }
+
+    .nav-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
     .nav__link {
@@ -86,4 +113,85 @@ const navList = [
         margin-left: 58px;
         margin-right: auto;
     }
+
+    .header-mobile {
+        padding: 24px 40px;
+        display: none;
+        justify-content: space-between;
+    }
+
+    .nav-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 24px 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: var(--color-primary);
+        transition: all .5s ease-in-out;
+        transform: translateX(100%);
+        z-index: 999;
+    }
+
+    .nav-mobile--active {
+        transform: translateX(0);
+    }
+
+    .nav-mobile__ul {
+        align-self: center;
+        padding-left: 0;
+    }
+
+    .nav-mobile__li {
+        list-style: none;
+        text-align: center;
+    }
+
+    .nav-mobile__li + .nav-mobile__li {
+        margin-top: 16px;
+    }
+
+    .nav-mobile__link {
+        font-size: 24px;
+        color: var(--color-contrast);
+        text-decoration: none;
+    }
+
+    .nav-mobile__tel {
+        font-size: 22px;
+        color: var(--color-contrast);
+        /* color: var(--color-accent); */
+        align-self: center;
+        text-decoration: none;
+    }
+    
+
+    @media(max-width: 1023px) {
+        .header-mobile {
+            display: flex;
+        }
+        .header-desktop {
+            display: none;
+        }
+    }
 </style>
+<script>
+    // const navMobileElement = document.querySelector('.nav-mobile');
+    // const openElement = document.querySelector('.nav-trigger--open');
+    // const closeElement = document.querySelector('.nav-trigger--close');
+
+    // openElement.addEventListener('click', openMobileNav);
+    // closeElement.addEventListener('click', closeMobileNav);
+    
+    // function openMobileNav() {
+    //     navMobileElement.classList.add('nav-mobile--active');
+    // }
+
+    // function closeMobileNav() {
+    //     navMobileElement.classList.remove('nav-mobile--active');
+    // }
+</script>
