@@ -6,7 +6,7 @@ import screen4Blue from "../assets/img/screen4_blue.png";
 import screen4Red from "../assets/img/screen4_red.png";
 ---
 
-<div class="screen">
+<div class="screen4">
   <div class="first-section">
     <div
       class="first-section__content fade-in-left"
@@ -43,7 +43,7 @@ import screen4Red from "../assets/img/screen4_red.png";
 </div>
 
 <style>
-  .screen {
+  .screen4 {
     padding-top: 90px;
   }
 
@@ -88,7 +88,7 @@ import screen4Red from "../assets/img/screen4_red.png";
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .first-section__content {
     display: flex;
     padding-right: 331px;
@@ -125,7 +125,46 @@ import screen4Red from "../assets/img/screen4_red.png";
   }
 
   .second-section img {
+    height: 280px;
     clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0 100%);
+  }
+
+  @media (max-width: 1023px) {
+    .first-section {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+
+    .first-section__content  {
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+        margin-right: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: -20%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .first-section img {
+        clip-path: none;
+    }
+
+    .screen4__title-wrapper {
+        padding-top: 100px;
+    }
+
+    .screen4__title {
+        font-family: var(--heading-font);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        line-height: 38.5px;
+        color: var(--color-accent);
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
   }
 </style>
 

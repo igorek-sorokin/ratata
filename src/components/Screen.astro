@@ -1,128 +1,145 @@
 ---
 import Button from "./ui/Button.astro";
 import screen from "../assets/img/screen.jpg";
-
-
 ---
 
 <section class="banner-section" style={`background-image: url(${screen.src});`}>
-    <main class="banner-section__main">
-        <h1 class="banner-section__title">
-          <span>Научись водить как&nbsp;боженька <strong class="banner-section__title-mark">за 2 дня</strong></span>
-        </h1>
-        <p class="banner-section__subtitle">Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
-        <div class="buttons">
-            <Button href="#" style={"accent"}>Записаться</Button>
-            <Button href="#">Подробнее</Button>
-        </div>
-    </main>
+  <main class="banner-section__main">
+    <h1 class="banner-section__title">
+      <span
+        >Научись водить как&nbsp;боженька <strong
+          class="banner-section__title-mark">за 2 дня</strong
+        >
+      </span>
+    </h1>
+    <p class="banner-section__subtitle">
+      Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике
+    </p>
+    <div class="buttons">
+      <Button href="#" style={"accent"}>Записаться</Button>
+      <Button href="#">Подробнее</Button>
+    </div>
+  </main>
 </section>
 
 <style is:global>
-    .banner-section {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        height: 633px;
-        padding: var(--container-padding);
+  .banner-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 633px;
+    padding: var(--container-padding);
+  }
+
+  .banner-section__main {
+    width: 60%;
+    padding-top: 118px;
+  }
+
+  .banner-section__title {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 55px;
+    font-style: italic;
+    line-height: 73px;
+    margin-left: -2px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 26px;
+    position: relative;
+  }
+  .banner-section__title::before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 18px;
+    top: 44px;
+    left: -20px;
+    width: 521px;
+    background: #f3f3f3;
+    z-index: 1;
+  }
+
+  .banner-section__title > span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-section__title-mark {
+    display: inline-flex;
+    vertical-align: middle;
+    padding: 9px 19px;
+    margin-left: 23px;
+    font-style: normal;
+    padding-bottom: 5px;
+    margin-bottom: 14px;
+    color: var(--color-contrast);
+    background-color: var(--color-accent);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+  }
+  .banner-section__subtitle {
+    width: 75%;
+    padding-left: 5px;
+    line-height: 25px;
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    margin-bottom: 46px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  @media (max-width: 1023px) {
+    :root {
+      --container-padding: 0 40px;
+    }
+
+    .banner-section__title {
+      text-align: center;
     }
 
     .banner-section__main {
-        width: 60%;
-        padding-top: 118px;
+      width: 100%;
     }
 
-    .banner-section__title {
-        font-family: var(--heading-font);
-        font-weight: bold;
-        font-size: 55px;
-        font-style: italic;
-        line-height: 73px;
-        margin-left: -2px;
-        text-transform: uppercase;
-        color: var(--color-primary);
-        margin-bottom: 26px;
-        position: relative;
-    }
-    .banner-section__title::before {
-        display: block;
-        content: "";
-        position: absolute;
-        height: 18px;
-        top: 44px;
-        left: -20px;
-        width: 521px;
-        background: #f3f3f3;
-        z-index: 1;
-    }
-
-    .banner-section__title>span {
-        position: relative;
-        z-index: 2;
-    }
-
-    .banner-section__title-mark {
-        display: inline-flex;
-        vertical-align: middle;
-        padding: 9px 19px;
-        margin-left: 23px;
-        font-style: normal;
-        padding-bottom: 5px;
-        margin-bottom: 14px;
-        color: var(--color-contrast);
-        background-color: var(--color-accent);
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 37px;
-    }
     .banner-section__subtitle {
-        width: 75%;
-        padding-left: 5px;
-        line-height: 25px;
-        font-size: 18px;
-        letter-spacing: 1.1px;
-        margin-bottom: 46px;
+      width: 100%;
+      text-align: center;
     }
+  }
 
-    .buttons {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-
-    @media (max-width: 1023px) {
-        :root {
-            --container-padding: 0 40px
-        }
-        
-        .banner-section__title {
-            text-align: center;
-        }
-
-        .banner-section__main {
-            width: 100%;
-        }
-
-        .banner-section__subtitle {
-            width: 100%;
-            text-align: center;
-        }
-    }
-
-    @media (max-width: 767px) {
+  @media (max-width: 767px) {
     .banner-section__title {
-            font-size: 35px;
-            line-height: 40px;
+      font-size: 35px;
+      line-height: 40px;
     }
-        .buttons {
-            flex-direction: column;
-            gap: 15px;
-        }
+    .buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
 
-        .buttons .button {
-            width: 280px;
-        }
+    .buttons .button {
+      width: 280px;
     }
+
+    .banner-section__title::before {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 18px;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 335px;
+      background: #f3f3f3;
+      z-index: 1;
+    }
+  }
 </style>
 
 <script></script>

@@ -5,14 +5,14 @@ import deerImage from "../assets/img/screen2_deer.jpg";
 ---
 
 <section class="screen2">
-    <main>
-        <h2>Что лучше:</h2>
+    <main class="screen2__main">
+        <h2 class="screen2__title">Что лучше:</h2>
         <div class="first-option fade-in-right">
             <div class="first-option__content">
-                <h3 class="accent-text">
+                <h3 class="screen2__h3 accent-text ">
                     Оказаться в незнакомых дорожных&nbsp;условиях
                 </h3>
-                <p>С высоким риском ДТП и реагировать по ситуации</p>
+                <p class="screen2__text">С высоким риском ДТП и реагировать по ситуации</p>
             </div>
             <div class="first-option__image-wrapper">
                 <Image class="first-option__img" src={deerImage} height={275} alt="" />
@@ -24,32 +24,32 @@ import deerImage from "../assets/img/screen2_deer.jpg";
             </div>
             <div class="second-option__content">
                 <span class="h2 second-option__or">Или</span>
-                <h3>Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
-                <p>И закрепить это на практике</p>
+                <h3 class="screen2__h3">Узнать, как вести себя в&nbsp;сложных&nbsp;условиях</h3>
+                <p class="screen2__text">И закрепить это на практике</p>
             </div>
         </div>
     </main>
 </section>
 
 <style>
-    section {
+    .screen2 {
         padding-bottom: 90px;
     }
 
-    main {
+    .screen2__main {
         padding-top: 150px;
     }
 
-    h2 {
+    .screen2__title {
         padding: var(--container-padding);
         margin-bottom: 13px;
     }
 
-    h3 {
+    .screen2__h3 {
         margin-bottom: 25px;
     }
 
-    p {
+    .screen2__text {
         letter-spacing: 1.05px;
     }
 
@@ -111,19 +111,78 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     .second-option__content > h3 {
         margin-bottom: 14px;
     }
+
+    @media (max-width: 1023px) {
+        .first-option {
+            grid-template-columns: 1fr;
+            grid-auto-rows: min-content;
+        }
+
+        .first-option__image-wrapper {
+            order: -1;
+            padding-right: 20px;
+        }
+
+        .first-option__img {
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+        }
+
+        .screen2__title{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .second-option {
+            grid-template-columns: 1fr;
+            padding-top: 50px;
+            grid-auto-rows: min-content;
+        }
+
+        .second-option__content {
+            /* order: -1; */
+        }
+
+        .second-option__image-wrapper {
+            padding-left: 20px;
+        }
+
+        .second-option__img {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+        }
+
+        .h2.second-option__or {
+            font-size: 25px;
+            line-height: 27.5px;
+            margin-bottom: 20px;
+        }
+
+        .screen2__h3 {
+            font-size: 25px;
+            line-height: 27.5px;
+        }
+
+        .second-option__content {
+            padding-left: 40px;
+            padding-top: 30px;
+        }
+    }
 </style>
 
 <script>
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
+    const mm = gsap.matchMedia();
 
-    gsap.registerPlugin(ScrollTrigger);
+    mm.add('(min-width: 1024px)', () => {
+        gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
-        trigger: ".screen3",
-        start: "-180px center",
-        end: "top center",
-        pin: ".second-option",
-        pinSpacing: false,
+        ScrollTrigger.create({
+            trigger: ".screen3",
+            start: "-180px center",
+            end: "top center",
+            pin: ".second-option",
+            pinSpacing: false,
+        });
     });
+    
 </script>
