@@ -6,11 +6,11 @@ import screen from "../assets/img/screen.jpg";
 ---
 
 <section class="banner-section" style={`background-image: url(${screen.src});`}>
-    <main>
+    <main class="banner-section__main">
         <h1 class="banner-section__title">
-          <span>Научись водить как&nbsp;боженька <strong>за 2 дня</strong></span>
+          <span>Научись водить как&nbsp;боженька <strong class="banner-section__title-mark">за 2 дня</strong></span>
         </h1>
-        <p>Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
+        <p class="banner-section__subtitle">Курсы контраварийной подготовки по&nbsp;спортивной&nbsp;методике</p>
         <div class="buttons">
             <Button href="#" style={"accent"}>Записаться</Button>
             <Button href="#">Подробнее</Button>
@@ -18,8 +18,8 @@ import screen from "../assets/img/screen.jpg";
     </main>
 </section>
 
-<style>
-    section {
+<style is:global>
+    .banner-section {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -27,7 +27,7 @@ import screen from "../assets/img/screen.jpg";
         padding: var(--container-padding);
     }
 
-    main {
+    .banner-section__main {
         width: 60%;
         padding-top: 118px;
     }
@@ -61,7 +61,7 @@ import screen from "../assets/img/screen.jpg";
         z-index: 2;
     }
 
-    strong {
+    .banner-section__title-mark {
         display: inline-flex;
         vertical-align: middle;
         padding: 9px 19px;
@@ -75,7 +75,7 @@ import screen from "../assets/img/screen.jpg";
         font-size: 30px;
         line-height: 37px;
     }
-    p {
+    .banner-section__subtitle {
         width: 75%;
         padding-left: 5px;
         line-height: 25px;
@@ -88,6 +88,40 @@ import screen from "../assets/img/screen.jpg";
         display: flex;
         align-items: center;
         gap: 30px;
+    }
+
+    @media (max-width: 1023px) {
+        :root {
+            --container-padding: 0 40px
+        }
+        
+        .banner-section__title {
+            text-align: center;
+        }
+
+        .banner-section__main {
+            width: 100%;
+        }
+
+        .banner-section__subtitle {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 767px) {
+    .banner-section__title {
+            font-size: 35px;
+            line-height: 40px;
+    }
+        .buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .buttons .button {
+            width: 280px;
+        }
     }
 </style>
 
