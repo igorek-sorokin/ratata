@@ -8,8 +8,10 @@ import LockIcon from "./ui/lock-icon.astro";
 ---
 
 <section class="programs-section">
-  <h2>Две программы разного уровня</h2>
-  <a href="#" class="link">Хочу узнать больше о&nbsp;программах</a>
+  <h2 class="programs-section__title">Две программы разного уровня</h2>
+  <a href="#" class="link programs-section__link"
+    >Хочу узнать больше о&nbsp;программах</a
+  >
   <div class="programs">
     <div class="program" style={`background-image: url(${programBlue.src});`}>
       <div class="program__stars">
@@ -50,8 +52,8 @@ import LockIcon from "./ui/lock-icon.astro";
   <Button href="#" style={"accent"}>Я готов, запишите меня</Button>
 </section>
 
-<style>
-  h2 {
+<style is:global>
+  .prorgams-section__title {
     margin-bottom: 20px;
   }
 
@@ -70,7 +72,7 @@ import LockIcon from "./ui/lock-icon.astro";
   .link {
     margin-bottom: 36px;
   }
-  section {
+  .programs-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,5 +129,97 @@ import LockIcon from "./ui/lock-icon.astro";
     line-height: 106px;
     text-transform: uppercase;
     margin-bottom: 88px;
+  }
+
+  @media (max-width: 1023px) {
+    .programs-section {
+      padding: 90px 0px;
+    }
+    .programs-section__title {
+      padding: 0 40px;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 39px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .programs-section__link {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 28px;
+      text-align: center;
+      text-decoration-line: underline;
+    }
+
+    .programs {
+      grid-template-columns: 1fr;
+      grid-auto-rows: min-content;
+    }
+
+    .program {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: calc(15% + 80px) 40px;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+    }
+
+    .program__stars {
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
+    .program__stars > * {
+      width: 80px;
+    }
+
+    .programs__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 33px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .program__content {
+      margin-right: 0;
+    }
+
+    .program--disabled {
+      padding: 40px;
+      margin-top: -50%;
+      padding-top: 50%;
+      clip-path: none;
+      z-index: 1;
+      padding-left: 80px;
+      background: linear-gradient(
+          128.5deg,
+          rgba(255, 255, 255, 0.5) -9.21%,
+          rgba(255, 255, 255, 0) 40.28%
+        ),
+        #c9c9c9;
+    }
+
+    .program--disabled > svg {
+        width: 102px;
+        height: 102px;
+    }
+
+    .program--disabled .program__title {
+      order: 2;
+      margin-bottom: 0;
+      margin-top: 18px;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 66px;
+      text-transform: uppercase;
+    }
   }
 </style>

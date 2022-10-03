@@ -137,4 +137,40 @@ import otherTrainer from  "../assets/img/other_trainer.png";
 
         color: #2D2D2D;
     }
+
+    @media(max-width: 1023px) {
+        .trainers-section__title {
+            padding: 0 40px;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 35px;
+            line-height: 39px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .trainers-section__title::first-line {
+            font-style: italic;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 28px;
+            text-transform: uppercase
+        }
+
+        .trainers {
+            flex-direction: column;
+            padding: 0 15px;
+            gap: 50px;
+        }
+
+        .main-trainer__element {
+            max-width: 483px;
+            width: 100%;
+        }
+
+        .main-trainer {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
 </style>

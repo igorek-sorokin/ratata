@@ -1,106 +1,151 @@
 ---
-import safetyIcon1 from  "../assets/img/safety_icon1.png";
-import safetyIcon2 from  "../assets/img/safety_icon2.png";
-import safetyIcon3 from  "../assets/img/safety_icon3.png";
-import safetyIcon4 from  "../assets/img/safety_icon4.png";
-import safetyCar from  "../assets/img/safety_car.jpg";
+import safetyIcon1 from "../assets/img/safety_icon1.png";
+import safetyIcon2 from "../assets/img/safety_icon2.png";
+import safetyIcon3 from "../assets/img/safety_icon3.png";
+import safetyIcon4 from "../assets/img/safety_icon4.png";
+import safetyCar from "../assets/img/safety_car.jpg";
 
 import { Image } from "@astrojs/image/components";
 ---
 
 <section class="safety-section">
-    <h2 class="safety-section__title">Это безопасно</h2>
-    <p>Volkswagen polo 1.6 АКПП — неубиваемый снаряд</p>
-    <div class="safety-blocks">
-        <div class="safety-block">
-            <div class="safety-block__icon">
-                <Image src={safetyIcon1} alt="icon"></Image>
-            </div>
-            <span class="safety-block__text">Оборудован вторым комплектом педалей</span>
-        </div>
-        <div class="safety-block">
-            <div class="safety-block__icon">
-                <Image src={safetyIcon2} alt="icon"></Image>
-            </div>
-            <span class="safety-block__text">Тренер в машине на протяжении всей тренировки</span>
-        </div>
-        <div class="safety-block">
-            <div class="safety-block__icon">
-                <Image src={safetyIcon3} alt="icon"></Image>
-            </div>
-            <span class="safety-block__text">Дешевле, чем на&nbsp;собственной&nbsp;машине</span>
-        </div>
-        <div class="safety-block">
-            <div class="safety-block__icon">
-                <Image src={safetyIcon4} alt="icon"></Image>
-            </div>
-            <span class="safety-block__text">На специальном полигоне. Без&nbsp;лишних машин и людей</span>
-        </div>
+  <h2 class="safety-section__title">Это безопасно</h2>
+  <p class="safety-section__subtitle">Volkswagen polo 1.6 АКПП — неубиваемый снаряд</p>
+  <div class="safety-blocks">
+    <div class="safety-block">
+      <div class="safety-block__icon">
+        <Image src={safetyIcon1} alt="icon" />
+      </div>
+      <span class="safety-block__text"
+        >Оборудован вторым комплектом педалей</span
+      >
     </div>
-    <Image src={safetyCar} alt="icon"></Image>
+    <div class="safety-block">
+      <div class="safety-block__icon">
+        <Image src={safetyIcon2} alt="icon" />
+      </div>
+      <span class="safety-block__text"
+        >Тренер в машине на протяжении всей тренировки</span
+      >
+    </div>
+    <div class="safety-block">
+      <div class="safety-block__icon">
+        <Image src={safetyIcon3} alt="icon" />
+      </div>
+      <span class="safety-block__text"
+        >Дешевле, чем на&nbsp;собственной&nbsp;машине</span
+      >
+    </div>
+    <div class="safety-block">
+      <div class="safety-block__icon">
+        <Image src={safetyIcon4} alt="icon" />
+      </div>
+      <span class="safety-block__text"
+        >На специальном полигоне. Без&nbsp;лишних машин и людей</span
+      >
+    </div>
+  </div>
+  <Image src={safetyCar} alt="icon" class="safety-section__image" />
 </section>
 
 <style>
-    section {
-        padding: 90px 0;
+  .safety-section {
+    padding: 90px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .safety-section__title {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 77px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .safety-section__subtitle {
+    margin-bottom: 31px;
+  }
+
+  .safety-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 377px);
+    column-gap: 24px;
+    row-gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .safety-block {
+    display: flex;
+    align-items: center;
+  }
+
+  .safety-block__icon {
+    margin-right: calc(32px + 20px);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    background-color: var(--color-accent);
+    position: relative;
+  }
+
+  .safety-block__icon::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 72px 32px 0 0;
+    border-color: var(--color-accent) transparent transparent transparent;
+  }
+
+  .safety-block__text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #646464;
+  }
+
+  .safety-section__image {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 1023px) {
+    .safety-section__title {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 39px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .safety-section__subtitle  {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: #646464;
+        margin-bottom: 50px;
+    }
+
+    .safety-section {
+        padding: 90px 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .safety-section__title {
-        font-style: italic;
-        font-weight: 700;
-        font-size: 70px;
-        line-height: 77px;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 40px;
-    }
-
-    p {
-        margin-bottom: 31px;
-    }
 
     .safety-blocks {
-        display: grid;
-        grid-template-columns: repeat(2, 377px);
-        column-gap: 24px;
-        row-gap: 30px;
-        margin-bottom: 50px;
+        grid-template-columns: 1fr;
     }
-
-    .safety-block {
-        display: flex;
-        align-items: center;
-    }
-
-    .safety-block__icon {
-        margin-right: calc(32px + 20px);
-        flex-shrink: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 72px;
-        height: 72px;
-        background-color: var(--color-accent);
-        position: relative;
-    }
-
-    .safety-block__icon::after {
-        content: '';
-        position: absolute;
-        left: 100%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width:  72px 32px 0 0;
-        border-color: var(--color-accent) transparent transparent transparent;
-    }
-
-    .safety-block__text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
-        color: #646464;
-    }
+  }
 </style>

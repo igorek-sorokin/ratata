@@ -1,90 +1,108 @@
 ---
-
 import RedBlock from "./ui/red-block.astro";
 import PlusIcon from "./ui/plus-icon.astro";
-    const faqList: {
-        question: string;
-        answer: string
-    }[] = [
-        {
-            question: 'Я только получил права, мне можно?',
-            answer: 'Пример текста, который раскрывается'
-        },
-        {
-            question: 'Можно отправить жену?',
-            answer: 'Пример текста, который раскрывается'
-        },
-        {
-            question: 'Я 20 лет вожу, чему вы меня можете научить?',
-            answer: 'Пример текста, который раскрывается'
-        },
-        {
-            question: 'Почему нельзя на своем авто?',
-            answer: 'Пример текста, который раскрывается'
-        }
-    ]
+const faqList: {
+  question: string;
+  answer: string;
+}[] = [
+  {
+    question: "Я только получил права, мне можно?",
+    answer: "Пример текста, который раскрывается",
+  },
+  {
+    question: "Можно отправить жену?",
+    answer: "Пример текста, который раскрывается",
+  },
+  {
+    question: "Я 20 лет вожу, чему вы меня можете научить?",
+    answer: "Пример текста, который раскрывается",
+  },
+  {
+    question: "Почему нельзя на своем авто?",
+    answer: "Пример текста, который раскрывается",
+  },
+];
 ---
 
 <section class="faq-section">
-    <h2 class="faq-section__title">Частые вопросы</h2>
-    <div class="faq-list">
-        {faqList.map(item => 
-            <div class="faq-item faq-item--active">
-                <div class="faq-item__main">
-                    <div class="faq-item__question">
-                        {item.question}
-                    </div>
-                    <div class="faq-item__answer">
-                        {item.answer}
-                    </div>
-                </div>
-                <RedBlock><PlusIcon class="faq-item__icon"/></RedBlock>
-            </div>
-        )}
-    </div>
+  <h2 class="faq-section__title">Частые вопросы</h2>
+  <div class="faq-list">
+    {
+      faqList.map((item) => (
+        <div class="faq-item faq-item--active">
+          <div class="faq-item__main">
+            <div class="faq-item__question">{item.question}</div>
+            <div class="faq-item__answer">{item.answer}</div>
+          </div>
+          <RedBlock>
+            <PlusIcon class="faq-item__icon" />
+          </RedBlock>
+        </div>
+      ))
+    }
+  </div>
 </section>
 
 <style>
+  .faq-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 1px solid #e7e7e7;
+  }
 
-    .faq-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 0;
-        border-top: 1px solid #E7E7E7;
-    }
+  .faq-item:last-child {
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .faq-section {
+    padding: var(--container-padding);
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .faq-section__title {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
 
-    .faq-item:last-child {
-        border-bottom: 1px solid #E7E7E7;
+  .faq-item__question {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+  }
+
+  .faq-item__answer {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #8d8d8d;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 1023px) {
+    .faq-item__question {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23px;
     }
-    .faq-section {
-        padding: var(--container-padding);
-        padding-top: 90px;
-        padding-bottom: 90px;
+    .faq-item__answer {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
     }
     .faq-section__title {
-        font-style: italic;
         font-weight: 700;
-        font-size: 45px;
-        line-height: 50px;
+        font-size: 35px;
+        line-height: 39px;
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: 45px;
     }
-
-    .faq-item__question {
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 30px;
-        color: #000000;
-    }
-
-    .faq-item__answer {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: #8D8D8D;
-        margin-top: 5px;
-    }
+  }
 </style>

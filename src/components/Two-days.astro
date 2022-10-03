@@ -52,7 +52,7 @@ import StarIcon from "./ui/Star-icon.astro";
   </div>
 </section>
 
-<style>
+<style is:global>
   .two-days-section__title {
     font-style: italic;
     font-weight: 700;
@@ -163,5 +163,27 @@ import StarIcon from "./ui/Star-icon.astro";
 
   .td-option--expirienced .td-option__list > li::before {
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12.5 18.964 11.49-11.49 1.769 1.767-13.26 13.258-7.954-7.955 1.767-1.767 6.188 6.187Z' fill='%23FFE146'/%3E%3C/svg%3E");
+  }
+
+  @media(max-width: 1023px) {
+    .two-days-section__title {
+        font-size: 35px;
+        line-height: 39px;
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    .td-options {
+        padding: 0 40px;
+        grid-template-columns: 1fr;
+    }
+
+    .td-option__stars {
+        justify-content: flex-start;
+    }
+    
+    .td-option > svg {
+        display:  none;
+    }
   }
 </style>

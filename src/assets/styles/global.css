@@ -99,6 +99,8 @@ p,
 }
 
 .wheel-list > li {
+    display: flex;
+    align-items: center;
     list-style: none;
     font-size: 22px;
     color: var(--color-contrast);
@@ -110,6 +112,7 @@ p,
 
 .wheel-list > li::before {
     content: "";
+    flex-shrink: 0;
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px;

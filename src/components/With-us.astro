@@ -3,48 +3,66 @@ import Button from "./ui/Button.astro";
 import with_us from "../assets/img/with_us.jpg";
 ---
 
-<section class="with-us-section" style={`background-image: linear-gradient(91.59deg, #FFFFFF -7.42%, rgba(255, 255, 255, 0) 64.04%), radial-gradient(127.45% 741.98% at 28.7% 38.73%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), url(${with_us.src});`}>
-    <p>Проведи два дня на полигоне,<br>
-        и ты больше не будешь водить как прежде</p>
-    <h2 class="with-us-section__title">Ты с нами?</h2>
-    <div class="buttons">
-        <Button href="#" style={"accent"}>Погнали</Button>
-        <Button href="#">Программы и цены</Button>
-    </div>
+<section
+  class="with-us-section"
+  style={`background-image: linear-gradient(91.59deg, #FFFFFF -7.42%, rgba(255, 255, 255, 0) 64.04%), radial-gradient(127.45% 741.98% at 28.7% 38.73%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), url(${with_us.src});`}
+>
+  <p>
+    Проведи два дня на полигоне,<br />
+    и ты больше не будешь водить как прежде
+  </p>
+  <h2 class="with-us-section__title">Ты с нами?</h2>
+  <div class="buttons">
+    <Button href="#" style={"accent"}>Погнали</Button>
+    <Button href="#">Программы и цены</Button>
+  </div>
 </section>
 
 <style>
-    .with-us-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 550px;
-        padding: var(--container-padding);
-        margin-top: 90px;
-        margin-bottom: 90px;
-    }
+  .with-us-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 550px;
+    padding: var(--container-padding);
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
 
-    .with-us-section > p {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 30px;
-            margin-bottom: 21px;
-    }
+  .with-us-section > p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 21px;
+  }
 
+  .with-us-section__title {
+    font-family: "TT Mussels";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 88px;
+    text-transform: uppercase;
+    color: #46a5ff;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 30px;
+  }
+
+  @media (max-width: 1023px) {
+
+    .with-us-section  {
+        padding: 0 40px;
+        text-align: center;
+        background-position: 64%;
+    }
     .with-us-section__title {
-        font-family: 'TT Mussels';
-        font-style: italic;
-        font-weight: 700;
-        font-size: 80px;
-        line-height: 88px;
-        text-transform: uppercase;
-        color: #46A5FF;
-        margin-bottom: 20px;
+      font-size: 50px;
+      line-height: 55px;
     }
-
-    .buttons {
-        display: flex;
-        gap: 30px;
-    }
+  }
 </style>
