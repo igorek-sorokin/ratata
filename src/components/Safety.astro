@@ -149,3 +149,22 @@ import { Image } from "@astrojs/image/components";
     }
   }
 </style>
+<script>
+      import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const carImage: HTMLElement = document.querySelector(".safety-section__image");
+
+  gsap
+    .from(carImage, {
+      x: document.body.offsetWidth - carImage.offsetWidth / 2,
+      duration: 0.5,
+      ease: "ease-out",
+      scrollTrigger: {
+        trigger: carImage,
+        start: 'top bottom',
+        scrub: true,
+      }
+    });
+</script>
