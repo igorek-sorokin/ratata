@@ -29,22 +29,38 @@ const faqList: {
   <div class="faq-list">
     {
       faqList.map((item) => (
-        <div class="faq-item faq-item--active">
+        <div class="faq-item" x-data="{ open: false }" x-on:click="open = ! open">
           <div class="faq-item__main">
             <div class="faq-item__question">{item.question}</div>
-            <div class="faq-item__answer">{item.answer}</div>
+            <div class="faq-item__answer" x-show="open" x-transition>{item.answer}</div>
           </div>
-          <RedBlock>
-            <PlusIcon class="faq-item__icon" />
-          </RedBlock>
+          <button type="button" class="faq-item__button" :class="open && 'faq-item__button--active'">
+            <RedBlock>
+              <PlusIcon class="faq-item__icon" />
+            </RedBlock>
+          </button>
         </div>
       ))
     }
   </div>
 </section>
 
-<style>
+<style is:global>
+    .faq-item__button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .plus-icon {
+        transition: all .3s ease-in-out;
+    }
+
+    .faq-item__button--active .plus-icon {
+        transform: rotate(45deg);
+    }
   .faq-item {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -88,7 +104,7 @@ const faqList: {
 
   @media (max-width: 1023px) {
     .faq-section {
-        padding: 0 40px;
+      padding: 0 40px;
     }
     .faq-item__question {
       font-weight: 400;
@@ -101,11 +117,11 @@ const faqList: {
       line-height: 18px;
     }
     .faq-section__title {
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 39px;
-        text-align: center;
-        text-transform: uppercase;
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 39px;
+      text-align: center;
+      text-transform: uppercase;
     }
   }
 </style>
