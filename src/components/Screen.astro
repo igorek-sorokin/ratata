@@ -95,28 +95,11 @@ import screen from "../assets/img/screen.jpg";
   }
 
   @media (max-width: 1023px) {
-    :root {
-      --container-padding: 0 40px;
-    }
-
-    .banner-section__title {
-      text-align: center;
-    }
-
-    .banner-section__main {
-      width: 100%;
-    }
-
-    .banner-section__subtitle {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 767px) {
     .banner-section__title {
       font-size: 35px;
       line-height: 40px;
+      text-align: center;
+      margin: 0 40px;
     }
     .buttons {
       flex-direction: column;
@@ -138,6 +121,15 @@ import screen from "../assets/img/screen.jpg";
       width: 335px;
       background: #f3f3f3;
       z-index: 1;
+    }
+
+    .banner-section__main {
+      width: 100%;
+    }
+
+    .banner-section__subtitle {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>

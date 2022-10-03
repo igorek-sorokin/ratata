@@ -1,7 +1,7 @@
 /* Variables */
 :root {
     --color-primary: #46A5FF;
-    --color-primary-dark: #1B9097;
+    --color-primary-dark: #148DFF;
     --color-accent: hsla(353, 70%, 53%, 1);
     --color-accent-dark: hsla(353, 71%, 43%, 1);
     --color-main: #646464;
@@ -34,6 +34,19 @@ body {
         max-width: 100%;
         overflow-x: hidden;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 72px;
+    z-index: 10;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+
+  .sticky + #wrapper {
+    padding-top: 73px;
+  }
 
 :root {
     --primary-font: "Overpass", Helvetica, sans-serif;

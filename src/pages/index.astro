@@ -17,88 +17,87 @@ import MapSection from "../components/Map-section.astro";
 ---
 
 <Layout title="Home">
-	<div id="wrapper">
-		<div id="content">
-			<Screen />
-			<Screen2 />
-			<Screen3 />
-			<Screen4 />
-			<Numbers></Numbers>
-			<Safety></Safety>
-			<LearnList />
-			<Programs></Programs>
-			<Trainers></Trainers>
-			<TwoDays/>
-			<WithUs/>
-			<FaqSection/>
-			<MapSection/>
-		</div>
-	</div>
+  <div id="wrapper">
+    <div id="content">
+      <Screen />
+      <Screen2 />
+      <Screen3 />
+      <Screen4 />
+      <Numbers />
+      <Safety />
+      <LearnList />
+      <Programs />
+      <Trainers />
+      <TwoDays />
+      <WithUs />
+      <FaqSection />
+      <MapSection />
+    </div>
+  </div>
 </Layout>
 
 <script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-	gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-	// ScrollSmoother.create({
-	// 	wrapper: "#wrapper",
-	// 	content: "#content",
-	// });
+  const mm = gsap.matchMedia();
 
-	const fadeInElements = gsap.utils.toArray(".fade-in");
-	fadeInElements.forEach((fadeInElement: any) => {
-		gsap.from(fadeInElement, {
-			scrollTrigger: {
-				trigger: fadeInElement,
-				start: "center bottom",
-			},
-			y: 100,
-			opacity: 0,
-			duration: 0.5,
-		});
-	});
+  mm.add("(min-width: 1024px)", () => {
+    const fadeInElements = gsap.utils.toArray(".fade-in");
+    fadeInElements.forEach((fadeInElement: any) => {
+      gsap.from(fadeInElement, {
+        scrollTrigger: {
+          trigger: fadeInElement,
+          start: "center bottom",
+        },
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+      });
+    });
 
-	const fadeInScrubElements = gsap.utils.toArray(".fade-in-scrub");
-	fadeInScrubElements.forEach((fadeInElement: any) => {
-		gsap.from(fadeInElement, {
-			scrollTrigger: {
-				trigger: fadeInElement,
-				start: "center bottom",
-				scrub: false,
-			},
-			y: 100,
-			opacity: 0,
-			duration: 0.5,
-		});
-	});
+    const fadeInScrubElements = gsap.utils.toArray(".fade-in-scrub");
+    fadeInScrubElements.forEach((fadeInElement: any) => {
+      gsap.from(fadeInElement, {
+        scrollTrigger: {
+          trigger: fadeInElement,
+          start: "center bottom",
+          scrub: false,
+        },
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+      });
+    });
 
-	const fadeInRightElements = gsap.utils.toArray(".fade-in-right");
-	fadeInRightElements.forEach((fadeInElement: any) => {
-		gsap.from(fadeInElement, {
-			scrollTrigger: {
-				trigger: fadeInElement,
-				start: "center bottom",
-				scrub: false,
-			},
-			x: 100,
-			opacity: 0,
-			duration: 0.5,
-		});
-	});
+    const fadeInRightElements = gsap.utils.toArray(".fade-in-right");
+    fadeInRightElements.forEach((fadeInElement: any) => {
+      gsap.from(fadeInElement, {
+        scrollTrigger: {
+          trigger: fadeInElement,
+          start: "center bottom",
+          scrub: false,
+        },
+        x: 100,
+        opacity: 0,
+        duration: 0.5,
+      });
+    });
 
-	const fadeInLeftElements = gsap.utils.toArray(".fade-in-left");
-	fadeInLeftElements.forEach((fadeInElement: any) => {
-		gsap.from(fadeInElement, {
-			scrollTrigger: {
-				trigger: fadeInElement,
-				start: "center bottom",
-				scrub: false,
-			},
-			x: -100,
-			opacity: 0,
-			duration: 0.5,
-		});
-	});
+    const fadeInLeftElements = gsap.utils.toArray(".fade-in-left");
+    fadeInLeftElements.forEach((fadeInElement: any) => {
+      gsap.from(fadeInElement, {
+        scrollTrigger: {
+          trigger: fadeInElement,
+          start: "center bottom",
+          scrub: false,
+        },
+        x: -100,
+        opacity: 0,
+        duration: 0.5,
+      });
+    });
+  });
 </script>
