@@ -29,47 +29,49 @@ const navList = [
 ];
 ---
 
-<header class="header-mobile" x-data="{ open: false }">
-  <Image src={logo} alt="logo" />
-  <button class="nav-trigger nav-trigger--open" @click="open = ! open"
-    ><BurgerIcon />
-  </button>
-  <nav class="nav-mobile" :class="open && 'nav-mobile--active'">
-    <button class="nav-trigger nav-trigger--close" @click="open = ! open"
-      ><BurgerCloseIcon />
+<div class="sticky">
+  <header class="header-mobile" x-data="{ open: false }">
+    <Image src={logo} alt="logo" />
+    <button class="nav-trigger nav-trigger--open" @click="open = ! open"
+      ><BurgerIcon />
     </button>
-    <ul class="nav-mobile__ul">
-      {
-        navList.map((navItem) => (
-          <li class="nav-mobile__li">
-            <a class="nav-mobile__link" href={navItem.ulr}>
-              {navItem.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <a href="tel:+79991112233" class="nav-mobile__tel">+7 (999) 111–22–33</a>
-  </nav>
-</header>
-<header class="header-desktop sticky" id="header-sticky">
-  <Image src={logo} alt="logo" />
-  <nav class="header_nav">
-    <ul class="nav__ul">
-      {
-        navList.map((navItem) => (
-          <li class="nav__li">
-            <a class="nav__link" href={navItem.ulr}>
-              {navItem.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-  <a href="tel:+79991112233" class="header__tel">+7 (999) 111–22–33</a>
-  <Button href="/go" style={"outline"}>Записаться</Button>
-</header>
+    <nav class="nav-mobile" :class="open && 'nav-mobile--active'">
+      <button class="nav-trigger nav-trigger--close" @click="open = ! open"
+        ><BurgerCloseIcon />
+      </button>
+      <ul class="nav-mobile__ul">
+        {
+          navList.map((navItem) => (
+            <li class="nav-mobile__li">
+              <a class="nav-mobile__link" href={navItem.ulr}>
+                {navItem.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="tel:+79991112233" class="nav-mobile__tel">+7 (999) 111–22–33</a>
+    </nav>
+  </header>
+  <header class="header-desktop" id="header-sticky">
+    <Image src={logo} alt="logo" />
+    <nav class="header_nav">
+      <ul class="nav__ul">
+        {
+          navList.map((navItem) => (
+            <li class="nav__li">
+              <a class="nav__link" href={navItem.ulr}>
+                {navItem.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <a href="tel:+79991112233" class="header__tel">+7 (999) 111–22–33</a>
+    <Button href="/go" style={"outline"}>Записаться</Button>
+  </header>
+</div>
 <style>
   .header-desktop {
     height: 73px;
@@ -194,14 +196,15 @@ const navList = [
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
-  const header = document.querySelector(".header-desktop");
+  const header = document.querySelector(".sticky");
 
   const showHideHeader = gsap
     .from(header, {
       yPercent: -100,
       duration: 0.25,
-      ease: 'since.out'
-    }).progress(1);
+      ease: "since.out",
+    })
+    .progress(1);
 
   ScrollTrigger.create({
     start: "top top-=" + 100,

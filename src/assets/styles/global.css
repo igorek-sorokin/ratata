@@ -39,13 +39,19 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    padding-top: 72px;
     z-index: 10;
+    background-color: var(--color-contrast);
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   }
 
   .sticky + #wrapper {
     padding-top: 73px;
+  }
+
+  @media(max-width: 1023px) {
+    .sticky + #wrapper {
+        padding-top: 92px;
+      }
   }
 
 :root {
