@@ -232,8 +232,8 @@ const listItems = [
     items.forEach((item: HTMLElement) => {
       ScrollTrigger.create({
         trigger: item,
-        start: "top center",
-        end: "bottom center",
+        start: "top center-=" + 200,
+        end: "bottom center-=" + 200,
         onEnterBack: () => {
           item.classList.add("active");
         },
