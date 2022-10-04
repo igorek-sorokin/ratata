@@ -1,137 +1,182 @@
 ---
 const numbers: {
-    value: string;
-    text: string;
+  value: string;
+  text: string;
 }[] = [
-    {
-        value: "02",
-        text: "Дня тренировок",
-    },
-    {
-        value: "04",
-        text: `Часа чистого времени за&nbsp;рулем`,
-    },
-    {
-        value: "10",
-        text: `Максимальное количество упражнений от&nbsp;мастера автоспорта`,
-    },
-    {
-        value: "50",
-        text: `Километров пробега по&nbsp;полигону`,
-    },
-    {
-        value: "90",
-        text: "Км/ч — максимальная скорость маневров",
-    },
+  {
+    value: "01",
+    text: "Дня тренировок",
+  },
+  {
+    value: "04",
+    text: `Часа чистого времени за&nbsp;рулем`,
+  },
+  {
+    value: "10",
+    text: `Максимальное количество упражнений от&nbsp;мастера автоспорта`,
+  },
+  {
+    value: "50",
+    text: `Километров пробега по&nbsp;полигону`,
+  },
+  {
+    value: "90",
+    text: "Км/ч — максимальная скорость маневров",
+  },
 ];
 ---
 
-<section class="numbers-screen">
+<div class="numbers__wrapper">
+  <section class="numbers-screen">
     <main class="numbers">
-        {
-            numbers.map((number) => (
-                <div class="number">
-                    <div class="number__value">{number.value}</div>
-                    <div class="number__text" set:html={number.text} />
-                </div>
-            ))
-        }
-        <h2 class="numbers-screen__title">
-            <span class="first-line">дадут тебе больше,</span><span
-                class="second-line">чем годы за рулем</span
-            >
-            <span class="title-line"></span>
-        </h2>
+      {
+        numbers.map((number) => (
+          <div class="number">
+            <div class="number__value">{number.value}</div>
+            <div class="number__text" set:html={number.text} />
+          </div>
+        ))
+      }
+      <h2 class="numbers-screen__title">
+        <span class="first-line">дадут тебе больше,</span><span
+          class="second-line">чем годы за рулем</span
+        >
+        <span class="title-line"></span>
+      </h2>
     </main>
-</section>
+  </section>
+</div>
 
 <style>
-    .numbers-screen {
-        /* padding: 90px 0; */
-        margin: 90px 0;
-    }
-    .numbers-screen__title {
-        flex-shrink: 0;
-        font-size: 70px;
-        position: relative;
-    }
-    .numbers-screen__title > span {
-        display: block;
-        white-space: nowrap;
-    }
-    .first-line {
-        color: var(--color-accent);
-        margin-bottom: 30px;
-        position: relative;
-        z-index: 1;
-    }
+  .numbers__wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .numbers-screen {
+    /* padding: 90px 0; */
+    margin: 90px 0;
+  }
+  .numbers-screen__title {
+    flex-shrink: 0;
+    font-size: 70px;
+    position: relative;
+  }
+  .numbers-screen__title > span {
+    display: block;
+    white-space: nowrap;
+  }
+  .first-line {
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
 
-    .title-line {
-        z-index: 0;
-        display: block;
-        position: absolute;
-        background: #a1d2ff;
-        height: 25px;
-        width: 767px;
-        left: -10px;
-        top: 52px;
-    }
+  .title-line {
+    z-index: 0;
+    display: block;
+    position: absolute;
+    background: #a1d2ff;
+    height: 25px;
+    width: 767px;
+    left: -10px;
+    top: 52px;
+  }
 
-    .second-line {
-        padding-left: 100px;
-    }
+  .second-line {
+    padding-left: 100px;
+  }
 
-    .numbers-screen {
-        padding: var(--container-padding);
-        padding-right: 0;
-        color: #e4f2ff;
-    }
+  .numbers-screen {
+    padding: var(--container-padding);
+    padding-right: 0;
+    color: #e4f2ff;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    .numbers {
-        display: flex;
-        gap: 40px;
-        transform: translateX(100%);
-    }
-    .number__value {
-        font-family: var(--heading-font);
-        font-style: italic;
-        font-weight: 700;
-        font-size: 180px;
-        line-height: 198px;
-        color: inherit;
-        width: 260px;
-        flex-shrink: 0;
-    }
+  .numbers {
+    display: flex;
+    gap: 40px;
+    transform: translateX(0);
+  }
+  .number__value {
+    font-family: var(--heading-font);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 180px;
+    line-height: 198px;
+    color: inherit;
+    width: 260px;
+    flex-shrink: 0;
+  }
 
-    .number__text {
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 28px;
-        color: #646464;
-    }
+  .number__text {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #646464;
+  }
+
+  @media (max-width: 1023px) {
+    /* .numbers-screen__title {
+        max-width: 100vw;
+    } */
+  }
 </style>
 
 <script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    gsap.registerPlugin(ScrollTrigger);
+  const mm = gsap.matchMedia();
 
-    let pinWrap: HTMLElement = document.querySelector(".numbers-screen");
-    let title: HTMLElement = document.querySelector(".numbers-screen__title");
-    let pinWrapWidth =
-        pinWrap.offsetWidth + (pinWrap.offsetWidth / 2) + title.offsetWidth - 1000;
+  gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(".numbers-screen", {
-        scrollTrigger: {
-            scrub: 0.5,
-            trigger: ".numbers-screen",
-            pin: true,
-            start: "center center",
-            end: `${pinWrapWidth}px center`,
-        },
-        color: "#3CA0FF",
-        x: -pinWrapWidth,
-        ease: "none",
+  let pinWrap: HTMLElement = document.querySelector(".numbers-screen");
+  let title: HTMLElement = document.querySelector(".numbers-screen__title");
+  let pinWrapWidth =
+    pinWrap.offsetWidth + pinWrap.offsetWidth / 2 + title.offsetWidth - 1000;
+
+    gsap.from(".numbers-screen", {
+      scrollTrigger: {
+        scrub: 0.5,
+        trigger: ".numbers-screen",
+        pin: true,
+        start: "center center",
+        end: `${pinWrapWidth}px center`,
+      },
+      color: "#3CA0FF",
+      xPercent: 50,
+      ease: "none",
     });
+//   mm.add("(min-width: 1024px)", () => {
+//     gsap.from(".numbers-screen", {
+//       scrollTrigger: {
+//         scrub: 0.5,
+//         trigger: ".numbers-screen",
+//         pin: true,
+//         start: "center center",
+//         end: `${pinWrapWidth}px center`,
+//       },
+//       color: "#3CA0FF",
+//       xPercent: 100,
+//       ease: "none",
+//     });
+//   });
+
+//   mm.add("(max-width: 1023px)", () => {
+//     gsap.from(".numbers-screen", {
+//       scrollTrigger: {
+//         scrub: 0.5,
+//         trigger: ".numbers-screen",
+//         pin: true,
+//         start: "center center",
+//         end: `${pinWrap.offsetWidth}px center`,
+//       },
+//       color: "#3CA0FF",
+//       xPercent: 100,
+//       ease: "none",
+//     });
+//   });
 </script>

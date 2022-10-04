@@ -30,18 +30,18 @@ import { Image } from "@astrojs/image/components";
     </div>
     <div class="safety-block">
       <div class="safety-block__icon">
-        <Image src={safetyIcon3} alt="icon" />
-      </div>
-      <span class="safety-block__text"
-        >Дешевле, чем на&nbsp;собственной&nbsp;машине</span
-      >
-    </div>
-    <div class="safety-block">
-      <div class="safety-block__icon">
         <Image src={safetyIcon4} alt="icon" />
       </div>
       <span class="safety-block__text"
         >На специальном полигоне. Без&nbsp;лишних машин и людей</span
+      >
+    </div>
+    <div class="safety-block">
+      <div class="safety-block__icon">
+        <Image src={safetyIcon3} alt="icon" />
+      </div>
+      <span class="safety-block__text"
+        >Дешевле, чем на&nbsp;собственной&nbsp;машине</span
       >
     </div>
   </div>
@@ -54,6 +54,8 @@ import { Image } from "@astrojs/image/components";
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   .safety-section__title {
     font-style: italic;

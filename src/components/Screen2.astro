@@ -6,7 +6,6 @@ import deerImage from "../assets/img/screen2_deer.jpg";
 
 <section class="screen2">
     <main class="screen2__main">
-        <h2 class="screen2__title">Что лучше:</h2>
         <div class="first-option fade-in-right">
             <div class="first-option__content">
                 <h3 class="screen2__h3 accent-text ">
@@ -18,6 +17,7 @@ import deerImage from "../assets/img/screen2_deer.jpg";
                 <Image class="first-option__img" src={deerImage} height={275} alt="" />
             </div>
         </div>
+        <h2 class="screen2__title">Есть идея получше</h2>
         <div class="second-option fade-in-left">
             <div class="second-option__image-wrapper">
                 <Image src={carImage} alt="" class="second-option__img" height={275} />
@@ -42,7 +42,13 @@ import deerImage from "../assets/img/screen2_deer.jpg";
 
     .screen2__title {
         padding: var(--container-padding);
-        margin-bottom: 13px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 77px;
+        text-transform: uppercase;
     }
 
     .screen2__h3 {
@@ -173,16 +179,16 @@ import deerImage from "../assets/img/screen2_deer.jpg";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 1024px)', () => {
-        gsap.registerPlugin(ScrollTrigger);
+    // mm.add('(min-width: 1024px)', () => {
+    //     gsap.registerPlugin(ScrollTrigger);
 
-        ScrollTrigger.create({
-            trigger: ".screen3",
-            start: "-180px center",
-            end: "top center",
-            pin: ".second-option",
-            pinSpacing: false,
-        });
-    });
+    //     ScrollTrigger.create({
+    //         trigger: ".screen3",
+    //         start: "-180px center",
+    //         end: "top center",
+    //         pin: ".second-option",
+    //         pinSpacing: false,
+    //     });
+    // });
     
 </script>

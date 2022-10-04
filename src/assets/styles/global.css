@@ -27,13 +27,9 @@
 body {
     max-width: 100%;
     min-width: 380px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
-#content {
-        max-width: 100%;
-        overflow-x: hidden;
-}
 
 .sticky {
     position: fixed;
