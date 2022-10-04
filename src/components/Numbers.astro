@@ -98,7 +98,7 @@ const numbers: {
   .numbers {
     display: flex;
     gap: 40px;
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   .number__value {
     font-family: var(--heading-font);
@@ -133,37 +133,44 @@ const numbers: {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let pinWrap: HTMLElement = document.querySelector(".numbers-screen");
+  
+  let pinWrap: HTMLElement = document.querySelector(".numbers");
+
   let title: HTMLElement = document.querySelector(".numbers-screen__title");
   let pinWrapWidth =
-    pinWrap.offsetWidth + pinWrap.offsetWidth / 2 + title.offsetWidth - 1000;
+      pinWrap.offsetWidth - title.offsetWidth - window.innerWidth / 2;
 
-    gsap.from(".numbers-screen", {
-      scrollTrigger: {
-        scrub: 0.5,
-        trigger: ".numbers-screen",
-        pin: true,
-        start: "center center",
-        end: `${pinWrapWidth}px center`,
-      },
-      color: "#3CA0FF",
-      xPercent: 50,
-      ease: "none",
+      console.log('pinWrap.offsetWidth:', pinWrap.offsetWidth);
+      console.log('title.offsetWidth:', title.offsetWidth);
+      console.log('window.innerWidth / 2:', window.innerWidth / 2);
+      debugger;
+
+    gsap.to(pinWrap, {
+        scrollTrigger: {
+            scrub: 0.5,
+            trigger: '.numbers-screen',
+            pin: true,
+            start: "center center",
+            end: `${pinWrapWidth + 150}px center`,
+        },
+        color: "#3CA0FF",
+        x: -pinWrapWidth,
+        ease: "none",
     });
-//   mm.add("(min-width: 1024px)", () => {
-//     gsap.from(".numbers-screen", {
-//       scrollTrigger: {
-//         scrub: 0.5,
-//         trigger: ".numbers-screen",
-//         pin: true,
-//         start: "center center",
-//         end: `${pinWrapWidth}px center`,
-//       },
-//       color: "#3CA0FF",
-//       xPercent: 100,
-//       ease: "none",
-//     });
-//   });
+  // mm.add("(min-width: 1024px)", () => {
+  //   gsap.from(".numbers-screen", {
+  //     scrollTrigger: {
+  //       scrub: 0.5,
+  //       trigger: ".numbers-screen",
+  //       pin: true,
+  //       start: "center center",
+  //       end: `${pinWrapWidth}px center`,
+  //     },
+  //     color: "#3CA0FF",
+  //     xPercent: 100,
+  //     ease: "none",
+  //   });
+  // });
 
 //   mm.add("(max-width: 1023px)", () => {
 //     gsap.from(".numbers-screen", {
