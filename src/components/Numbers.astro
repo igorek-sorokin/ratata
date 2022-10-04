@@ -139,19 +139,18 @@ const numbers: {
   let title: HTMLElement = document.querySelector(".numbers-screen__title");
   let pinWrapWidth =
       pinWrap.offsetWidth - title.offsetWidth - window.innerWidth / 2;
-
       console.log('pinWrap.offsetWidth:', pinWrap.offsetWidth);
       console.log('title.offsetWidth:', title.offsetWidth);
       console.log('window.innerWidth / 2:', window.innerWidth / 2);
-      debugger;
+      // debugger;
 
     gsap.to(pinWrap, {
         scrollTrigger: {
-            scrub: 0.5,
+            scrub: 1.5,
             trigger: '.numbers-screen',
             pin: true,
             start: "center center",
-            end: `${pinWrapWidth + 150}px center`,
+            end: `center+=${pinWrapWidth * 1.5} center`,
         },
         color: "#3CA0FF",
         x: -pinWrapWidth,
