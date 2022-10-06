@@ -117,7 +117,7 @@ import { Image } from "@astrojs/image/components";
   .safety-section__image {
     max-width: 100%;
     object-fit: contain;
-    transform: translateX(100% + 50vw);
+    transform: translateX(0);
   }
 
   @media (max-width: 1023px) {
@@ -160,8 +160,8 @@ import { Image } from "@astrojs/image/components";
   const carImage: HTMLElement = document.querySelector(".safety-section__image");
 
   gsap
-    .to(carImage, {
-      x: (window.innerWidth / 2) - (carImage.offsetWidth / 2),
+    .from(carImage, {
+      x: window.innerWidth,
       ease: "ease-out",
       scrollTrigger: {
         trigger: carImage,
