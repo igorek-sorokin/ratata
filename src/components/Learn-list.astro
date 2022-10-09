@@ -108,7 +108,7 @@ const listItems = [
   }
 
   .learn-list-item {
-    position: relative;
+    /* position: relative; */
     padding-right: 480px;
   }
 
@@ -227,49 +227,38 @@ const listItems = [
   const mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
-    const learnList: HTMLElement = document.querySelector('.learn-list');
-    ScrollTrigger.create({
-      trigger: learnList,
-      pin: learnList,
-      pinSpacing: true,
-      scrub: true,
-      start: "top bottom -=200px",
-      end: learnList.offsetHeight
-    })
-  // gsap.to(learnList, {
-  //       scrollTrigger: {
-  //           scrub: true,
-  //           trigger: learnList,
-  //           pin: learnList,
-  //           pinSpacing: true,
-  //           start: "top top",
-  //           end: `bottom top+=${learnList.offsetHeight}`,
-  //       },
-  //       // color: "#3CA0FF",
-  //       // // y: learnList.offsetHeight,
-  //       // ease: "none",
-  //   });
+    const learnList: HTMLElement = document.querySelector(".learn-list");
 
-    // const items = gsap.utils.toArray(".learn-list-item");
+    gsap.to(learnList, {
+      scrollTrigger: {
+        scrub: 4,
+        trigger: learnList,
+        pin: learnList,
+        start: "center center",
+        end: `bottom top`,
+      },
+    });
 
-    // items.forEach((item: HTMLElement) => {
-    //   ScrollTrigger.create({
-    //     trigger: item,
-    //     start: "top center-=" + 200,
-    //     end: "bottom center-=" + 200,
-    //     onEnterBack: () => {
-    //       item.classList.add("active");
-    //     },
-    //     onEnter: () => {
-    //       item.classList.add("active");
-    //     },
-    //     onLeave: () => {
-    //       item.classList.remove("active");
-    //     },
-    //     onLeaveBack: () => {
-    //       item.classList.remove("active");
-    //     },
-    //   });
-    // });
+    const items = gsap.utils.toArray(".learn-list-item");
+
+    items.forEach((item: HTMLElement) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top center-=" + 200,
+        end: "bottom center-=" + 200,
+        onEnterBack: () => {
+          item.classList.add("active");
+        },
+        onEnter: () => {
+          item.classList.add("active");
+        },
+        onLeave: () => {
+          item.classList.remove("active");
+        },
+        onLeaveBack: () => {
+          item.classList.remove("active");
+        },
+      });
+    });
   });
 </script>
