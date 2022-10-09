@@ -1,9 +1,13 @@
 ---
 import Button from "./ui/Button.astro";
 import screen from "../assets/img/screen.jpg";
+import video from "../assets/video2.mp4";
 ---
 
 <section class="banner-section" style={`background-image: url(${screen.src});`}>
+  <video autoplay muted loop class="banner-section__video">
+    <source src={video} type="video/mp4">
+  </video>
   <main class="banner-section__main">
     <h1 class="banner-section__title">
       <span
@@ -29,9 +33,21 @@ import screen from "../assets/img/screen.jpg";
     background-position: center;
     height: 633px;
     padding: var(--container-padding);
+    position: relative;
+  }
+
+  .banner-section__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .banner-section__main {
+    position: relative;
+    z-index: 2;
     width: 60%;
     padding-top: 118px;
   }
@@ -86,6 +102,7 @@ import screen from "../assets/img/screen.jpg";
     font-size: 18px;
     letter-spacing: 1.1px;
     margin-bottom: 46px;
+    color: var(--color-contrast)
   }
 
   .buttons {
