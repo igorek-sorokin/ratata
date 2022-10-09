@@ -82,6 +82,10 @@ const listItems = [
     padding-bottom: 90px;
   }
 
+  .learn-list {
+    position: relative;
+  }
+
   .learn-list-section__title {
     font-style: italic;
     font-weight: 700;
@@ -227,7 +231,7 @@ const listItems = [
   const mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
-    const learnList: HTMLElement = document.querySelector(".learn-list");
+    const learnList: HTMLElement = document.querySelector(".learn-list-section");
 
     gsap.to(learnList, {
       scrollTrigger: {
