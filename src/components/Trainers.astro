@@ -172,6 +172,8 @@ import otherTrainer from "../assets/img/other_trainer.png";
     .trainers {
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
+      position: relative;
+
     }
     .trainers-section__title {
       padding: 0 40px;
@@ -236,6 +238,18 @@ import otherTrainer from "../assets/img/other_trainer.png";
         width: 100%;
         overflow-x: scroll;
       }
+
+      .other-trainers::after {
+        display: block;
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 25%;
+        right: 0;
+        top: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        pointer-events: none;
+      }
       .other-trainers::-webkit-scrollbar {
         width: 4px;
         height: 4px;
@@ -268,21 +282,4 @@ import otherTrainer from "../assets/img/other_trainer.png";
   }
 </style>
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const trainersSection = document.querySelector(".trainers-section");
-  const otherTrainers: HTMLElement = document.querySelector(".other-trainers");
-
-  // gsap.to(otherTrainers, {
-  //   xPercent: -100,
-  //   ease: "ease-out",
-  //   scrollTrigger: {
-  //     trigger: otherTrainers,
-  //     start: "top bottom",
-  //     end: `bottom top`,
-  //     scrub: true,
-  //   },
-  // });
 </script>

@@ -181,11 +181,11 @@ const numbers: {
 
     gsap.from(pinWrap, {
         scrollTrigger: {
-            scrub: 1.5,
+            scrub: true,
             trigger: '.numbers-screen',
             pin: true,
             start: "center center",
-            end: `center+=${pinWrap.offsetWidth} center`,
+            end: `center+=${pinWrap.offsetWidth + 100} center`,
         },
         color: "#e4f2ff",
         xPercent: 100,
