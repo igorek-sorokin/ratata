@@ -29,11 +29,11 @@ const listItems = [
     imgUrl: "img/list-item.jpg",
     text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
   },
-  {
-    label: "Использовать управляемый занос для поворота",
-    imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
-  },
+  // {
+  //   label: "Использовать управляемый занос для поворота",
+  //   imgUrl: "img/list-item.jpg",
+  //   text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+  // },
 ];
 ---
 
@@ -105,7 +105,7 @@ const listItems = [
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 100px;
+    top: 0;
     right: 0;
     width: 460px;
     transition: all 0.3s ease-in-out;
@@ -181,7 +181,6 @@ const listItems = [
 
   .active > .learn-list-card {
     opacity: 1;
-    top: 0;
     visibility: visible;
   }
 
