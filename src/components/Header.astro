@@ -43,7 +43,7 @@ const navList = [
         {
           navList.map((navItem) => (
             <li class="nav-mobile__li">
-              <a class="nav-mobile__link" href={navItem.ulr}>
+              <a class="nav-mobile__link" href={navItem.ulr} @click="open = ! open">
                 {navItem.text}
               </a>
             </li>
