@@ -97,7 +97,7 @@ const numbers: {
 
   .numbers-screen {
     /* padding: var(--container-padding); */
-    color: #e4f2ff;
+    color: #3CA0FF;
     display: flex;
     justify-content: flex-end;
   }
@@ -174,19 +174,10 @@ const numbers: {
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  const mm = gsap.matchMedia();
-
   gsap.registerPlugin(ScrollTrigger);
 
   
   let pinWrap: HTMLElement = document.querySelector(".numbers");
-  let numbersValues: HTMLElement = document.querySelector(".numbers__values");
-  let title: HTMLElement = document.querySelector(".numbers-screen__title");
-
-  let nm = numbersValues.offsetWidth + title.offsetWidth + 140;
-  let pinWrapWidth =
-      pinWrap.offsetWidth - window.innerWidth;
-      // debugger;
 
     gsap.from(pinWrap, {
         scrollTrigger: {
@@ -196,37 +187,8 @@ const numbers: {
             start: "center center",
             end: `center+=${pinWrap.offsetWidth} center`,
         },
-        // color: "#3CA0FF",
+        color: "#e4f2ff",
         xPercent: 100,
         ease: "none",
     });
-  // mm.add("(min-width: 1024px)", () => {
-  //   gsap.from(".numbers-screen", {
-  //     scrollTrigger: {
-  //       scrub: 0.5,
-  //       trigger: ".numbers-screen",
-  //       pin: true,
-  //       start: "center center",
-  //       end: `${pinWrapWidth}px center`,
-  //     },
-  //     color: "#3CA0FF",
-  //     xPercent: 100,
-  //     ease: "none",
-  //   });
-  // });
-
-//   mm.add("(max-width: 1023px)", () => {
-//     gsap.from(".numbers-screen", {
-//       scrollTrigger: {
-//         scrub: 0.5,
-//         trigger: ".numbers-screen",
-//         pin: true,
-//         start: "center center",
-//         end: `${pinWrap.offsetWidth}px center`,
-//       },
-//       color: "#3CA0FF",
-//       xPercent: 100,
-//       ease: "none",
-//     });
-//   });
 </script>
