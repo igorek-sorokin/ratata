@@ -1,62 +1,80 @@
 ---
 export interface Props {
-    href: string;
-    style?: 'primary' | 'accent' | 'outline'
+  href?: string;
+  style?: "primary" | "accent" | "outline";
+  isModal?: boolean;
 }
 
-const { href, style = 'primary' } = Astro.props as Props;
+const { href = "#", style = "primary", isModal = false } = Astro.props as Props;
 ---
 
-<a href="{href}" class={`button button--${style} btn-fx-4`}>
-    <span><slot /></span>
-</a>
+{
+  isModal ? (
+    <button class={`button button--${style} btn-fx-4 open-modal-js`}>
+      <span>
+        <slot />
+      </span>
+    </button>
+  ) : (
+    <a href="{href}" class={`button button--${style} btn-fx-4`}>
+      <span>
+        <slot />
+      </span>
+    </a>
+  )
+}
 
 <style is:global>
-    .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        color: var(--color-contrast);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: normal;
-        line-height: 20px;
-        transition: all .3s ease-in-out;
-    }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: var(--color-contrast);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+  }
 
-    .button--primary {
-        background-color: var(--color-primary);
-        width: 230px;
-        color: var(--color-contrast);
-    }
+  .button--primary {
+    background-color: var(--color-primary);
+    width: 230px;
+    color: var(--color-contrast);
+  }
 
-    .button--primary:is(:hover, :focus) {
-        background-color: var(--color-primary-dark);
-        color: var(--color-contrast);
-    }
+  .button--primary:is(:hover, :focus) {
+    background-color: var(--color-primary-dark);
+    color: var(--color-contrast);
+    outline: none;
+  }
 
-    .button--accent {
-        background-color: var(--color-accent);
-        width: 300px;
-        color: var(--color-contrast);
-    }
+  .button--accent {
+    background-color: var(--color-accent);
+    width: 300px;
+    color: var(--color-contrast);
+  }
 
-    .button--accent:is(:hover, :focus) {
-        background-color: var(--color-accent-dark);
-    }
+  .button--accent:is(:hover, :focus) {
+    background-color: var(--color-accent-dark);
+    outline: none;
+  }
 
-    .button--outline {
-        background-color: transparent;
-        width: 200px;
-        height: 52px;
-        font-size: 18px;
-        color: var(--color-primary);
-        border: 1px solid var(--color-primary);
-    }
+  .button--outline {
+    background-color: transparent;
+    width: 200px;
+    height: 52px;
+    font-size: 18px;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
 
-    .button--outline:is(:hover, :focus) {
-        color: var(--color-contrast);
-        background-color: var(--color-primary);
-    }
+  .button--outline:is(:hover, :focus) {
+    color: var(--color-contrast);
+    background-color: var(--color-primary);
+    outline: none;
+  }
 </style>

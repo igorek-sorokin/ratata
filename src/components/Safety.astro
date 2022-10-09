@@ -56,6 +56,9 @@ import { Image } from "@astrojs/image/components";
     align-items: center;
     max-width: 100%;
     overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-image: url("data:image/svg+xml,%3Csvg width='316' height='604' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m-51.631.497-293.205 603.269 660.518-3.268L-51.631.497Z' fill='%23DB3549'/%3E%3C/svg%3E");
   }
   .safety-section__title {
     font-style: italic;
@@ -145,7 +148,8 @@ import { Image } from "@astrojs/image/components";
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+      background-position: left 79%;
+      background-image: url("data:image/svg+xml,%3Csvg width='87' height='223' viewBox='0 0 87 223' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m86.487.659-250.323.906 109.652 220.779L86.487.659Z' fill='%23DB3549'/%3E%3C/svg%3E");       }
 
     .safety-blocks {
         grid-template-columns: 1fr;

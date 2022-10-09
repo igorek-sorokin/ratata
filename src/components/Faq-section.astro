@@ -29,17 +29,19 @@ const faqList: {
   <div class="faq-list">
     {
       faqList.map((item) => (
-        <div class="faq-item" x-data="{ open: false }" x-on:click="open = ! open">
+        <button  type="button" class="faq-item" x-data="{ open: false }" x-on:click="open = ! open">
           <div class="faq-item__main">
-            <div class="faq-item__question">{item.question}</div>
-            <div class="faq-item__answer" x-show="open" x-transition>{item.answer}</div>
-          </div>
-          <button type="button" class="faq-item__button" :class="open && 'faq-item__button--active'">
+            <div class="faq-item__question"><span>{item.question} </span>
+              
+              <div class="faq-item__button" :class="open && 'faq-item__button--active'">
             <RedBlock>
               <PlusIcon class="faq-item__icon" />
             </RedBlock>
-          </button>
-        </div>
+          </div>
+              </div>
+            <div class="faq-item__answer" x-show="open" x-transition>{item.answer}</div>
+          </div>
+        </button>
       ))
     }
   </div>
@@ -61,10 +63,11 @@ const faqList: {
     }
   .faq-item {
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: left;
     padding: 15px 0;
+    width: 100%;
+    background: none;
+    border: none;
     border-top: 1px solid #e7e7e7;
   }
 
@@ -87,10 +90,14 @@ const faqList: {
   }
 
   .faq-item__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
     color: #000000;
+    width: 100%;
   }
 
   .faq-item__answer {

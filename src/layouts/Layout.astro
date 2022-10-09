@@ -4,8 +4,9 @@ import "../assets/styles/global.css";
 import "@fontsource/overpass";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Form from "../components/Form.astro";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -13,22 +14,103 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div id="smooth-wrapper">
-			<div id="smooth-container">
-				<Header />
-				<slot />
-				<!-- <Footer /> -->
-			</div>
-		</div>
-		<style is:global>
-		</style>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="smooth-wrapper">
+      <div id="smooth-container">
+        <Header />
+        <slot />
+        <!-- <Footer /> -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <Form />
+          </div>
+        </div>
+      </div>
+    </div>
+    <style is:global>
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+		justify-content: center;
+		align-items: center;
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+	  .modal-content {
+		position: relative;
+	  }
+
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 1000;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Add Animation */
+      @keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+    </style>
+  </body>
 </html>
+
+<script>
+  var modal = document.getElementById("myModal");
+
+  var btns = document.querySelectorAll(".open-modal-js");
+
+  var span: HTMLElement = document.getElementsByClassName(
+    "close"
+  )[0] as HTMLElement;
+
+  btns.forEach((btn: HTMLElement) => {
+    btn.onclick = function () {
+      modal.style.display = "flex";
+    };
+  });
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
