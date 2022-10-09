@@ -31,7 +31,7 @@ const navList = [
 
 <div class="sticky">
   <header class="header-mobile" x-data="{ open: false }">
-    <Image src={logo} alt="logo" />
+    <a href="/"><Image src={logo} alt="logo" /></a>
     <button class="nav-trigger nav-trigger--open" @click="open = ! open"
       ><BurgerIcon />
     </button>
@@ -210,6 +210,7 @@ const navList = [
 
   ScrollTrigger.create({
     start: "top top-=" + 100,
+    end: 9999999,
     onUpdate: (self) => {
       if (self.direction === -1) {
         showHideHeader.play();

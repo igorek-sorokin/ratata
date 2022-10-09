@@ -252,6 +252,7 @@ const listItems = [
   const mm = gsap.matchMedia();
 
   const learnList: HTMLElement = document.querySelector(".learn-list-section");
+  const items = gsap.utils.toArray(".learn-list-item");
 
   mm.add("(min-width: 1024px)", () => {
     gsap.to(learnList, {
@@ -260,15 +261,10 @@ const listItems = [
         trigger: learnList,
         pin: learnList,
         start: "center center",
-        end: `bottom top`,
+        end: `bottom-=90 top`,
       },
     });
-  });
- 
-
-  const items = gsap.utils.toArray(".learn-list-item");
-
-  items.forEach((item: HTMLElement) => {
+    items.forEach((item: HTMLElement) => {
     ScrollTrigger.create({
       trigger: item,
       start: "top center-=" + 200,
@@ -286,5 +282,28 @@ const listItems = [
         item.classList.remove("active");
       },
     });
+  });
+  });
+
+  mm.add("(max-width: 1023px)", () => {
+    items.forEach((item: HTMLElement) => {
+    ScrollTrigger.create({
+      trigger: item,
+      start: "top top+=100",
+      end: "bottom top+=100",
+      onEnterBack: () => {
+        item.classList.add("active");
+      },
+      onEnter: () => {
+        item.classList.add("active");
+      },
+      onLeave: () => {
+        item.classList.remove("active");
+      },
+      onLeaveBack: () => {
+        item.classList.remove("active");
+      },
+    });
+  });
   });
 </script>

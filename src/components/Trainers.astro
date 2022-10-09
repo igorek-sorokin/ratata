@@ -213,6 +213,7 @@ import otherTrainer from "../assets/img/other_trainer.png";
         display: flex;
         width: 360px;
         margin: 0 auto;
+        padding: 0 15px;
       }
       .main-trainer--desktop {
         display: none;
@@ -222,10 +223,42 @@ import otherTrainer from "../assets/img/other_trainer.png";
         gap: 25px;
       }
 
+      .trainers {
+        padding-left: 0;
+        padding-right: 0;
+        gap: 50px;
+      }
+
       .other-trainers {
         flex-wrap: nowrap;
+        padding: 0 15px;
+        padding-bottom: 8px;
         width: 100%;
         overflow-x: scroll;
+      }
+      .other-trainers::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+      }
+
+      /* Track */
+      .other-trainers::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+
+      }
+
+      /* Handle */
+      .other-trainers::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+
+      }
+
+      /* Handle on hover */
+      .other-trainers::-webkit-scrollbar-thumb:hover {
+        background: #555;
       }
 
       .other-trainer {
