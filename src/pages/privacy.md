@@ -1,5 +1,5 @@
 ---
-title: Hello, World
+title: ПОЛИТИКА ОПЕРАТОРА В ОТНОШЕНИИ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ
 layout: ../layouts/PageLayout.astro
 ---
 

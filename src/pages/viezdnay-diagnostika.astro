@@ -1,0 +1,11 @@
+---
+import {Content} from '../components/content/vyezdnaya-diagnostika.md';
+import Button from '../components/ui/Button.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+
+---
+
+<PageLayout title="Выездная диагностика">
+    <Content />
+    <Button isModal={true} style={'outline'}>Оставить заявку</Button>
+</PageLayout>

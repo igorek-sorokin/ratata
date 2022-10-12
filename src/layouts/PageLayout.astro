@@ -116,7 +116,7 @@ const { title } = Astro.props;
                 line-height: 61px;
                 text-transform: uppercase;
                 color: var(--color-primary);
-                margin-bottom: 2em;
+                margin-bottom: 1.5em;
             }
 
             .content h2 {
@@ -127,7 +127,7 @@ const { title } = Astro.props;
                 line-height: 50px;
                 text-transform: uppercase;
                 color: var(--color-primary);
-                margin-bottom: 1.5em;
+                margin-bottom: 1em;
             }
 
             .content p {
@@ -159,6 +159,10 @@ const { title } = Astro.props;
 
             .content a:is(:hover, :focus) {
                 color: var(--color-primary-dark);
+            }
+
+            .content * + h2 {
+                margin-top: 2em;
             }
         </style>
     </body>
