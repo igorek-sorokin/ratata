@@ -1,0 +1,191 @@
+---
+import "../assets/styles/TTMussels.css";
+import "../assets/styles/global.css";
+import "@fontsource/overpass";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Form from "../components/Form.astro";
+import MapSection from "../components/Map-section.astro";
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <div id="smooth-wrapper">
+            <div id="smooth-container">
+                <Header />
+                <div class="content">
+                    <slot />
+                </div>
+                <MapSection />
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <Form />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style is:global>
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                justify-content: center;
+                align-items: center;
+                z-index: 1000; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            }
+
+            .modal-content {
+                position: relative;
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                z-index: 1000;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* Add Animation */
+            @keyframes animatetop {
+                from {
+                    top: -300px;
+                    opacity: 0;
+                }
+                to {
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+
+            .content {
+                margin-top: 73px;
+                padding: var(--container-padding);
+                padding-top: 100px;
+                padding-bottom: 100px;
+
+                color: var(--color-main-light);;
+            }
+
+            @media (max-width: 1023px) {
+                .content {
+                    margin-top: 100px;
+                    padding: 50px 40px;
+                }
+            }
+
+            .content h1 {
+                font-family: "TT Mussels";
+                font-style: italic;
+                font-weight: 700;
+                font-size: 55px;
+                line-height: 61px;
+                text-transform: uppercase;
+                color: var(--color-primary);
+                margin-bottom: 2em;
+            }
+
+            .content h2 {
+                font-family: "TT Mussels";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 45px;
+                line-height: 50px;
+                text-transform: uppercase;
+                color: var(--color-primary);
+                margin-bottom: 1.5em;
+            }
+
+            .content p {
+                font-family: "Overpass";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 25px;
+                margin-bottom: 1em;
+            }
+            .content li {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 25px;
+                margin-bottom: 1em;
+            }
+
+            .content ul, .content ol {
+                padding-left: 1em;
+            }
+
+            .content hr {
+                margin: 1em 0;
+            }
+
+            .content a {
+                color: var(--color-primary);
+            }
+
+            .content a:is(:hover, :focus) {
+                color: var(--color-primary-dark);
+            }
+        </style>
+    </body>
+</html>
+
+<script>
+    var modal = document.getElementById("myModal");
+
+    var btns = document.querySelectorAll(".open-modal-js");
+
+    var span: HTMLElement = document.getElementsByClassName(
+        "close"
+    )[0] as HTMLElement;
+
+    btns.forEach((btn: HTMLElement) => {
+        btn.onclick = function () {
+            modal.style.display = "flex";
+        };
+    });
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
