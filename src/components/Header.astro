@@ -8,23 +8,23 @@ import BurgerCloseIcon from "./ui/burger-close-icon.astro";
 const navList = [
   {
     text: "Для кого",
-    ulr: "#for-who",
+    ulr: "/#for-who",
   },
   {
     text: "Программа",
-    ulr: "#programs",
+    ulr: "/#programs",
   },
   {
     text: "Тренеры",
-    ulr: "#trainers",
+    ulr: "/#trainers",
   },
   {
     text: "FAQ",
-    ulr: "#faq",
+    ulr: "/#faq",
   },
   {
     text: "Контакты",
-    ulr: "#contact",
+    ulr: "/#contact",
   },
 ];
 ---
@@ -54,7 +54,7 @@ const navList = [
     </nav>
   </header>
   <header class="header-desktop" id="header-sticky">
-    <Image src={logo} alt="logo" />
+    <a href="/"><Image src={logo} alt="logo" /></a>
     <nav class="header_nav">
       <ul class="nav__ul">
         {
