@@ -98,12 +98,7 @@ import MapSection from "../components/Map-section.astro";
       });
     });
 
-    window.onload = jumptoanchor
-    //.
-    function jumptoanchor()
-    {	
-      //if anchor exist in url
-      if(!window.location.href.match(/#(\w.+)/)) {
+    if(!window.location.href.match(/#(\w.+)/)) {
         return;
       }
       const id = location.href.match(/#(\w.+)/)[1];
@@ -114,6 +109,5 @@ import MapSection from "../components/Map-section.astro";
       if(elementToScroll) {
         elementToScroll.scrollIntoView();
       }
-    }
   });
 </script>
