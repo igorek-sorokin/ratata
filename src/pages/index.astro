@@ -97,5 +97,23 @@ import MapSection from "../components/Map-section.astro";
         duration: 0.5,
       });
     });
+
+    window.onload = jumptoanchor
+    //.
+    function jumptoanchor()
+    {	
+      //if anchor exist in url
+      if(!window.location.href.match(/#(\w.+)/)) {
+        return;
+      }
+      const id = location.href.match(/#(\w.+)/)[1];
+      if (!id) {
+        return;
+      }
+      const elementToScroll = document.getElementById(id);
+      if(elementToScroll) {
+        elementToScroll.scrollIntoView();
+      }
+    }
   });
 </script>
