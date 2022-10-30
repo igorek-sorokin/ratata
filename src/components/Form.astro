@@ -15,6 +15,7 @@
       type="tel"
       name="tel"
       id="tel"
+      pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
       required
       placeholder="Телефон"
     />
@@ -138,3 +139,10 @@
   }
   }
 </style>
+<script>
+  import Inputmask from 'inputmask';
+  var selector = document.getElementById("tel");
+
+  var im = new Inputmask("+7 (999) 999 99 99");
+  im.mask(selector);
+</script>

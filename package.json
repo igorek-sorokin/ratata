@@ -13,6 +13,7 @@
     "@fontsource/overpass": "^4.5.9",
     "astro": "^1.1.5",
     "gsap": "^3.11.1",
+    "inputmask": "^5.0.7",
     "ymaps": "^0.2.1"
   },
   "devDependencies": {

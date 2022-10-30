@@ -28,9 +28,9 @@ const { title } = Astro.props;
         <Header />
         <slot />
         <!-- <Footer /> -->
-        <div id="myModal" class="modal">
+        <div id="formModal" class="modal">
           <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="formModalClose">&times;</span>
             <Form />
           </div>
         </div>
@@ -63,7 +63,7 @@ const { title } = Astro.props;
         font-size: 28px;
         font-weight: bold;
 		position: absolute;
-		top: 15px;
+		top: 25px;
 		right: 15px;
 		z-index: 1000;
       }
@@ -73,6 +73,13 @@ const { title } = Astro.props;
         color: black;
         text-decoration: none;
         cursor: pointer;
+      }
+
+      @media (max-width: 1023px) {
+        .modal {
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
       }
 
       /* Add Animation */
@@ -91,13 +98,13 @@ const { title } = Astro.props;
 </html>
 
 <script>
-  var modal = document.getElementById("myModal");
+  var modal = document.getElementById("formModal");
 
   var btns = document.querySelectorAll(".open-modal-js");
 
-  var span: HTMLElement = document.getElementsByClassName(
-    "close"
-  )[0] as HTMLElement;
+  var span: HTMLElement = document.getElementById(
+    "formModalClose"
+  ) as HTMLElement;
 
   btns.forEach((btn: HTMLElement) => {
     btn.onclick = function () {

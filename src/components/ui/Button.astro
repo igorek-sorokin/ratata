@@ -16,7 +16,7 @@ const { href = "#", style = "primary", isModal = false } = Astro.props as Props;
       </span>
     </button>
   ) : (
-    <a href="{href}" class={`button button--${style} btn-fx-4`}>
+    <a href={href} class={`button button--${style} btn-fx-4`}>
       <span>
         <slot />
       </span>

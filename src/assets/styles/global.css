@@ -26,8 +26,8 @@
 
 body {
     max-width: 100%;
-    min-width: 380px;
-    /* overflow-x: hidden; */
+    min-width: 360px;
+    overflow-x: hidden;
 }
 
 
@@ -107,6 +107,9 @@ p,
     text-decoration-line: underline;
     transition: all .28s ease-in-out;
     color: #B0B0B0;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .link:is(:hover) {

@@ -38,11 +38,28 @@ import screen4Red from "../assets/img/screen4_red.png";
     </section> -->
   <div class="screen4__title-wrapper fade-in-left">
     <p class="screen4__title">тебе срочно нужно ратата</p>
-    <a href="#" class="link">Что такое “РАТАТА”</a>
+    <button class="link open-ratatat-modal-js">Что такое “РАТАТА”</button>
+  </div>
+</div>
+
+<div id="ratataModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="ratataModalclose">&times;</span>
+    <div class="ratata-conent">
+      <p>
+        Вот знаете, иногда просыпаешься с&nbsp;чувством, что хочется поделать что-то эдакое. Побарагозить и посуетить. Вот это настроение и есть ратата. Но мы хорошие мальчики и девочки, пдд соблюдаем, аварийных ситуаций не создаем. Зато на полигоне можем творить любую ратату и возвращаться на&nbsp;дороге нормальным человеком.
+      </p>
+    </div>
   </div>
 </div>
 
 <style>
+
+  .ratata-conent {
+    width: 360px;
+    background: #fff;
+    padding: 40px 24px;
+  }
   .screen4 {
     max-width: 100%;
     overflow-x: hidden;
@@ -172,4 +189,28 @@ import screen4Red from "../assets/img/screen4_red.png";
   }
 </style>
 
-<script></script>
+<script>
+  var modal = document.getElementById("ratataModal");
+
+var btns = document.querySelectorAll(".open-ratatat-modal-js");
+
+var span: HTMLElement = document.getElementById(
+  "ratataModal"
+) as HTMLElement;
+
+btns.forEach((btn: HTMLElement) => {
+  btn.onclick = function () {
+    modal.style.display = "flex";
+  };
+});
+
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+</script>
