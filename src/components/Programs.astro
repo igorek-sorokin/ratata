@@ -2,6 +2,7 @@
 import StarIcon from "./ui/Star-icon.astro";
 import Button from "./ui/Button.astro";
 import programBlue from "../assets/img/program_blue.png";
+import programRed from "../assets/img/program_red.png";
 import programDisabled from "../assets/img/program_disabled.png";
 import LockIcon from "./ui/lock-icon.astro";
 ---
@@ -29,7 +30,7 @@ import LockIcon from "./ui/lock-icon.astro";
         </ul>
       </div>
     </div>
-    <div class="program program--second">
+    <div class="program program--second" style={`background-image: url(${programRed.src});`}>
       <div class="program__header">
         <h3 class="programs__title">Драйв</h3>
         <div class="program__stars">
@@ -181,15 +182,9 @@ import LockIcon from "./ui/lock-icon.astro";
   }
 
   .program--second {
-    background-color: var(--color-contrast);
-    color: #888888;
-    background-image: none;
-    border: 1px solid #888888;
+    color: #fff;
   }
 
-  .program--second .program__stars {
-    color: #888;
-  }
 
   .program--third {
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
