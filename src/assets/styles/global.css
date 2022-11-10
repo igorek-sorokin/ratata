@@ -121,7 +121,7 @@ p,
     align-items: center;
     list-style: none;
     font-size: 22px;
-    color: var(--color-contrast);
+    color: inherit;
 }
 
 .wheel-list > li + li {
