@@ -22,36 +22,8 @@ import StarIcon from "./ui/Star-icon.astro";
         <span>Двухкратный вице-чемпион <br>России по кольцевым гонкам</span>
       </div>
     </div>
-    <div class="main-trainer--mobile">
-      <figure class="main-trainer ">
-        <img src={efim.src} alt="Efim" />
-        <div class="main-trainer__element"></div>
-        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-      </figure>
-      <p class="main-trainer__sub-title">Автор методики</p>
-      <div class="main-trainer__sub-text">
-        <div class="main-trainer__sub-star">
-          <StarIcon  width={28} height={28} filled={true} />
-        </div>
-        <span>Двухкратный вице-чемпион <br>России по кольцевым гонкам</span>
-      </div>
-    </div>
     <div class="other-trainers">
       <div class="main-trainer__wrap">
-        <div class="main-trainer--desktop">
-          <figure class="main-trainer ">
-            <img src={efim.src} alt="Efim" />
-            <div class="main-trainer__element"></div>
-            <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-          </figure>
-          <p class="main-trainer__sub-title">Автор методики</p>
-          <div class="main-trainer__sub-text">
-            <div class="main-trainer__sub-star">
-              <StarIcon  width={28} height={28} filled={true} />
-            </div>
-            <span>Двухкратный вице-чемпион <br>России по кольцевым гонкам</span>
-          </div>
-        </div>
         <div class="main-trainer--desktop">
           <figure class="main-trainer ">
             <img src={efim.src} alt="Efim" />
@@ -127,14 +99,13 @@ import StarIcon from "./ui/Star-icon.astro";
     font-size: 24px;
     line-height: 30px;
     color:var(--color-primary);
-    text-align: center;
     margin-bottom: 4px;
+    width: 115%;
   }
 
   .main-trainer__sub-text{
     display: flex;
     align-items: center;
-    justify-content: center;
     color: var(----color-main);
     gap: 10px;
   }
@@ -169,7 +140,7 @@ import StarIcon from "./ui/Star-icon.astro";
     position: absolute;
     content: "";
     display: block;
-    width: 110%;
+    width: 115%;
     height: 25%;
     background: #db3549;
     z-index: 1;
@@ -212,7 +183,6 @@ import StarIcon from "./ui/Star-icon.astro";
 
   .other-trainer {
     width: 100%;
-    border: 1px solid #ebebeb;
     display: flex;
     flex-direction: column;
     align-items: center;
