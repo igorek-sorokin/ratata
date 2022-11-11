@@ -28,7 +28,7 @@ import StarIcon from "./ui/Star-icon.astro";
         <StarIcon filled={true} width={37} height={38} />
         <StarIcon filled={true} width={37} height={38} />
       </div>
-      <div class="td-option__svg"><Road2Icon /></div> 
+      <div class="td-option__svg"><Road2Icon /></div>
       <h3 class="td-option__label">Опытный?</h3>
       <ul class="td-option__list">
         <li><span>Спустишь пар — поводишь так, как нельзя на дороге</span></li>
@@ -42,7 +42,7 @@ import StarIcon from "./ui/Star-icon.astro";
         <StarIcon filled={true} width={37} height={38} />
         <StarIcon filled={true} width={37} height={38} />
       </div>
-      <div class="td-option__svg"><Road3Icon /></div> 
+      <div class="td-option__svg"><Road3Icon /></div>
       <h3 class="td-option__label">Бесстрашный?</h3>
       <ul class="td-option__list">
         <li><span>Безопасно загонишь авто в экстремальную ситуацию</span></li>
@@ -221,18 +221,18 @@ import StarIcon from "./ui/Star-icon.astro";
   }
 </style>
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
+  // import { gsap } from "gsap";
+  // import { ScrollTrigger } from "gsap/ScrollTrigger";
+  // gsap.registerPlugin(ScrollTrigger);
 
-      gsap.to('.ratata', {
-      scrollTrigger: {
-        scrub: true,
-        trigger: '.two-days-section',
-        // pin: true,
-        start: "top bottom",
-        end:"bottom top",
-      },
-      backgroundPositionX: -300
-    });
+  //     gsap.to('.ratata', {
+  //     scrollTrigger: {
+  //       scrub: true,
+  //       trigger: '.two-days-section',
+  //       // pin: true,
+  //       start: "top bottom",
+  //       end:"bottom top",
+  //     },
+  //     backgroundPositionX: -300
+  //   });
 </script>
