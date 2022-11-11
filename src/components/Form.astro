@@ -1,7 +1,11 @@
+---
+
+---
+
 <div class="form-wrapper">
   <h2 class="form__title">Оставтье заявку</h2>
   <p class="form__subtitle">И мы свяжемся с вами в ближайшее время</p>
-  <form class="form">
+  <form id="form" class="form" target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post">
     <input
       class="form__input form__input--name"
       type="text"
@@ -145,4 +149,37 @@
 
   var im = new Inputmask("+7 (999) 999 99 99");
   im.mask(selector);
+
+  const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
+
+  var modal = document.getElementById("formModal");
+  var formSubmit: HTMLElement = document.querySelector(
+    ".form__submit"
+  ) as HTMLElement;
+
+  formSubmit.onclick = function (e) {
+    if (inputs.every(input => input?.checkValidity())) {
+      modal.style.display = "none";
+    }
+  };
+
+    // target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post"
+  //   formSubmit.onclick = function (e) {
+  //   e.preventDefault();
+  //   if (inputs.every(input => input?.checkValidity())) {
+
+  //       const data = new URLSearchParams();
+  //       data.append('name', nameInput.value);
+  //       data.append('tel', telInput.value);
+  //       data.append('email', emailInput.value);
+  //       fetch('https://autopragmat.ru/api/v1/send-order/', {
+  //       method: 'post',
+  //       body: data,
+  //   })
+  //   .then(() => {
+  //     modal.style.display = "none";
+  //     alert('Успех')
+  //   });
+  //   }
+  // };
 </script>

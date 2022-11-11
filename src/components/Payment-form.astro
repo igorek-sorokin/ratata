@@ -1,0 +1,207 @@
+---
+---
+
+<div class="form-wrapper">
+  <h2 class="form__title">Оплатить заказ</h2>
+  <p class="form__subtitle">
+    Пожалуйста, перед оплатой согласуйте сумму с отделом продаж
+  </p>
+  <form
+    id="form"
+    class="form"
+    target="iframe"
+    action="https://autopragmat.ru/api/v1/send-order/"
+    method="post"
+  >
+    <input
+      class="form__input form__input--tel"
+      type="tel"
+      name="tel"
+      id="tel"
+      pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+      required
+      placeholder="Номер телефона"
+    />
+    <input
+      class="form__input form__input--name"
+      type="text"
+      name="name"
+      id="name"
+      required
+      placeholder="Ваше имя"
+    />
+    <input
+      class="form__input form__input--email"
+      type="email"
+      name="email"
+      id="email"
+      required
+      placeholder="Электронная почта"
+    />
+    <input
+      class="form__input form__input--value"
+      type="number"
+      name="value"
+      id="value"
+      required
+      placeholder="Сумма оплаты"
+    />
+    <button type="submit" class="form__submit">Оплатить заказ</button>
+    <span class="form__submit-subtitle"
+      >Нажимая кнопку вы даете согласие на обработку данных</span
+    >
+  </form>
+</div>
+<style>
+  .form-wrapper {
+    width: 509px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    z-index: 200;
+  }
+  .form__title {
+    font-family: "TT Mussels";
+    font-style: italic;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #46a5ff;
+    margin-bottom: 10px;
+  }
+
+  .form__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: center;
+    color: #cfcfcf;
+    margin-bottom: 30px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form__input {
+    padding-left: 64px;
+    padding-right: 30px;
+    height: 64px;
+    line-height: 64px;
+    font-weight: 400;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 30px center;
+
+    color: #767676;
+    background-color: #ebebeb !important;
+    border: 1px solid #ffffff;
+  }
+
+  .form__input--name {
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 22h-16v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2Zm-8-9a6 6 0 1 1 0-12.002A6 6 0 0 1 12.5 13Z' fill='%2346A6FF'/%3E%3C/svg%3E") !important;
+  }
+
+  .form__input--tel {
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.999 16.674v3.34c0 .24-.096.47-.268.644a1.025 1.025 0 0 1-.662.299c-.437.028-.794.043-1.07.043C11.163 21 4 14.235 4 5.889c0-.26.015-.598.046-1.01a.924.924 0 0 1 .316-.625C4.547 4.09 4.79 4 5.044 4H8.58c.124 0 .243.043.335.122.092.078.15.186.163.303.023.217.044.39.064.521.198 1.31.606 2.584 1.208 3.78a.416.416 0 0 1-.147.535l-2.158 1.456c1.32 2.903 3.77 5.217 6.843 6.464l1.54-2.035a.463.463 0 0 1 .26-.168.487.487 0 0 1 .313.028 14.51 14.51 0 0 0 4 1.138c.139.019.322.04.55.06a.51.51 0 0 1 .32.154c.083.087.13.2.129.316h-.001Z' fill='%2346A6FF'/%3E%3C/svg%3E") !important;
+  }
+
+  .form__input--email {
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.798 4.5c1.177 0 2.084.274 2.721.821.654.53.981 1.435.981 2.712v7.737h-1.57l-.195-1.866c-.294.299-.695.614-1.202.946a8.231 8.231 0 0 1-1.716.796 5.939 5.939 0 0 1-1.962.323c-.637 0-1.2-.108-1.691-.323a2.755 2.755 0 0 1-1.128-.996c-.262-.447-.392-.995-.392-1.642V11.74c0-.796.237-1.418.71-1.866.475-.465 1.178-.697 2.11-.697h5.074v-1.07c0-.663-.147-1.136-.44-1.418-.295-.282-.85-.423-1.668-.423h-3.138c-1.063 0-1.913.05-2.55.15-.638.1-1.12.34-1.447.721-.327.382-.547.995-.662 1.841-.098.83-.147 1.982-.147 3.458 0 1.211.033 2.214.098 3.01.082.78.229 1.394.441 1.842.213.447.523.77.932.97.409.199.948.323 1.618.373.687.05 1.529.075 2.526.075h6.325v1.592a99.226 99.226 0 0 1-6.3.199c-1.374.017-2.518-.033-3.433-.15-.916-.099-1.66-.306-2.232-.621a2.836 2.836 0 0 1-1.25-1.344c-.278-.597-.466-1.376-.564-2.338-.098-.979-.147-2.181-.147-3.608 0-1.393.04-2.562.123-3.508.081-.945.245-1.708.49-2.288.261-.58.637-1.02 1.128-1.319.507-.315 1.169-.522 1.986-.622.817-.116 1.839-.182 3.065-.199h3.506Zm1.74 5.97-4.364.1c-.572.017-.98.141-1.226.373-.229.216-.343.565-.343 1.045v.647c0 .597.139 1.02.417 1.27.278.248.678.372 1.201.372.474 0 .973-.066 1.496-.199a8.331 8.331 0 0 0 1.52-.547 5.68 5.68 0 0 0 1.3-.896v-2.164Z' fill='%2346A6FF'/%3E%3C/svg%3E") !important;
+  }
+
+  .form__input--value {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24'%0Aheight='24' fill='%2346A6FF'%0Axmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M15 2a6 6 0 0 1 .225 11.996L15 14h-5v2h4a1 1 0 0 1 0 2h-4v3a1 1 0 0 1-2 0v-3H4a1 1 0 0 1 0-2h4v-2H4a1 1 0 0 1-.117-1.993L4 12h4V3a1 1 0 0 1 1-1h6Zm0 2h-5v8h5a4 4 0 0 0 .2-7.995L15 4Z'/%3E%3C/svg%3E");  }
+
+  .form__input + .form__input {
+    margin-top: 10px;
+  }
+
+  .form__submit {
+    margin-top: 30px;
+    width: 409px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+
+    background: var(--color-primary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .form__submit:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .form__submit-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #cfcfcf;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 75%;
+  }
+
+  @media (max-width: 767px) {
+    .form-wrapper {
+      width: 100%;
+    }
+  }
+</style>
+<script>
+  import Inputmask from "inputmask";
+  var selector = document.getElementById("tel");
+
+  var im = new Inputmask("+7 (999) 999 99 99");
+  im.mask(selector);
+
+  const inputs: HTMLInputElement[] = [
+    document.getElementById("name") as HTMLInputElement,
+    document.getElementById("tel") as HTMLInputElement,
+    document.getElementById("email") as HTMLInputElement,
+  ];
+
+  var modal = document.getElementById("formModal");
+  var formSubmit: HTMLElement = document.querySelector(
+    ".form__submit"
+  ) as HTMLElement;
+
+  formSubmit.onclick = function (e) {
+    if (inputs.every((input) => input?.checkValidity())) {
+      modal.style.display = "none";
+    }
+  };
+
+  // target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post"
+  //   formSubmit.onclick = function (e) {
+  //   e.preventDefault();
+  //   if (inputs.every(input => input?.checkValidity())) {
+
+  //       const data = new URLSearchParams();
+  //       data.append('name', nameInput.value);
+  //       data.append('tel', telInput.value);
+  //       data.append('email', emailInput.value);
+  //       fetch('https://autopragmat.ru/api/v1/send-order/', {
+  //       method: 'post',
+  //       body: data,
+  //   })
+  //   .then(() => {
+  //     modal.style.display = "none";
+  //     alert('Успех')
+  //   });
+  //   }
+  // };
+</script>

@@ -2,38 +2,69 @@
 import StarIcon from "./ui/Star-icon.astro";
 import Button from "./ui/Button.astro";
 import programBlue from "../assets/img/program_blue.png";
-// import programRed from  "../assets/img/program_red.png";
+import programRed from "../assets/img/program_red.png";
 import programDisabled from "../assets/img/program_disabled.png";
 import LockIcon from "./ui/lock-icon.astro";
 ---
 
 <section class="programs-section" id="programs">
-  <h2 class="programs-section__title">Две программы разного уровня</h2>
+  <h2 class="programs-section__title">Программы разного уровня</h2>
   <a href="#" class="link programs-section__link"
     >Хочу узнать больше о&nbsp;программах</a
   >
   <div class="programs">
-    <div class="program" style={`background-image: url(${programBlue.src});`}>
-      <div class="program__stars">
-        <StarIcon filled={true} />
-        <StarIcon />
-        <StarIcon />
+    <div class="program program--first" style={`background-image: url(${programBlue.src});`}>
+      <div class="program__header">
+        <h3 class="programs__title">Скилл</h3>
+        <div class="program__stars">
+          <StarIcon width={42} height={42}  filled={true} />
+          <StarIcon width={42} height={42}  />
+          <StarIcon  width={42} height={42} />
+        </div>
       </div>
       <div class="program__content">
-        <h3 class="programs__title">Для начинающих</h3>
-        <ul class="wheel-list">
+        <ul class="program__list">
           <li>Меньше упражнений</li>
           <li>Больше времени отработки</li>
           <li>Крепче закрепить результат</li>
         </ul>
       </div>
     </div>
+    <div class="program program--second" style={`background-image: url(${programRed.src});`}>
+      <div class="program__header">
+        <h3 class="programs__title">Драйв</h3>
+        <div class="program__stars">
+          <StarIcon width={42} height={42} filled={true} />
+          <StarIcon  width={42} height={42} filled={true} />
+          <StarIcon  width={42} height={42} />
+        </div>
+      </div>
+      <div class="program__content">
+        <ul class="program__list">
+          <li>Больше упражнений</li>
+          <li>Выше сложность</li>
+          <li>Вызов самому себе</li>
+        </ul>
+      </div>
+    </div>
     <div
-      class="program program--second program--disabled"
+      class="program program--third"
       style={`background-image: url(${programDisabled.src});`}
     >
-      <h3 class="program__disabled-title">Скоро</h3>
-      <h4 class="programs__subtitle">Курс для профессионалов</h4>
+      <div class="program__header">
+        <h3 class="programs__title">Скоро</h3>
+        <div class="program__stars">
+          <StarIcon width={42} height={42} filled={true} />
+          <StarIcon  width={42} height={42} filled={true} />
+          <StarIcon  width={42} height={42} filled={true} />
+        </div>
+      </div>
+      <div class="program__content">
+        <ul class="program__list">
+          <li>Спортивное и экстримальное вождение</li>
+          <li>100% наших знаний и души</li>
+        </ul>
+      </div>
       <LockIcon />
     </div>
     <!-- <div class="program program--second" style={`background-image: url(${programRed.src});`}>
@@ -58,16 +89,10 @@ import LockIcon from "./ui/lock-icon.astro";
     margin-bottom: 20px;
   }
 
-  .programs__title {
-    color: var(--color-contrast);
-    margin-bottom: 22px;
-  }
-
   .program__stars {
     display: flex;
-    gap: 16px;
+    gap: 8px;
     justify-content: flex-end;
-    margin-bottom: 74px;
     color: hsla(0, 0%, 100%, 1);
   }
   .link {
@@ -85,41 +110,91 @@ import LockIcon from "./ui/lock-icon.astro";
   .programs {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 458px;
-    gap: 42px;
+    gap: 36px;
     margin-bottom: 40px;
   }
 
   .program {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     padding: 40px 47px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
     background-color: var(--color-primary);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+    color: var(--color-contrast);
   }
 
+  .program__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 72px;
+  }
+
+    .program__list > li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      font-size: 22px;
+      color: inherit;
+  }
+
+  .program__list > li + li {
+      margin-top: 19px;
+  }
+
+  /* .program__list > li::before {
+      content: "";
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Zm1.67 14h-3.34l-1.38 1.897.554 1.706A7.991 7.991 0 0 0 12 20c.871 0 1.71-.14 2.496-.397l.553-1.706L13.669 16h.001Zm-8.376-5.128-1.292.937L4 12c0 1.73.549 3.331 1.482 4.64h1.91l1.323-1.82-1.028-3.17-2.393-.778Zm13.412 0-2.393.778-1.028 3.17 1.322 1.82h1.91A7.964 7.964 0 0 0 20 12l-.003-.191-1.291-.937ZM14.29 4.333l-1.29.94V7.79l2.694 1.957 2.239-.727.554-1.703a8.014 8.014 0 0 0-4.196-2.984h-.001Zm-4.582 0a8.014 8.014 0 0 0-4.196 2.985l.554 1.702 2.239.727L11 7.79V5.273l-1.291-.94h-.001Z' fill='%23fff'/%3E%3C/svg%3E");
+  } */
+
   .program__content {
-    margin-right: 80px;
+    /* padding-left: 80px; */
+   
+  }
+
+  .program__content + svg {
+    margin-top: 30px;
   }
 
   .program--disabled {
     align-items: flex-start;
     padding-left: 80px;
+
+  }
+
+  .programs__title {
+    color: inherit;
+  }
+
+  .program--first {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  }
+
+  .program--second {
+    color: #fff;
+  }
+
+
+  .program--third {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
     background: linear-gradient(
         128.5deg,
         rgba(255, 255, 255, 0.5) -9.21%,
         rgba(255, 255, 255, 0) 40.28%
       ),
       #c9c9c9;
-  }
-
-  .program--second {
-    clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+      background-repeat: no-repeat;
   }
 
   .program__disabled-title {
@@ -181,16 +256,12 @@ import LockIcon from "./ui/lock-icon.astro";
       align-self: flex-start;
     }
 
-    .program__stars > * {
-      width: 80px;
-    }
 
     .programs__title {
       font-style: normal;
       font-weight: 700;
       font-size: 30px;
       line-height: 33px;
-      margin-bottom: 30px;
       text-transform: uppercase;
     }
 
@@ -211,22 +282,6 @@ import LockIcon from "./ui/lock-icon.astro";
           rgba(255, 255, 255, 0) 40.28%
         ),
         #c9c9c9;
-    }
-
-    .program--disabled > svg {
-        width: 102px;
-        height: 102px;
-    }
-
-    .program__disabled-title {
-      order: 2;
-      margin-bottom: 0;
-      margin-top: 18px;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 60px;
-      line-height: 66px;
-      text-transform: uppercase;
     }
   }
 </style>

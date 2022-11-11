@@ -5,6 +5,7 @@ import "@fontsource/overpass";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Form from "../components/Form.astro";
+import PaymentForm from "../components/Payment-form.astro";
 export interface Props {
   title: string;
 }
@@ -32,6 +33,12 @@ const { title } = Astro.props;
           <div class="modal-content">
             <span class="close" id="formModalClose">&times;</span>
             <Form />
+          </div>
+        </div>
+        <div id="paymentForm" class="modal">
+          <div class="modal-content">
+            <span class="close" id="paymentFormClose">&times;</span>
+            <PaymentForm />
           </div>
         </div>
       </div>
@@ -98,27 +105,34 @@ const { title } = Astro.props;
 </html>
 
 <script>
-  var modal = document.getElementById("formModal");
+  var formModal = document.getElementById("formModal");
+  var paymentForm = document.getElementById("paymentForm");
 
   var btns = document.querySelectorAll(".open-modal-js");
 
-  var span: HTMLElement = document.getElementById(
+  var formModalClose: HTMLElement = document.getElementById(
     "formModalClose"
+  ) as HTMLElement;
+
+  var paymentFormClose: HTMLElement = document.getElementById(
+    "paymentFormClose"
   ) as HTMLElement;
 
   btns.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
-      modal.style.display = "flex";
+      formModal.style.display = "flex";
     };
   });
 
-  span.onclick = function () {
-    modal.style.display = "none";
+  formModalClose.onclick = function () {
+    formModal.style.display = "none";
   };
 
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+  paymentFormClose.onclick = function () {
+    paymentForm.style.display = "none";
   };
+
+  if(window.location.hash && window.location.hash === '#pay_form') {
+    paymentForm.style.display = "flex";
+  }
 </script>
