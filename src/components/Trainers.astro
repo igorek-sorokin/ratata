@@ -1,19 +1,25 @@
 ---
 import efim from "../assets/img/efim.png";
 import otherTrainer from "../assets/img/other_trainer.png";
+import pavlenko from "../assets/img/pavlenko.png";
+import mosin from "../assets/img/mosin.png";
+import galakhov from "../assets/img/galakhov.png";
+import koryagin from "../assets/img/koryagin.png";
+import prisyazhniy from "../assets/img/prisyazhniy.png";
 import StarIcon from "./ui/Star-icon.astro";
+
+
 ---
 
 <section class="trainers-section" id="trainers">
-  <h2 class="trainers-section__title">Профессиональные тренеры</h2>
-  <p class="trainers-section__subtitle">Невероятные умнички опытные водители и просто няшки</p>
+  <h2 class="trainers-section__title">Лучшие тренеры</h2>
   <div class="trainers">
     <div class="main-trainer--mobile">
       <figure class="main-trainer ">
-        <img src={efim.src} alt="Efim" />
-        <div class="main-trainer__element"></div>
-        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-      </figure>
+      <img src={efim.src} alt="Efim" />
+      <div class="main-trainer__element"></div>
+      <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+    </figure>
       <p class="main-trainer__sub-title">Автор методики</p>
       <div class="main-trainer__sub-text">
         <div class="main-trainer__sub-star">
@@ -26,10 +32,10 @@ import StarIcon from "./ui/Star-icon.astro";
       <div class="main-trainer__wrap">
         <div class="main-trainer--desktop">
           <figure class="main-trainer ">
-            <img src={efim.src} alt="Efim" />
-            <div class="main-trainer__element"></div>
-            <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-          </figure>
+        <img src={efim.src} alt="Efim" />
+        <div class="main-trainer__element"></div>
+        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+      </figure>
           <p class="main-trainer__sub-title">Автор методики</p>
           <div class="main-trainer__sub-text">
             <div class="main-trainer__sub-star">
@@ -40,29 +46,29 @@ import StarIcon from "./ui/Star-icon.astro";
         </div>
       </div>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={pavlenko.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Николай Павленко</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={mosin.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Дмитрий Мосин</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={galakhov.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Александр Галахов</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={koryagin.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Ярослав Корягин</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={prisyazhniy.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Егор Присяжный</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
     </div>
   </div>
