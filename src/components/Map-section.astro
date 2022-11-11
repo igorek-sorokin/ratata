@@ -8,14 +8,16 @@ import Button from "./ui/Button.astro";
   <div class="map-section__main">
     <div class="map-section__content">
       <p class="map-section__address">
-        Адрес: Московская область, Быково, Промзона, 17 ангар
+        Адрес: Московская область, Логопарк Быково
       </p>
-      <p class="map-section__hint">Слева и направо до упора</p>
+      <p class="map-section__hint">южный конец взлетной полосы</p>
       <div class="buttons map-section__buttons">
         <Button isModal={true} style={"accent"}>Оставить заявку</Button>
         <Button href="#" style={"primary"}>Как добраться</Button>
       </div>
-      <p class="map-section__phone">+7 (999) 111–22–33</p>
+      <p class="map-section__phone">+7 (499) 455-46-69</p>s
+      <p class="map-section__hint">ООО «Ратата»
+        ИНН&nbsp;9717122834</p>
     </div>
     <div id="js-map" class="map-section__map"></div>
   </div>
@@ -32,7 +34,7 @@ import Button from "./ui/Button.astro";
   }
 
   .map-section__map {
-    width: 100%;
+    width: 100%; 
     height: 100%;
   }
 
