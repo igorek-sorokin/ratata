@@ -5,7 +5,7 @@
 <div class="form-wrapper">
   <h2 class="form__title">Оставь заявку</h2>
   <p class="form__subtitle">Менеджер поможет выбрать программу и порешает все вопросики</p>
-  <form id="form" class="form" target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post">
+  <form id="form" class="form">
     <input
       class="form__input form__input--name"
       type="text"
@@ -23,6 +23,7 @@
       required
       placeholder="Телефон"
     />
+
     <input
       class="form__input form__input--email"
       type="email"
@@ -151,35 +152,28 @@
   im.mask(selector);
 
   const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
-
+  const form = document.getElementById('form') as HTMLFormElement;
   var modal = document.getElementById("formModal");
   var formSubmit: HTMLElement = document.querySelector(
     ".form__submit"
   ) as HTMLElement;
 
-  formSubmit.onclick = function (e) {
+  form.onsubmit = function(e) {
+    e.preventDefault();
     if (inputs.every(input => input?.checkValidity())) {
+        const data = new URLSearchParams();
+        data.append('name', inputs[0].value);
+        data.append('tel', inputs[1].value);
+        data.append('email', inputs[2].value);
+        debugger;
+        fetch('https://autopragmat.ru/api/v1/send-order/', {
+        method: 'POST',
+        body: data,
+    })
+    .then(() => {
       modal.style.display = "none";
-    }
+      alert('Заявка успешно отправленна');
+    });
+  }
   };
-
-    // target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post"
-  //   formSubmit.onclick = function (e) {
-  //   e.preventDefault();
-  //   if (inputs.every(input => input?.checkValidity())) {
-
-  //       const data = new URLSearchParams();
-  //       data.append('name', nameInput.value);
-  //       data.append('tel', telInput.value);
-  //       data.append('email', emailInput.value);
-  //       fetch('https://autopragmat.ru/api/v1/send-order/', {
-  //       method: 'post',
-  //       body: data,
-  //   })
-  //   .then(() => {
-  //     modal.style.display = "none";
-  //     alert('Успех')
-  //   });
-  //   }
-  // };
 </script>
