@@ -29,6 +29,11 @@ import StarIcon from "./ui/Star-icon.astro";
       </div>
     </div>
     <div class="other-trainers">
+      <figure class="other-trainer">
+        <img src={pavlenko.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Николай Павленко</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
+      </figure>
       <div class="main-trainer__wrap">
         <div class="main-trainer--desktop">
           <figure class="main-trainer ">
@@ -46,11 +51,6 @@ import StarIcon from "./ui/Star-icon.astro";
         </div>
       </div>
       <figure class="other-trainer">
-        <img src={pavlenko.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Николай Павленко</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <figure class="other-trainer">
         <img src={mosin.src} alt="other trainer" />
         <figcaption class="other-trainer__name">Дмитрий Мосин</figcaption>
         <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
@@ -63,6 +63,11 @@ import StarIcon from "./ui/Star-icon.astro";
       <figure class="other-trainer">
         <img src={koryagin.src} alt="other trainer" />
         <figcaption class="other-trainer__name">Ярослав Корягин</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
+      </figure>
+      <figure class="other-trainer">
+        <img src={prisyazhniy.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Егор Присяжный</figcaption>
         <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
@@ -164,12 +169,14 @@ import StarIcon from "./ui/Star-icon.astro";
   }
   .other-trainers {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-end;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: space-between;
   }
   .main-trainer__wrap {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: 4;
     display: flex;
     justify-content: center;
@@ -181,7 +188,6 @@ import StarIcon from "./ui/Star-icon.astro";
     flex-direction: column;
     align-items: center;
     padding: 57.5px 0;
-    width: 339px;
     flex-shrink: 0;
   }
   .other-trainer > img {
