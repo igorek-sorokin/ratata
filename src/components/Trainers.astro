@@ -1,19 +1,23 @@
 ---
 import efim from "../assets/img/efim.png";
 import otherTrainer from "../assets/img/other_trainer.png";
+import pavlenko from "../assets/img/pavlenko.png";
+import mosin from "../assets/img/mosin.png";
+import galakhov from "../assets/img/galakhov.png";
+import koryagin from "../assets/img/koryagin.png";
+import prisyazhniy from "../assets/img/prisyazhniy.png";
 import StarIcon from "./ui/Star-icon.astro";
 ---
 
 <section class="trainers-section" id="trainers">
-  <h2 class="trainers-section__title">Профессиональные тренеры</h2>
-  <p class="trainers-section__subtitle">Невероятные умнички опытные водители и просто няшки</p>
+  <h2 class="trainers-section__title">Лучшие тренеры</h2>
   <div class="trainers">
     <div class="main-trainer--mobile">
       <figure class="main-trainer ">
-        <img src={efim.src} alt="Efim" />
-        <div class="main-trainer__element"></div>
-        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-      </figure>
+      <img src={efim.src} alt="Efim" />
+      <div class="main-trainer__element"></div>
+      <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+    </figure>
       <p class="main-trainer__sub-title">Автор методики</p>
       <div class="main-trainer__sub-text">
         <div class="main-trainer__sub-star">
@@ -26,10 +30,10 @@ import StarIcon from "./ui/Star-icon.astro";
       <div class="main-trainer__wrap">
         <div class="main-trainer--desktop">
           <figure class="main-trainer ">
-            <img src={efim.src} alt="Efim" />
-            <div class="main-trainer__element"></div>
-            <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-          </figure>
+        <img src={efim.src} alt="Efim" />
+        <div class="main-trainer__element"></div>
+        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+      </figure>
           <p class="main-trainer__sub-title">Автор методики</p>
           <div class="main-trainer__sub-text">
             <div class="main-trainer__sub-star">
@@ -40,29 +44,29 @@ import StarIcon from "./ui/Star-icon.astro";
         </div>
       </div>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={pavlenko.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Николай Павленко</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={mosin.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Дмитрий Мосин</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={galakhov.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Александр Галахов</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={koryagin.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Ярослав Корягин</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={otherTrainer.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Иван Петров</figcaption>
-        <p class="other-trainer__desc">Тренер начинающих</p>
+        <img src={prisyazhniy.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Егор Присяжный</figcaption>
+        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
     </div>
   </div>
@@ -77,13 +81,11 @@ import StarIcon from "./ui/Star-icon.astro";
     grid-template-columns: repeat(3, 1fr);
     gap: 30px; */
   }
-
   .trainers-section__subtitle {
     text-align: center;
     font-size: 24px;
     margin-top: 5px;
   }
-
   .main-trainer {
     display: flex;
     flex-direction: column;
@@ -102,19 +104,16 @@ import StarIcon from "./ui/Star-icon.astro";
     margin-bottom: 4px;
     width: 115%;
   }
-
   .main-trainer__sub-text{
     display: flex;
     align-items: center;
     color: var(----color-main);
     gap: 10px;
   }
-
   .main-trainer__sub-star {
     flex-shrink: 0;
     color: var(--color-accent);
   }
-
   .trainers-section {
     max-width: 100%;
     overflow-x: hidden;
@@ -125,17 +124,14 @@ import StarIcon from "./ui/Star-icon.astro";
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg width='150' height='360' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M703.505.768 342.08 565.812 0 .768h703.505Z' fill='%235AAFFF'/%3E%3C/svg%3E");
   }
-
   .trainers-section__title {
     text-align: center;
   }
-
   .main-trainer > img {
     position: relative;
     width: 100%;
     z-index: 2;
   }
-
   .main-trainer__element {
     position: absolute;
     content: "";
@@ -146,7 +142,6 @@ import StarIcon from "./ui/Star-icon.astro";
     z-index: 1;
     clip-path: polygon(19% 0%, 100% 0%, 81% 100%, 0% 100%);
   }
-
   .main-trainer__name {
     z-index: 2;
     display: flex;
@@ -165,14 +160,12 @@ import StarIcon from "./ui/Star-icon.astro";
     clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
     color: #ffffff;
   }
-
   .other-trainers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     gap: 30px;
   }
-
   .main-trainer__wrap {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -180,7 +173,6 @@ import StarIcon from "./ui/Star-icon.astro";
     justify-content: center;
     gap: 100px;
   }
-
   .other-trainer {
     width: 100%;
     display: flex;
@@ -190,35 +182,28 @@ import StarIcon from "./ui/Star-icon.astro";
     width: 339px;
     flex-shrink: 0;
   }
-
   .other-trainer > img {
     margin-bottom: 20px;
   }
-
   .other-trainer__name {
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
-
     color: #2d2d2d;
     margin-bottom: 10px;
   }
-
   .other-trainer__desc {
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-
     color: #2d2d2d;
   }
-
   .main-trainer--mobile {
         display: none;
       }
       .main-trainer--desktop {
         width: 339px;
       }
-
   @media (max-width: 1023px) {
     .trainers-section {
       background-image: none;
@@ -229,7 +214,6 @@ import StarIcon from "./ui/Star-icon.astro";
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
       position: relative;
-
     }
     .trainers-section__title {
       padding: 0 40px;
@@ -243,7 +227,6 @@ import StarIcon from "./ui/Star-icon.astro";
       text-align: center;
       margin-bottom: 50px;
     }
-
     .trainers-section__title::first-line {
       font-style: italic;
       font-weight: 700;
@@ -251,25 +234,20 @@ import StarIcon from "./ui/Star-icon.astro";
       line-height: 28px;
       text-transform: uppercase;
     }
-
     .trainers {
       flex-direction: column;
       padding: 0 15px;
       gap: 50px;
     }
-
     .main-trainer__element {
       max-width: 483px;
       width: 100%;
     }
-
     .main-trainer {
       width: 100%;
       padding-left: 0;
     }
-
     @media (max-width: 767px) {
-
       .main-trainer--mobile {
         display: flex;
         flex-direction: column;
@@ -284,19 +262,16 @@ import StarIcon from "./ui/Star-icon.astro";
         grid-template-columns: repeat(1, 1fr);
         gap: 25px;
       }
-
       .trainers-section__subtitle {
         font-size: 20px;
         line-height: 24px;
         padding: 0 24px;
       }
-
       .trainers {
         padding-left: 0;
         padding-right: 0;
         gap: 50px;
       }
-
       .other-trainers {
         flex-wrap: nowrap;
         padding: 0 15px;
@@ -306,7 +281,6 @@ import StarIcon from "./ui/Star-icon.astro";
         display: flex;
         gap: 0;
       }
-
       .other-trainers::after {
         display: block;
         position: absolute;
@@ -323,26 +297,20 @@ import StarIcon from "./ui/Star-icon.astro";
         height: 4px;
         border-radius: 4px;
       }
-
       /* Track */
       .other-trainers::-webkit-scrollbar-track {
         background: #f1f1f1;
         border-radius: 4px;
-
       }
-
       /* Handle */
       .other-trainers::-webkit-scrollbar-thumb {
         background: #888;
         border-radius: 4px;
-
       }
-
       /* Handle on hover */
       .other-trainers::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
-
       .other-trainer {
         width: 300px;
       }

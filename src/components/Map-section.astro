@@ -8,14 +8,16 @@ import Button from "./ui/Button.astro";
   <div class="map-section__main">
     <div class="map-section__content">
       <p class="map-section__address">
-        Адрес: Московская область, Быково, Промзона, 17 ангар
+        Адрес: Московская область, Логопарк Быково
       </p>
-      <p class="map-section__hint">Слева и направо до упора</p>
+      <p class="map-section__hint">южный конец взлетной полосы</p>
       <div class="buttons map-section__buttons">
         <Button isModal={true} style={"accent"}>Оставить заявку</Button>
         <Button href="#" style={"primary"}>Как добраться</Button>
       </div>
-      <p class="map-section__phone">+7 (999) 111–22–33</p>
+      <p class="map-section__phone">+7 (499) 455-46-69</p>
+      <p class="map-section__hint">ООО «Ратата»
+        ИНН&nbsp;9717122834</p>
     </div>
     <div id="js-map" class="map-section__map"></div>
   </div>
@@ -30,12 +32,10 @@ import Button from "./ui/Button.astro";
     text-align: center;
     text-transform: uppercase;
   }
-
   .map-section__map {
-    width: 100%;
+    width: 100%; 
     height: 100%;
   }
-
   .map-section__address {
     font-style: normal;
     font-weight: 400;
@@ -44,26 +44,21 @@ import Button from "./ui/Button.astro";
     color: #000000;
     margin-bottom: 5px;
   }
-
   .map-section__phone {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-
     color: #000000;
   }
-
   .map-section__hint {
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
     /* identical to box height */
-
     color: #b5b5b5;
     margin-bottom: 25px;
   }
-
   .map-section__buttons {
     display: flex;
     flex-direction: column;
@@ -71,11 +66,9 @@ import Button from "./ui/Button.astro";
     gap: 15px;
     margin-bottom: 40px;
   }
-
   .map-section__buttons .button {
     width: 200px;
   }
-
   .map-section {
    padding-top: 100px;
     min-height: 100vh;
@@ -85,7 +78,6 @@ import Button from "./ui/Button.astro";
     max-width: 100%;
     overflow-x: hidden;
   }
-
   .map-section__main {
     display: flex;
     align-items: center;
@@ -98,12 +90,10 @@ import Button from "./ui/Button.astro";
     flex-direction: column;
     width: 360px;
   }
-
   @media(max-width: 1023px) {
     .map-section {
       display: block;
     }
-
     .map-section__title {
       margin-bottom: 50px;
     }
@@ -112,11 +102,9 @@ import Button from "./ui/Button.astro";
         align-items: flex-start;
         padding: 0;
     }
-
     .map-section__map {
         height: 60vh;
     }
-
     .map-section__content {
         align-items: center;
         padding-right: 0;

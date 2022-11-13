@@ -1,34 +1,33 @@
 ---
 import { Image } from "@astrojs/image/components";
 import listItemImg from "../assets/img/list-item.jpg";
-
 let activeIndex = 0;
 const listItems = [
   {
-    label: "Правильно сидеть",
+    label: "Настраивать кресло водителя под себя",
     imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    text: "Правильная посадка поможет быстро вращать руль, полностью выжимать педали и меньше травмироваться в ДТП",
   },
   {
-    label: "Выбирать правильную скорость",
+    label: "Эффективно тормозить и выбирать скорость",
     imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    text: "Как скорость влияет на тормозной путь, как быстрее всего остановиться и что происходит при неправильном торможении",
   },
   {
-    label: "Тормозить с максимальной эффективностью",
+    label: "Выводить машину из заноса",
     imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    text: "Узнаешь, что делать, когда машину сносит или заносит, и доведешь реакции до автоматизма",
   },
   {
-    label: "Объезжать препятствия в лосином тесте",
+    label: "Объезжать неожиданные препятствия",
     imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
+    text: "Боишься сбить пешехода на темной улице? Отработай безопасный объезд без снижения скорости",
   },
   {
-    label: "Рулить, когда машину сносит или заносит",
+    label: "Водить лучше, чем прежде",
     imgUrl: "img/list-item.jpg",
-    text: "Слева можно выбирать пункты, а здесь появляется поясняющий текст. Нужна анимация выделения. Длина — условные 120 символов.",
-  },
+    text: "Инфа 100%, что ты станешь лучше маневрировать, чуствовать габариты авто и быстрее принимать решения",
+  }
   // {
   //   label: "Использовать управляемый занос для поворота",
   //   imgUrl: "img/list-item.jpg",
@@ -38,7 +37,7 @@ const listItems = [
 ---
 
 <section class="learn-list-section">
-  <h2 class="learn-list-section__title">Мы научим тебя:</h2>
+  <h2 class="learn-list-section__title">После курса ты сможешь:</h2>
   <div class="learn-list-wrapper">
     <div class="learn-list">
       {
@@ -81,26 +80,21 @@ const listItems = [
     padding-top: 90px;
     padding-bottom: 90px;
   }
-
   .learn-list {
     position: relative;
   }
-
   .learn-list-section__title {
     font-style: italic;
     font-weight: 700;
     font-size: 45px;
     line-height: 50px;
-
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 55px;
   }
-
   .learn-list-wrapper {
     /* position: relative;; */
   }
-
   @media(min-width: 1024px) {
     .learn-list-card {
       visibility: hidden;
@@ -112,12 +106,10 @@ const listItems = [
       transition: all 0.3s ease-in-out;
   }
   }
-
   .learn-list-item {
     /* position: relative; */
     padding-right: 480px;
   }
-
   .learn-list-item__content {
     display: flex;
     align-items: center;
@@ -126,15 +118,12 @@ const listItems = [
     margin-top: 1px;
     transition: all 0.3s ease-in-out;
   }
-
   .learn-list-item__content > svg {
     flex-shrink: 0;
   }
-
   .learn-list-item:last-child > .learn-list-item__content {
     border-bottom: 1px solid var(--color-contrast-low);
   }
-
   .item-label {
     margin-left: 20px;
     font-weight: 400;
@@ -143,56 +132,45 @@ const listItems = [
     color: #828282;
     transition: all 0.3s ease-in-out;
   }
-
   .active .item-label {
     color: var(--color-accent);
   }
-
   .icon-wrapper {
     width: 106px;
   }
-
   .item-box {
     fill: transparent;
     transition: all 0.3s ease-in-out;
   }
-
   .active .item-box {
     fill: var(--color-accent);
   }
-
   .item-check {
     stroke: #e3e3e3;
     transition: all 0.3s ease-in-out;
   }
-
   .active .item-check {
     stroke: #fff;
   }
   .active.learn-list-item > .learn-list-item__content {
     border-top-color: var(--color-accent);
   }
-
   .active + .learn-list-item > .learn-list-item__content {
     border-top-color: var(--color-accent);
   }
-
   .active.learn-list-item:last-child > .learn-list-item__content {
     border-bottom-color: var(--color-accent);
   }
-
   .active > .learn-list-card {
     opacity: 1;
     visibility: visible;
   }
-
   .learn-list-card__text {
     display: block;
     background-color: #46a5ff;
     padding: 40px 30px 50px;
     color: var(--color-contrast);
   }
-
   @media (max-width: 1023px) {
     .learn-list-section__title {
       font-size: 35px;
@@ -200,21 +178,17 @@ const listItems = [
       text-align: center;
       text-transform: uppercase;
     }
-
     .learn-list-section {
       padding: 90px 40px;
     }
-
     .learn-list-item {
       position: relative;
       padding-right: 0;
     }
-
     .icon-wrapper {
       width: 81px;
       height: 32px;
     }
-
     .item-label {
       font-style: normal;
       font-weight: 400;
@@ -230,12 +204,10 @@ const listItems = [
       width: 100%;
       transition: all .3s ease-in-out;
     }
-
     .learn-list-card > img {
       width: 100%;
       object-fit: cover;
     }
-
     .active > .learn-list-card {
       filter: grayscale(0);
     }
@@ -246,12 +218,9 @@ const listItems = [
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-
   const mm = gsap.matchMedia();
-
   const learnList: HTMLElement = document.querySelector(".learn-list-section");
   const items = gsap.utils.toArray(".learn-list-item");
-
   mm.add("(min-width: 1024px)", () => {
     gsap.to(learnList, {
       scrollTrigger: {
@@ -282,7 +251,6 @@ const listItems = [
     });
   });
   });
-
   mm.add("(max-width: 1023px)", () => {
     items.forEach((item: HTMLElement) => {
     ScrollTrigger.create({
@@ -305,3 +273,4 @@ const listItems = [
   });
   });
 </script>
+
