@@ -6,6 +6,7 @@ import mosin from "../assets/img/mosin.png";
 import galakhov from "../assets/img/galakhov.png";
 import koryagin from "../assets/img/koryagin.png";
 import prisyazhniy from "../assets/img/prisyazhniy.png";
+import lebedev from "../assets/img/lebedev.png";
 import StarIcon from "./ui/Star-icon.astro";
 
 
@@ -71,8 +72,8 @@ import StarIcon from "./ui/Star-icon.astro";
         <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
       <figure class="other-trainer">
-        <img src={prisyazhniy.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Егор Присяжный</figcaption>
+        <img src={lebedev.src} alt="other trainer" />
+        <figcaption class="other-trainer__name">Лебедев</figcaption>
         <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
       </figure>
     </div>
@@ -181,6 +182,7 @@ import StarIcon from "./ui/Star-icon.astro";
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
+    gap: 52px;
     align-items: flex-end;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -199,12 +201,12 @@ import StarIcon from "./ui/Star-icon.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 57.5px 0;
     flex-shrink: 0;
   }
 
   .other-trainer > img {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   .other-trainer__name {
@@ -316,7 +318,7 @@ import StarIcon from "./ui/Star-icon.astro";
         width: 100%;
         overflow-x: scroll;
         display: flex;
-        gap: 0;
+        gap: 30px;
       }
 
       .other-trainers::after {
