@@ -1,5 +1,5 @@
 ---
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/logo.svg";
 import { Image } from "@astrojs/image/components";
 import Button from "./ui/Button.astro";
 import BurgerIcon from "./ui/Burger-icon.astro";
@@ -31,7 +31,7 @@ const navList = [
 
 <div class="sticky">
   <header class="header-mobile" x-data="{ open: false }">
-    <a href="/"><Image src={logo} alt="logo" /></a>
+    <a href="/"><Image src={logo} height={44} aspectRatio={505.21/174.59} alt="logo" /></a>
     <button class="nav-trigger nav-trigger--open" @click="open = ! open"
       ><BurgerIcon />
     </button>
@@ -54,7 +54,7 @@ const navList = [
     </nav>
   </header>
   <header class="header-desktop" id="header-sticky">
-    <a href="/"><Image src={logo} alt="logo" /></a>
+    <a href="/"><Image src={logo} height={44} aspectRatio={505.21/174.59} alt="logo" /></a>
     <nav class="header_nav">
       <ul class="nav__ul">
         {

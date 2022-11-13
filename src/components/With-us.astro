@@ -5,7 +5,7 @@ import with_us from "../assets/img/with_us.jpg";
 
 <section
   class="with-us-section"
-  style={`background-image: linear-gradient(91.59deg, #FFFFFF -7.42%, rgba(255, 255, 255, 0) 64.04%), radial-gradient(127.45% 741.98% at 28.7% 38.73%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), url(${with_us.src});`}
+  style={`background-image: linear-gradient(91.59deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url(${with_us.src});`}
 >
   <p>
     Проведи один день на полигоне,<br />
@@ -27,6 +27,7 @@ import with_us from "../assets/img/with_us.jpg";
     padding: var(--container-padding);
     margin-top: 90px;
     margin-bottom: 90px;
+    background-size: cover;
   }
 
   .with-us-section > p {
