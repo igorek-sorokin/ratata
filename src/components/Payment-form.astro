@@ -7,17 +7,14 @@
       Пожалуйста, перед оплатой согласуйте сумму с отделом продаж
     </p>
     <form
-      id="form"
+      id="paymentForm"
       class="form"
-      target="iframe"
-      action="https://autopragmat.ru/api/v1/send-order/"
-      method="post"
     >
       <input
         class="form__input form__input--tel"
         type="tel"
         name="tel"
-        id="tel"
+        id="paymentTel"
         pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
         required
         placeholder="Номер телефона"
@@ -26,7 +23,7 @@
         class="form__input form__input--name"
         type="text"
         name="name"
-        id="name"
+        id="paymentName"
         required
         placeholder="Ваше имя"
       />
@@ -34,25 +31,36 @@
         class="form__input form__input--email"
         type="email"
         name="email"
-        id="email"
+        id="paymentEmail"
         required
         placeholder="Электронная почта"
       />
       <input
         class="form__input form__input--value"
         type="number"
-        name="value"
-        id="value"
+        step="0.01" 
+        name="amount"
+        id="paymentAmount"
         required
         placeholder="Сумма оплаты"
       />
-      <button type="submit" class="form__submit">Оплатить заказ</button>
+      <button type="submit" class="form__submit payment-form__submit">Оплатить заказ</button>
       <span class="form__submit-subtitle"
         >Нажимая кнопку вы даете согласие на обработку данных</span
       >
     </form>
   </div>
   <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
     .form-wrapper {
       width: 509px;
       padding: 50px;
@@ -149,39 +157,63 @@
   </style>
   <script>
     import Inputmask from "inputmask";
-    var selector = document.getElementById("tel");
-    var im = new Inputmask("+7 (999) 999 99 99");
-    im.mask(selector);
-    const inputs: HTMLInputElement[] = [
-      document.getElementById("name") as HTMLInputElement,
-      document.getElementById("tel") as HTMLInputElement,
-      document.getElementById("email") as HTMLInputElement,
-    ];
+    const nameInput = (document.getElementById('paymentName') as HTMLInputElement);
+    const telInput = (document.getElementById('paymentTel') as HTMLInputElement);
+    const emailInput = (document.getElementById('paymentEmail') as HTMLInputElement);
+    const amountInput = (document.getElementById('paymentAmount') as HTMLInputElement);
+    const form = document.getElementById('paymentForm') as HTMLFormElement;
     var modal = document.getElementById("formModal");
-    var formSubmit: HTMLElement = document.querySelector(
-      ".form__submit"
-    ) as HTMLElement;
-    formSubmit.onclick = function (e) {
-      if (inputs.every((input) => input?.checkValidity())) {
+    var im = new Inputmask("+7 (999) 999 99 99");
+    im.mask(telInput);
+
+    interface RegisterPayment {
+      // Логин магазина, полученный при подключении. Если вместо аутентификации по логину и паролю используется открытый токен (параметр token), параметр userName передавать не нужно.
+      userName: string,
+      // Пароль магазина, полученный при подключении. Если для аутентификации при регистрации вместо логина и пароля используется открытый токен (параметр token), параметр password передавать не нужно.
+      password: string,
+      // Открытый ключ, который можно использовать для регистрации заказа. Если для аутентификации при регистрации заказа используются логин и пароль, параметр token передавать не нужно.
+      token: string,
+      // Номер (идентификатор) заказа в системе магазина, уникален для каждого магазина в пределах системы.
+      orderNumber: string,
+      // Сумма платежа в копейках (или центах).
+      amount: number,
+      // Код валюты платежа ISO 4217. Если не указан, считается равным коду валюты по умолчанию. <br>Тип: N3
+      currency: number,
+      // Адрес, на который требуется перенаправить пользователя в случае успешной оплаты.
+      // Должен быть указан полностью, включая используемый протокол (например, https://test.ru вместо test.ru).
+      // В противном случае пользователь будет перенаправлен по адресу следующего вида: http://<адресплатёжногошлюза>/<адрес_продавца>.
+      returnUrl: string,
+      failUrl: string,
+      description,
+    }
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      if ([nameInput, emailInput, telInput, amountInput].every(input => input?.checkValidity())) {
+          const description = `Заказ: 'Регистрация платежа',
+          Ф.И.О: ${nameInput.value},
+          Телефон: ${telInput.value},
+          E-mail: ${emailInput.value}
+          `
+          const model: Partial<RegisterPayment> = {
+            userName: import.meta.env.PUBLIC_USER_NAME,
+            password: import.meta.env.PUBLIC_PASSWORD,
+            orderNumber: `${(new Date()).getTime()}`,
+            description,
+            returnUrl: 'https://ratata.ru/',
+            failUrl: 'https://ratata.ru/',
+            amount: +amountInput.value * 100
+          }
+          fetch('https://web.rbsuat.com/ab/rest/register.do', {
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          method: 'POST',
+          body: JSON.stringify(model),
+      })
+      .then(() => {
         modal.style.display = "none";
-      }
+        alert('Заявка успешно отправленна');
+      });
+    }
     };
-    // target="iframe" action="https://autopragmat.ru/api/v1/send-order/" method="post"
-    //   formSubmit.onclick = function (e) {
-    //   e.preventDefault();
-    //   if (inputs.every(input => input?.checkValidity())) {
-    //       const data = new URLSearchParams();
-    //       data.append('name', nameInput.value);
-    //       data.append('tel', telInput.value);
-    //       data.append('email', emailInput.value);
-    //       fetch('https://autopragmat.ru/api/v1/send-order/', {
-    //       method: 'post',
-    //       body: data,
-    //   })
-    //   .then(() => {
-    //     modal.style.display = "none";
-    //     alert('Успех')
-    //   });
-    //   }
-    // };
   </script>
