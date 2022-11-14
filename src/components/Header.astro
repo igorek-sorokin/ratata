@@ -31,7 +31,7 @@ const navList = [
 
 <div class="sticky">
   <header class="header-mobile" x-data="{ open: false }">
-    <a href="/"><Image src={logo} height={44} aspectRatio={505.21/174.59} alt="logo" /></a>
+    <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
     <button class="nav-trigger nav-trigger--open" @click="open = ! open"
       ><BurgerIcon />
     </button>
@@ -54,7 +54,7 @@ const navList = [
     </nav>
   </header>
   <header class="header-desktop" id="header-sticky">
-    <a href="/"><Image src={logo} height={44} aspectRatio={505.21/174.59} alt="logo" /></a>
+    <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
     <nav class="header_nav">
       <ul class="nav__ul">
         {
@@ -82,6 +82,10 @@ const navList = [
     padding-right: calc(50vw - 621px);
   }
   .header__tel {
+  }
+
+  .logo {
+    height: 44px;
   }
 
   .header_nav {
