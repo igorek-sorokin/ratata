@@ -15,7 +15,6 @@
         type="tel"
         name="tel"
         id="paymentTel"
-        pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
         required
         placeholder="Номер телефона"
       />
@@ -193,26 +192,21 @@
           Ф.И.О: ${nameInput.value},
           Телефон: ${telInput.value},
           E-mail: ${emailInput.value}
-          `
-          const model: Partial<RegisterPayment> = {
-            userName: import.meta.env.PUBLIC_USER_NAME,
-            password: import.meta.env.PUBLIC_PASSWORD,
-            orderNumber: `${(new Date()).getTime()}`,
-            description,
-            returnUrl: 'https://ratata.ru/',
-            failUrl: 'https://ratata.ru/',
-            amount: +amountInput.value * 100
-          }
+          `       
+          const data = new URLSearchParams();
+          data.append('userName', import.meta.env.PUBLIC_USER_NAME);
+          data.append('password', import.meta.env.PUBLIC_PASSWORD);
+          data.append('orderNumber', `${(new Date()).getTime()}`);
+          data.append('description', description);
+          data.append('returnUrl', 'https://ratata.ru/');
+          data.append('failUrl', 'https://ratata.ru/');
+          data.append('amount', `${+amountInput.value * 100}`);
           fetch('https://web.rbsuat.com/ab/rest/register.do', {
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
           method: 'POST',
-          body: JSON.stringify(model),
+          body: data,
       })
       .then(() => {
         modal.style.display = "none";
-        alert('Заявка успешно отправленна');
       });
     }
     };

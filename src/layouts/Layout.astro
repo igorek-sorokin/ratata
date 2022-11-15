@@ -37,7 +37,7 @@ const { title } = Astro.props;
         </div>
         <div id="paymentForm" class="modal">
           <div class="modal-content">
-            <span class="close" id="paymentFormClose">&times;</span>
+            <a href="/" class="close" id="paymentFormClose">&times;</a>
             <PaymentForm />
           </div>
         </div>
@@ -73,6 +73,7 @@ const { title } = Astro.props;
 		top: 25px;
 		right: 15px;
 		z-index: 1000;
+    text-decoration: none;
       }
 
       .close:hover,
