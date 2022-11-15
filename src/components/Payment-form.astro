@@ -195,17 +195,17 @@
           E-mail: ${emailInput.value}
           `
           const model: Partial<RegisterPayment> = {
-            userName: import.meta.env.PUBLIC_USER_NAME,
-            password: import.meta.env.PUBLIC_PASSWORD,
+         // userName: 'r-ratata-operator',
+         // password: 'r-ratata*?1',
             orderNumber: `${(new Date()).getTime()}`,
             description,
             returnUrl: 'https://ratata.ru/',
             failUrl: 'https://ratata.ru/',
             amount: +amountInput.value * 100
           }
-          fetch('https://web.rbsuat.com/ab/rest/register.do', {
+          fetch('https://autopragmat.ru/api/v1/send-pay/', {
           headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
           },
           method: 'POST',
           body: JSON.stringify(model),
