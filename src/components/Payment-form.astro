@@ -15,7 +15,6 @@
         type="tel"
         name="tel"
         id="paymentTel"
-        pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
         required
         placeholder="Номер телефона"
       />
@@ -189,30 +188,22 @@
     form.onsubmit = function(e) {
       e.preventDefault();
       if ([nameInput, emailInput, telInput, amountInput].every(input => input?.checkValidity())) {
-          const description = `Заказ: 'Регистрация платежа',
-          Ф.И.О: ${nameInput.value},
-          Телефон: ${telInput.value},
-          E-mail: ${emailInput.value}
-          `
-          const model: Partial<RegisterPayment> = {
-         // userName: 'r-ratata-operator',
-         // password: 'r-ratata*?1',
-            orderNumber: `${(new Date()).getTime()}`,
-            description,
-            returnUrl: 'https://ratata.ru/',
-            failUrl: 'https://ratata.ru/',
-            amount: +amountInput.value * 100
-          }
-          fetch('https://autopragmat.ru/api/v1/send-pay/', {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-          },
+          const description = `Заказ: 'Регистрация платежа', Ф.И.О: ${nameInput.value}, Телефон: ${telInput.value}, E-mail: ${emailInput.value}`
+          const data = new URLSearchParams();
+          data.append('userName', import.meta.env.PUBLIC_USER_NAME);
+          data.append('password', import.meta.env.PUBLIC_PASSWORD);
+          data.append('orderNumber', `${(new Date()).getTime()}`);
+          data.append('description', description);
+          data.append('returnUrl', 'https://ratata.ru/');
+          data.append('failUrl', 'https://ratata.ru/');
+          data.append('amount', `${+amountInput.value * 100}`);
+          fetch('https://web.rbsuat.com/ab/rest/register.do', {
           method: 'POST',
-          body: model,
+          body: data,
+
       })
       .then(() => {
         modal.style.display = "none";
-        alert('Заявка успешно отправленна');
       });
     }
     };

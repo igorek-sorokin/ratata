@@ -3,20 +3,21 @@ export interface Props {
   href?: string;
   style?: "primary" | "accent" | "outline";
   isModal?: boolean;
+  id?: string;
 }
 
-const { href = "#", style = "primary", isModal = false } = Astro.props as Props;
+const { href = "#", style = "primary", isModal = false, id} = Astro.props as Props;
 ---
 
 {
   isModal ? (
-    <button class={`button button--${style} btn-fx-4 open-modal-js`}>
+    <button id={id} class={`button button--${style} btn-fx-4 open-modal-js`}>
       <span>
         <slot />
       </span>
     </button>
   ) : (
-    <a href={href} class={`button button--${style} btn-fx-4`}>
+    <a id={id} href={href} class={`button button--${style} btn-fx-4`}>
       <span>
         <slot />
       </span>

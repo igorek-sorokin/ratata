@@ -165,7 +165,6 @@
         data.append('name', inputs[0].value);
         data.append('tel', inputs[1].value);
         data.append('email', inputs[2].value);
-        debugger;
         fetch('https://autopragmat.ru/api/v1/send-order/', {
         method: 'POST',
         body: data,

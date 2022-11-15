@@ -15,7 +15,6 @@ import Button from "./ui/Button.astro";
         <Button isModal={true} style={"accent"}>Оставить заявку</Button>
         <Button href="#" style={"primary"}>Как добраться</Button>
         <Button href="#pay_form" style={"outline"}>Оплатить курс</Button>
-
       </div>
       <p class="map-section__phone">+7 (499) 455-46-69</p>
       <p class="map-section__hint">ООО «Ратата»
@@ -129,4 +128,11 @@ import Button from "./ui/Button.astro";
       map.geoObjects.add(placemark);
     })
     .catch((error) => console.log("Failed to load Yandex Maps", error));
+
+    const openPaymentButton = document.getElementById('openPaymentButton');
+    var paymentForm = document.getElementById("paymentForm");
+    openPaymentButton.addEventListener('click', (event) => {
+      paymentForm.style.display = 'flex';
+    });
+    
 </script>
