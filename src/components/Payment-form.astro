@@ -185,7 +185,14 @@
       failUrl: string,
       description,
     }
-    form.onsubmit = function(e) {
+
+    export interface RegisterResponse {
+        errorCode: string;
+        errorMessage: string;
+        formUrl: string;
+        orderId: string;
+    }
+    form.onsubmit = async function(e) {
       e.preventDefault();
       if ([nameInput, emailInput, telInput, amountInput].every(input => input?.checkValidity())) {
           const description = `Заказ: 'Регистрация платежа',
@@ -201,13 +208,18 @@
           data.append('returnUrl', 'https://ratata.ru/');
           data.append('failUrl', 'https://ratata.ru/');
           data.append('amount', `${+amountInput.value * 100}`);
-          fetch('https://web.rbsuat.com/ab/rest/register.do', {
+          const response = await fetch('https://web.rbsuat.com/ab/rest/register.do', {
           method: 'POST',
           body: data,
-      })
-      .then(() => {
-        modal.style.display = "none";
-      });
+          })
+          if (!response.ok) {
+            return;
+          }
+          let result: RegisterResponse = await response.json();
+          if (result.errorCode || result.errorMessage) {
+            return;
+          }
+          window.location.href = result.formUrl;
     }
     };
   </script>
