@@ -15,7 +15,7 @@ import WithUs from "../components/With-us.astro";
 import MapSection from "../components/Map-section.astro";
 ---
 
-<Layout title="Home">
+<Layout title="Ратата — школа контраварийного вождения в Москве и Московской области | Ratata">
   <div id="wrapper">
     <div id="content">
       <Screen />
@@ -37,8 +37,11 @@ import MapSection from "../components/Map-section.astro";
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+
   gsap.registerPlugin(ScrollTrigger);
+
   const mm = gsap.matchMedia();
+
   mm.add("(min-width: 1024px)", () => {
     const fadeInElements = gsap.utils.toArray(".fade-in");
     fadeInElements.forEach((fadeInElement: any) => {
@@ -52,6 +55,7 @@ import MapSection from "../components/Map-section.astro";
         duration: 0.5,
       });
     });
+
     const fadeInScrubElements = gsap.utils.toArray(".fade-in-scrub");
     fadeInScrubElements.forEach((fadeInElement: any) => {
       gsap.from(fadeInElement, {
@@ -65,6 +69,7 @@ import MapSection from "../components/Map-section.astro";
         duration: 0.5,
       });
     });
+
     const fadeInRightElements = gsap.utils.toArray(".fade-in-right");
     fadeInRightElements.forEach((fadeInElement: any) => {
       gsap.from(fadeInElement, {
@@ -78,6 +83,7 @@ import MapSection from "../components/Map-section.astro";
         duration: 0.5,
       });
     });
+
     const fadeInLeftElements = gsap.utils.toArray(".fade-in-left");
     fadeInLeftElements.forEach((fadeInElement: any) => {
       gsap.from(fadeInElement, {
@@ -91,6 +97,7 @@ import MapSection from "../components/Map-section.astro";
         duration: 0.5,
       });
     });
+
     window.onload = jumptoanchor;
     //.
     function jumptoanchor() {
