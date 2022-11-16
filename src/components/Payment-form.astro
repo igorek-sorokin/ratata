@@ -204,7 +204,7 @@
           data.append('returnUrl', 'https://ratata.ru/');
           data.append('failUrl', 'https://ratata.ru/');
           data.append('amount', `${+amountInput.value * 100}`);
-          const response = await fetch('https://web.rbsuat.com/ab/rest/register.do', {
+          const response = await fetch('https://autopragmat.ru/api/v1/send-pay/', {
           method: 'POST',
           body: data,
           })
