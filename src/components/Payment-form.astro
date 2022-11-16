@@ -161,7 +161,6 @@
     const emailInput = (document.getElementById('paymentEmail') as HTMLInputElement);
     const amountInput = (document.getElementById('paymentAmount') as HTMLInputElement);
     const form = document.getElementById('paymentForm') as HTMLFormElement;
-    var modal = document.getElementById("formModal");
     var im = new Inputmask("+7 (999) 999 99 99");
     im.mask(telInput);
 
@@ -200,15 +199,15 @@
           Телефон: ${telInput.value},
           E-mail: ${emailInput.value}
           `       
+          const backUrl = 'https://ratata.ru/';
           const data = new URLSearchParams();
-          data.append('userName', import.meta.env.PUBLIC_USER_NAME);
-          data.append('password', import.meta.env.PUBLIC_PASSWORD);
           data.append('orderNumber', `${(new Date()).getTime()}`);
           data.append('description', description);
-          data.append('returnUrl', 'https://ratata.ru/');
-          data.append('failUrl', 'https://ratata.ru/');
+          data.append('returnUrl', backUrl);
+          data.append('failUrl', backUrl);
+          data.append('email', emailInput.value);
           data.append('amount', `${+amountInput.value * 100}`);
-          const response = await fetch('https://web.rbsuat.com/ab/rest/register.do', {
+          const response = await fetch('https://autopragmat.ru/api/v1/send-pay/', {
           method: 'POST',
           body: data,
           })

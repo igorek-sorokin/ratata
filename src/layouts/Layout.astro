@@ -43,67 +43,68 @@ const { title } = Astro.props;
         </div>
       </div>
     </div>
-    <style is:global>
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-		justify-content: center;
-		align-items: center;
-        z-index: 1000; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-      }
-
-	  .modal-content {
-		position: relative;
-	  }
-
-      /* The Close Button */
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-		position: absolute;
-		top: 25px;
-		right: 15px;
-		z-index: 1000;
-    text-decoration: none;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      @media (max-width: 1023px) {
-        .modal {
-          justify-content: flex-start;
-          align-items: flex-start;
-        }
-      }
-
-      /* Add Animation */
-      @keyframes animatetop {
-        from {
-          top: -300px;
-          opacity: 0;
-        }
-        to {
-          top: 0;
-          opacity: 1;
-        }
-      }
-    </style>
   </body>
 </html>
+
+<style is:global>
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+justify-content: center;
+align-items: center;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+
+.modal-content {
+position: relative;
+}
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+position: absolute;
+top: 25px;
+right: 15px;
+z-index: 1000;
+text-decoration: none;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1023px) {
+    .modal {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  /* Add Animation */
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+</style>
 
 <script>
   var formModal = document.getElementById("formModal");
