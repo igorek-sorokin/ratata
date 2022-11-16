@@ -146,6 +146,7 @@
 </style>
 <script>
   import Inputmask from 'inputmask';
+  import toastr from 'toastr'
   var selector = document.getElementById("tel");
 
   var im = new Inputmask("+7 (999) 999 99 99");
@@ -171,7 +172,7 @@
     })
     .then(() => {
       modal.style.display = "none";
-      alert('Заявка успешно отправленна');
+      toastr.success('Заявка успешно отправленна')
     });
   }
   };
