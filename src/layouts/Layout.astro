@@ -1,6 +1,7 @@
 ---
 import "../assets/styles/TTMussels.css";
 import "../assets/styles/global.css";
+import "../../node_modules/toastr/build/toastr.css"
 import "@fontsource/overpass";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -47,6 +48,9 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+  #toast-container {
+      padding-top: 15px;
+  }
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -72,11 +76,11 @@ position: relative;
     float: right;
     font-size: 28px;
     font-weight: bold;
-position: absolute;
-top: 25px;
-right: 15px;
-z-index: 1000;
-text-decoration: none;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    z-index: 1000;
+    text-decoration: none;
   }
 
   .close:hover,
@@ -107,6 +111,24 @@ text-decoration: none;
 </style>
 
 <script>
+  import toastr from "toastr";
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "0",
+    "hideDuration": "0",
+    "timeOut": "0",
+    "extendedTimeOut": "0",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
   var formModal = document.getElementById("formModal");
   var paymentForm = document.getElementById("paymentForm");
 
@@ -137,4 +159,13 @@ text-decoration: none;
   if(window.location.hash && window.location.hash === '#pay_form') {
     paymentForm.style.display = "flex";
   }
+
+  if(window.location.hash && window.location.hash === '#payment_success') {
+    toastr.success('Оплата прошла успешно')
+  }
+
+  if(window.location.hash && window.location.hash === '#payment_error') {
+    toastr.error('Платеж отклонен')
+  }
+
 </script>
