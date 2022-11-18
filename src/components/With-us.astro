@@ -1,12 +1,15 @@
 ---
 import Button from "./ui/Button.astro";
 import with_us from "../assets/img/with_us.jpg";
+import with_us_mobile from "../assets/img/with_us_mobile.jpg";
 ---
 
 <section
   class="with-us-section"
-  style={`background-image: linear-gradient(91.59deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url(${with_us.src});`}
 >
+  <div class="with-us-section__background with-us-section__background--desktop"   style={`background-image: linear-gradient(90deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url(${with_us.src});`}></div>
+  <div class="with-us-section__background with-us-section__background--mobile"   style={`background-image: linear-gradient(180deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url(${with_us_mobile.src});`}></div>
+
   <p>
     Проведи один день на полигоне,<br />
     и ты больше не будешь водить как прежде
@@ -28,7 +31,21 @@ import with_us from "../assets/img/with_us.jpg";
     margin-top: 90px;
     margin-bottom: 90px;
     background-size: cover;
-    background-image: linear-gradient(91.59deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url('/assets/img/with_us.jpg');
+    position: relative;
+    }
+    .with-us-section > * {
+      z-index: 1;
+    }
+
+  .with-us-section__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
   }
 
   .with-us-section > p {
@@ -55,12 +72,28 @@ import with_us from "../assets/img/with_us.jpg";
     gap: 30px;
   }
 
+  .with-us-section__background--mobile {
+      display: none;
+    }
+
   @media (max-width: 1023px) {
 
+    .with-us-section__background--desktop {
+      display: none;
+    }
+
+    .with-us-section__background--mobile {
+      background-size: 140%;
+      display: block;
+      background-position: top center;
+    }
+
     .with-us-section  {
-        padding: 0 40px;
-        text-align: center;
-        background-position: 64%;
+      padding: 0 40px;
+      text-align: center;
+      justify-content: flex-start;
+      height: 1000px;
+      padding-top: 120px;
     }
     .with-us-section__title {
       font-size: 50px;
