@@ -36,7 +36,7 @@ const { title } = Astro.props;
             <Form />
           </div>
         </div>
-        <div id="paymentForm" class="modal">
+        <div id="paymentFormModal" class="modal">
           <div class="modal-content">
             <a href="/" class="close" id="paymentFormClose">&times;</a>
             <PaymentForm />
@@ -140,8 +140,8 @@ const { title } = Astro.props;
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
     z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
@@ -178,8 +178,8 @@ position: relative;
 
   @media (max-width: 1023px) {
     .modal {
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -216,7 +216,7 @@ position: relative;
     "hideMethod": "fadeOut"
   }
   var formModal = document.getElementById("formModal");
-  var paymentForm = document.getElementById("paymentForm");
+  var paymentForm = document.getElementById("paymentFormModal");
 
   var btns = document.querySelectorAll(".open-modal-js");
 
@@ -246,11 +246,11 @@ position: relative;
     paymentForm.style.display = "flex";
   }
 
-  if(window.location.hash && window.location.hash === '#payment_success') {
+  if(window.location.hash.includes('#payment_success')) {
     toastr.success('Оплата прошла успешно')
   }
 
-  if(window.location.hash && window.location.hash === '#payment_error') {
+  if(window.location.hash.includes('#payment_error')) {
     toastr.error('Платеж отклонен')
   }
 

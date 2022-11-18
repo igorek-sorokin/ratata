@@ -1,16 +1,16 @@
 ---
 import Button from "./ui/Button.astro";
 import screen from "../assets/img/screen.jpg";
+import screenMobile from "../assets/img/screen_mobile.jpg";
 import video from "../assets/video2.mp4";
 ---
 
-<section class="banner-section" 
-style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screen.src});`}
-
->
+<section class="banner-section" >
   <!-- <video autoplay muted loop class="banner-section__video">
     <source src={video} type="video/mp4" >
   </video> -->
+  <div class="banner-section__background banner-section__background--desktop" style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screen.src});`}></div>
+  <div class="banner-section__background banner-section__background--mobile" style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screenMobile.src});`}></div>
   <main class="banner-section__main">
     <h1 class="banner-section__title">
       <span
@@ -54,6 +54,20 @@ style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(
     width: 60%;
     padding-top: 118px;
   }
+
+  .banner-section__background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .banner-section__background--mobile {
+    display: none;
+  }
+
 
   .banner-section__title {
     font-family: var(--heading-font);
@@ -114,12 +128,24 @@ style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(
   }
 
   @media (max-width: 1023px) {
+        .banner-section__background--desktop {
+      display: none;
+    }
+    .banner-section__background.banner-section__background--mobile {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-size: cover;
+        background-position: bottom center;
+    }
     .banner-section {
       background-position-y: 68%;
       background-size: cover;
       background-position-x: 72%;
       /* margin-top: 300px; */
-      height: 633px;
+      height: 833px;
     }
     .banner-section__main {
       position: relative;
@@ -158,18 +184,12 @@ style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(
     }
 
     .banner-section__subtitle {
-      width: 100%;
+      width: 50%;
       text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
-
-  @media(max-width: 376px) {
-    .banner-section__title::before {
-        top: 60px;
-        width: 200px;
-    }
-  }
-
 
   @media(max-width: 376px) {
     .banner-section__title::before {

@@ -24,6 +24,7 @@ import LockIcon from "./ui/lock-icon.astro";
           <li>Проверь свой навык и стань увереннее за два часа</li>
         </ul>
       </div>
+      <Button isModal={true} style={"contrast"}>Оставить заявку</Button>
     </div>
     <div class="program program--second" style={`background-image: url(${programRed.src});`}>
       <div class="program__header">
@@ -41,6 +42,7 @@ import LockIcon from "./ui/lock-icon.astro";
           <li>Вызов самому себе</li>
         </ul>
       </div>
+      <Button isModal={true} style={"contrast"}>Оставить заявку</Button>
     </div>
     <div
       class="program program--third"
@@ -76,7 +78,6 @@ import LockIcon from "./ui/lock-icon.astro";
             </ul>
         </div> -->
   </div>
-  <Button isModal={true} style={"accent"}>Я готов, запишите меня</Button>
 </section>
 
 <style is:global>
@@ -126,7 +127,7 @@ import LockIcon from "./ui/lock-icon.astro";
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 72px;
+    margin-bottom: 35px;
   }
 
   .program__soon {
@@ -138,8 +139,8 @@ import LockIcon from "./ui/lock-icon.astro";
       line-height: 33px;
       text-transform: uppercase;
       gap: 25px;
-      margin-top: 50px;
       color: #888888;
+      height: 58px;
   }
 
     .program__list > li {
@@ -167,6 +168,8 @@ import LockIcon from "./ui/lock-icon.astro";
 
   .program__content {
     /* padding-left: 80px; */
+    margin-bottom: 50px;
+    margin-bottom: auto;
    
   }
 
@@ -221,6 +224,10 @@ import LockIcon from "./ui/lock-icon.astro";
   }
 
   @media (max-width: 1023px) {
+    .program__list > li:last-child {
+      margin-bottom: 35px;
+    }
+
     .programs-section {
       padding: 100px 0px 90px;
     }
@@ -244,6 +251,7 @@ import LockIcon from "./ui/lock-icon.astro";
     }
 
     .programs {
+      gap: 30px;
       grid-template-columns: 1fr;
       grid-auto-rows: min-content;
     }
@@ -254,8 +262,8 @@ import LockIcon from "./ui/lock-icon.astro";
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: calc(15% + 80px) 40px;
-      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+      padding: 40px;
+      clip-path: none;
     }
 
     .program__stars {
@@ -289,6 +297,16 @@ import LockIcon from "./ui/lock-icon.astro";
           rgba(255, 255, 255, 0) 40.28%
         ),
         #c9c9c9;
+    }
+
+    .program--first {
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+      padding-top: 15%;
+    }
+
+    .program--third {
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      padding-bottom: 10%;
     }
   }
 </style>
