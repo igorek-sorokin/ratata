@@ -9,14 +9,10 @@ import LockIcon from "./ui/lock-icon.astro";
 
 <section class="programs-section" id="programs">
   <h2 class="programs-section__title">Три программы разного уровня</h2>
-<br>  
-<!--  <a href="#" class="link programs-section__link"
-    >Хочу узнать больше о&nbsp;программах</a
-  > -->
   <div class="programs">
     <div class="program program--first" style={`background-image: url(${programBlue.src});`}>
       <div class="program__header">
-        <h3 class="programs__title">Скилл</h3>
+        <h3 class="programs__title">Safety</h3>
       <div class="program__stars">
           <StarIcon width={42} height={42}  filled={true} />
           <StarIcon width={42} height={42}  />
@@ -31,7 +27,7 @@ import LockIcon from "./ui/lock-icon.astro";
     </div>
     <div class="program program--second" style={`background-image: url(${programRed.src});`}>
       <div class="program__header">
-        <h3 class="programs__title">Драйв</h3>
+        <h3 class="programs__title">Skill</h3>
         <div class="program__stars">
           <StarIcon width={42} height={42} filled={true} />
           <StarIcon  width={42} height={42} filled={true} />
@@ -51,7 +47,7 @@ import LockIcon from "./ui/lock-icon.astro";
       style={`background-image: url(${programDisabled.src});`}
     >
       <div class="program__header">
-        <h3 class="programs__title">Скоро</h3>
+        <h3 class="programs__title">Sport</h3>
         <div class="program__stars">
           <StarIcon width={42} height={42} filled={true} />
           <StarIcon  width={42} height={42} filled={true} />
@@ -64,7 +60,9 @@ import LockIcon from "./ui/lock-icon.astro";
           <li>100% наших знаний и души</li>
         </ul>
       </div>
-      <LockIcon />
+      <div class="program__soon">
+        <span>Скоро</span><LockIcon />
+      </div>
     </div>
     <!-- <div class="program program--second" style={`background-image: url(${programRed.src});`}>
             <div class="program__stars">
@@ -82,8 +80,8 @@ import LockIcon from "./ui/lock-icon.astro";
 </section>
 
 <style is:global>
-  .prorgams-section__title {
-    margin-bottom: 20px;
+  .programs-section__title {
+    margin-bottom: 60px;
   }
 
   .program__stars {
@@ -129,6 +127,19 @@ import LockIcon from "./ui/lock-icon.astro";
     justify-content: space-between;
     width: 100%;
     margin-bottom: 72px;
+  }
+
+  .program__soon {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 33px;
+      text-transform: uppercase;
+      gap: 25px;
+      margin-top: 50px;
+      color: #888888;
   }
 
     .program__list > li {
@@ -207,7 +218,6 @@ import LockIcon from "./ui/lock-icon.astro";
   .programs__subtitle {
     font-size: 24px;
     color: #888888;
-    margin-bottom: 88px;
   }
 
   @media (max-width: 1023px) {

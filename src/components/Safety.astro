@@ -10,6 +10,7 @@ import { Image } from "@astrojs/image/components";
 
 <section class="safety-section">
   <h2 class="safety-section__title">Самое безопасное жогово</h2>
+  <p class="safety-section__subtitle">Аренда автомобиля от «Ратата» входит в стоимость курса</p>
   <p class="safety-section__subtitle">Volkswagen Polo 1.6 с АКПП — неубиваемый снаряд.<br>
   Доверься ему: жми в пол,  бей по тормозам, жги резину!</p>
   <div class="safety-blocks">
@@ -73,6 +74,11 @@ import { Image } from "@astrojs/image/components";
   }
 
   .safety-section__subtitle {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .safety-section__subtitle  +   .safety-section__subtitle {
     margin-bottom: 42px;
   }
 
