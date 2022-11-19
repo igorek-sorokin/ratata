@@ -219,6 +219,8 @@ position: relative;
   var paymentForm = document.getElementById("paymentFormModal");
 
   var btns = document.querySelectorAll(".open-modal-js");
+  var btnsPayment = document.querySelectorAll(".open-payment-modal-js");
+
 
   var formModalClose: HTMLElement = document.getElementById(
     "formModalClose"
@@ -231,6 +233,13 @@ position: relative;
   btns.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
       formModal.style.display = "flex";
+    };
+  });
+
+
+  btnsPayment.forEach((btn: HTMLElement) => {
+    btn.onclick = function () {
+      paymentForm.style.display = "flex";
     };
   });
 
