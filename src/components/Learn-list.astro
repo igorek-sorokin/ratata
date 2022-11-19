@@ -1,32 +1,37 @@
 ---
 import { Image } from "@astrojs/image/components";
-import listItemImg from "../assets/img/list-item.jpg";
+import listItemImg1 from "../assets/img/list-item-safe.png";
+import listItemImg2 from "../assets/img/list-item2.png";
+import listItemImg3 from "../assets/img/list-item3.png";
+import listItemImg4 from "../assets/img/list-item4.png";
+import listItemImg5 from "../assets/img/list-item5.png";
+
 
 let activeIndex = 0;
 const listItems = [
   {
     label: "Настраивать кресло водителя под себя",
-    imgUrl: "img/list-item.jpg",
+    img: listItemImg1,
     text: "Правильная посадка поможет быстро вращать руль, полностью выжимать педали и меньше травмироваться в ДТП",
   },
   {
     label: "Эффективно тормозить и выбирать скорость",
-    imgUrl: "img/list-item.jpg",
+    imgUrl: listItemImg2,
     text: "Как скорость влияет на тормозной путь, как быстрее всего остановиться и что происходит при неправильном торможении",
   },
   {
     label: "Выводить машину из заноса",
-    imgUrl: "img/list-item.jpg",
+    imgUrl: listItemImg3,
     text: "Узнаешь, что делать, когда машину сносит или заносит, и доведешь реакции до автоматизма",
   },
   {
     label: "Объезжать неожиданные препятствия",
-    imgUrl: "img/list-item.jpg",
+    imgUrl: listItemImg4,
     text: "Боишься сбить пешехода на темной улице? Отработай безопасный объезд без снижения скорости",
   },
   {
     label: "Водить лучше, чем прежде",
-    imgUrl: "img/list-item.jpg",
+    imgUrl: listItemImg5,
     text: "Инфа 100%, что ты станешь лучше маневрировать, чуствовать габариты авто и быстрее принимать решения",
   }
   // {
@@ -65,7 +70,7 @@ const listItems = [
               <span class="item-label">{item.label}</span>
             </div>
             <div class="learn-list-card">
-              <Image src={listItemImg} alt="asd" />
+              <img src={item?.imgUrl?.src || listItemImg1.src} width={460} height={207} alt={item.text} />
               <p class="learn-list-card__text">{item.text}</p>
             </div>
           </div>

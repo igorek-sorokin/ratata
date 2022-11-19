@@ -197,27 +197,43 @@ const { title } = Astro.props;
 </html>
 
 <script>
-    var modal = document.getElementById("myModal");
+  var formModal = document.getElementById("formModal");
+  var paymentForm = document.getElementById("paymentFormModal");
 
-    var btns = document.querySelectorAll(".open-modal-js");
+  var btns = document.querySelectorAll(".open-modal-js");
+  var btnsPayment = document.querySelectorAll(".open-payment-modal-js");
 
-    var span: HTMLElement = document.getElementsByClassName(
-        "close"
-    )[0] as HTMLElement;
 
-    btns.forEach((btn: HTMLElement) => {
-        btn.onclick = function () {
-            modal.style.display = "flex";
-        };
-    });
+  var formModalClose: HTMLElement = document.getElementById(
+    "formModalClose"
+  ) as HTMLElement;
 
-    span.onclick = function () {
-        modal.style.display = "none";
+  var paymentFormClose: HTMLElement = document.getElementById(
+    "paymentFormClose"
+  ) as HTMLElement;
+
+  btns.forEach((btn: HTMLElement) => {
+    btn.onclick = function () {
+      formModal.style.display = "flex";
     };
+  });
 
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+
+  btnsPayment.forEach((btn: HTMLElement) => {
+    btn.onclick = function () {
+      paymentForm.style.display = "flex";
     };
+  });
+
+  formModalClose.onclick = function () {
+    formModal.style.display = "none";
+  };
+
+  paymentFormClose.onclick = function () {
+    paymentForm.style.display = "none";
+  };
+
+  if(window.location.hash && window.location.hash === '#pay_form') {
+    paymentForm.style.display = "flex";
+  }
 </script>
