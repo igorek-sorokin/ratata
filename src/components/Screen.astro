@@ -27,6 +27,9 @@ import video from "../assets/video2.mp4";
       <Button href="/#screen2">Подробнее</Button>
     </div>
   </main>
+  <span class="banner-section__description">
+    Услугу предоставляют тренеры-парнтеры ООО «Ратата»
+  </span>
 </section>
 
 <style is:global>
@@ -37,6 +40,8 @@ import video from "../assets/video2.mp4";
     height: 633px;
     padding: var(--container-padding);
     position: relative;
+    flex-direction: column;
+    display: flex;
   }
 
   .banner-section__video {
@@ -125,6 +130,18 @@ import video from "../assets/video2.mp4";
     display: flex;
     align-items: center;
     gap: 30px;
+  }
+
+  .banner-section__description {
+    z-index: 1;
+    position: relative;
+    margin-left: auto;
+    width: 100%;
+    display: block;
+    margin-top: auto;
+    text-align: right;
+    padding: 20px;
+    color: var(--color-contrast);
   }
 
   @media (max-width: 1023px) {
