@@ -51,7 +51,11 @@ const navList = [
         }
         <li class="nav-mobile__li">     <Button isModal={true} style={"contrast"}>Оставь заявку</Button>
 </li>
-<li class="nav-mobile__li">        <Button href="/#pay_form" id="openPaymentButton" style={"contrast"}>Оплатить курс</Button>
+<li class="nav-mobile__li">                <button id="openPaymentButton" class={`button button--contrast btn-fx-4 open-payment-modal-js`}>
+          <span>
+            Оплатить курс
+          </span>
+        </button>
 </li>
 
       </ul>
