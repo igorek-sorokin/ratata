@@ -189,7 +189,6 @@ import LockIcon from "./ui/lock-icon.astro";
   }
 
   .program--first {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
   }
 
   .program--second {
@@ -198,7 +197,7 @@ import LockIcon from "./ui/lock-icon.astro";
 
 
   .program--third {
-    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
     background: linear-gradient(
         128.5deg,
         rgba(255, 255, 255, 0.5) -9.21%,
@@ -229,7 +228,7 @@ import LockIcon from "./ui/lock-icon.astro";
     }
 
     .programs-section {
-      padding: 100px 0px 90px;
+      padding: 100px 0px 30px;
     }
     .programs-section__title {
       padding: 0 40px;
@@ -276,7 +275,6 @@ import LockIcon from "./ui/lock-icon.astro";
       font-style: normal;
       font-weight: 700;
       font-size: 30px;
-      line-height: 33px;
       text-transform: uppercase;
     }
 
@@ -300,12 +298,12 @@ import LockIcon from "./ui/lock-icon.astro";
     }
 
     .program--first {
-      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
-      padding-top: 15%;
+      /* clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+      padding-top: 15%; */
     }
 
     .program--third {
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
       padding-bottom: 10%;
     }
   }
