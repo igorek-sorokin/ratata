@@ -1,70 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
 
-<svg
-   width="35.963539mm"
-   height="42.295017mm"
-   viewBox="0 0 35.963539 42.295017"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
-   sodipodi:docname="favicon.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.48818743"
-     inkscape:cx="203.81516"
-     inkscape:cy="288.8235"
-     inkscape:window-width="1312"
-     inkscape:window-height="770"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g904" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Слой 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-41.017119,-71.852886)">
-    <g
-       id="g904"
-       transform="matrix(0.26458333,0,0,0.26458333,27.316994,-21.875763)">
-      <polygon
-         class="st0"
-         points="181.56,354.25 61.41,381.78 98.11,390.69 150.52,378.76 144.07,402.01 138.99,407.76 121.77,413.24 116.76,432.13 125.41,430.68 137.85,465.18 167.28,458.46 150.9,421.34 169.92,400.79 "
-         id="polygon826"
-         transform="matrix(1.0473508,0,0,1.0399791,-2.451822,-14.162581)" />
-      <polygon
-         class="st0"
-         points="97.35,397.35 121.62,391.74 118.59,408.23 88.36,429.81 "
-         id="polygon828"
-         transform="matrix(1.0473508,0,0,1.0399791,-2.451822,-14.162581)" />
-      <polygon
-         class="st1"
-         points="116.64,415.06 102.74,471.75 51.78,507.96 67.63,450.05 "
-         id="polygon830"
-         transform="matrix(1.0473508,0,0,1.0399791,-2.451822,-14.162581)" />
-    </g>
-  </g>
-  <style
-     type="text/css"
-     id="style824">
-	.st0{fill:#5E9ED5;}
+ <style type="text/css">.st0{fill:#5E9ED5;}
 	.st1{fill:#DF3245;}
 	.st2{fill:#3A89C7;}
-	.st3{fill:#FFFFFF;}
-</style>
+	.st3{fill:#FFFFFF;}</style>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="122" width="122" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="layer1">
+   <g stroke="null" transform="matrix(0.7354307023056914,0,0,0.6774571210930117,84.92978097353611,-49.01219533027735) " id="g904">
+    <polygon stroke="null" id="polygon826" points="32.679840677963256,82.6800693537056 -93.15935154951478,111.31069270719986 -54.72158038577576,120.57690236230623 0.17008012627687474,108.1699672507515 -6.585329337462139,132.34947339134067 -11.905873568926621,138.32935321634065 -29.941262615251922,144.02841837224886 -35.18848436998215,163.6736388053177 -26.128898351851653,162.16565641526034 -13.099852841674423,198.04493536526033 17.72367453013077,191.0562745437546 0.5680625629895211,152.45225542977755 20.48868000287857,131.08069761983492 " class="st0"/>
+    <polygon stroke="null" id="polygon828" points="-55.51756923115845,127.50316697682344 -30.09835884272995,121.66886772224883 -33.271838478878024,138.81814466284638 -64.93325068577576,161.26087967628328 " class="st0"/>
+    <polygon stroke="null" id="polygon830" points="-35.314169342617035,145.9211879512833 -49.87234905841065,204.87760566929475 -103.24534486753234,242.5352399937546 -86.64483628566285,182.3100465042374 " class="st1"/>
+   </g>
+  </g>
+ </g>
 </svg>
