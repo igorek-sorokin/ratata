@@ -15,7 +15,7 @@ layout: ../layouts/PageLayout.astro
 
 Припарковаться можно здесь:
 
-![Tux, the Linux mascot](/assets/images/logopark.jpg)
+<img src="/logopark.jpg" alt="logopark" style="height: auto; width: 100%;"/>
 
 ## Если ты опоздал
 
@@ -26,5 +26,5 @@ layout: ../layouts/PageLayout.astro
 На видео — путь от проходной до полигона.
 
 <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/emctm7uB0Dk?autoplay=1">
+src="https://www.youtube.com/embed/0rzA289Q9hY?autoplay=0" style="height: auto; width: 100%; aspect-ratio: 16/9;">
 </iframe>
