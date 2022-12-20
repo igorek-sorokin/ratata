@@ -1,0 +1,7 @@
+User-Agent: *
+
+Disallow: /rent/
+Disallow: /service/
+
+Host: https://ratata.ru
+Sitemap: https://ratata.ru/sitemap.xml
