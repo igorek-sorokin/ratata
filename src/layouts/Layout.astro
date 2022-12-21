@@ -38,7 +38,7 @@ const { title } = Astro.props;
         </div>
         <div id="paymentFormModal" class="modal">
           <div class="modal-content">
-            <a href="/" class="close" id="paymentFormClose">&times;</a>
+            <button class="close" id="paymentFormClose" type="button">&times;</button>
             <PaymentForm />
           </div>
         </div>
@@ -66,6 +66,8 @@ const { title } = Astro.props;
 
       /* The Close Button */
       .close {
+        background: none;
+        border: none;
         color: #aaa;
         float: right;
         font-size: 28px;
@@ -158,6 +160,8 @@ position: relative;
 
   /* The Close Button */
   .close {
+    background: none;
+    border: none;
     color: #aaa;
     float: right;
     font-size: 28px;
