@@ -45,7 +45,7 @@
       />
       <button type="submit" class="form__submit payment-form__submit">Оплатить заказ</button>
       <span class="form__submit-subtitle"
-        >Нажимая кнопку вы даете согласие на <a href="/privacy/">обработку данных</a></span
+        >Нажимая кнопку вы даете согласие на <a class="link" href="/privacy/">обработку данных</a></span
       >
     </form>
   </div>
@@ -147,6 +147,12 @@
       margin: 0 auto;
       margin-top: 20px;
       width: 75%;
+    }
+
+    .form__submit-subtitle .link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
     }
     @media (max-width: 767px) {
       .form-wrapper {
