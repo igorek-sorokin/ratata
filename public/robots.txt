@@ -2,6 +2,7 @@ User-Agent: *
 
 Disallow: /rent/
 Disallow: /service/
+Disallow: /gift/
 
 Host: https://ratata.ru
 Sitemap: https://ratata.ru/sitemap.xml
