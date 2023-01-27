@@ -1,7 +1,7 @@
 ---
 export interface Props {
   href?: string;
-  style?: "primary" | "accent" | "outline"  | "contrast";
+  style?: "primary" | "accent" | "outline"  | "contrast" | "header";
   isModal?: boolean;
   id?: string;
 }
@@ -59,16 +59,22 @@ const { href = "#", style = "primary", isModal = false, id} = Astro.props as Pro
     color: var(--color-contrast);
   }
 
-  .button--accent:is(:hover, :focus) {
+  .button--accent:is(:hover, :focus), .button--header:is(:hover, :focus) {
     background-color: var(--color-accent-dark);
     outline: none;
+  }
+
+  .button--header {
+    background-color: var(--color-accent);
+    width: 150px;
+    height: 42px;
+    color: var(--color-contrast);
   }
 
   .button--outline {
     background-color: transparent;
     width: 200px;
     height: 52px;
-    font-size: 18px;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
   }

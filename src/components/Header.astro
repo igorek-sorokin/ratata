@@ -15,10 +15,6 @@ const navList = [
     ulr: "/#programs",
   },
   {
-    text: "Тренеры",
-    ulr: "/#trainers",
-  },
-  {
     text: "FAQ",
     ulr: "/#faq",
   },
@@ -79,7 +75,14 @@ const navList = [
       </ul>
     </nav>
     <a href="tel:+74994554669" class="header__tel">+7 499 455-466-9</a>
-    <Button isModal={true} style={"outline"}>Оставь заявку</Button>
+    <div class="header__buttons">
+      <button id="openPaymentButton" class={`button button--outline button--header open-payment-modal-js`}>
+          <span>
+            Оплатить курс
+          </span>
+        </button>
+    <Button isModal={true} style={"header"}>Оставь заявку</Button>
+    </div>
   </header>
 </div>
 <style>
@@ -92,6 +95,16 @@ const navList = [
     padding-right: calc(50vw - 621px);
   }
   .header__tel {
+  }
+
+  .header__buttons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .header__buttons .button, .header__buttons .button.button--accent {
+    width: 150px;
+    height: 42px;
   }
 
   .logo {

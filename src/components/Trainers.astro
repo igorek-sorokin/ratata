@@ -8,7 +8,36 @@ import koryagin from "../assets/img/koryagin.png";
 import prisyazhniy from "../assets/img/prisyazhniy.png";
 import lebedev from "../assets/img/lebedev.png";
 import StarIcon from "./ui/Star-icon.astro";
+  // Import Swiper styles
+  import 'swiper/swiper-bundle.min.css';
 
+
+const trainersList = [
+  {
+    name: "Николай Павленко",
+    img: pavlenko,
+  },
+  {
+    name: "Дмитрий Мосин",
+    img: mosin,
+  },
+  {
+    name: "Ярослав Корягин",
+    img: koryagin,
+  },
+  {
+    name: "Александр Галахов",
+    img: galakhov,
+  },
+  {
+    name: "Егор Присяжный",
+    img: prisyazhniy,
+  },
+  {
+    name: "Роман Лебедев",
+    img: lebedev,
+  },
+];
 
 ---
 
@@ -31,19 +60,13 @@ import StarIcon from "./ui/Star-icon.astro";
         <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
       </div>
     </div>
-    <div class="other-trainers">
-      <figure class="other-trainer">
-        <img src={pavlenko.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Николай Павленко</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <div class="main-trainer__wrap">
-        <div class="main-trainer--desktop">
-          <figure class="main-trainer ">
-        <img src={efim.src} alt="Efim" />
-        <div class="main-trainer__element"></div>
-        <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-      </figure>
+    <div class="main-trainer__wrap">
+      <div class="main-trainer--desktop">
+        <figure class="main-trainer">
+          <img src={efim.src} alt="Efim" />
+          <div class="main-trainer__element"></div>
+          <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
+        </figure>
           <p class="main-trainer__sub-title">Автор методики</p>
           <div class="main-trainer__sub-text">
             <div class="main-trainer__sub-star">
@@ -51,42 +74,47 @@ import StarIcon from "./ui/Star-icon.astro";
             </div>
             <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
           </div>
-        </div>
       </div>
-      <figure class="other-trainer">
-        <img src={mosin.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Дмитрий Мосин</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <figure class="other-trainer">
-        <img src={galakhov.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Александр Галахов</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <figure class="other-trainer">
-        <img src={koryagin.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Ярослав Корягин</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <figure class="other-trainer">
-        <img src={prisyazhniy.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Егор Присяжный</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
-      <figure class="other-trainer">
-        <img src={lebedev.src} alt="other trainer" />
-        <figcaption class="other-trainer__name">Роман Лебедев</figcaption>
-        <!-- <p class="other-trainer__desc">Тренер начинающих</p> -->
-      </figure>
+    </div>
+    <div class="other-trainers">
+      {
+        trainersList.map((trainer) => (
+        <figure class="other-trainer">
+          <img src={trainer.img.src} alt="other trainer" />
+          <figcaption class="other-trainer__name">{trainer.name}</figcaption>
+        </figure>
+        ))
+      }
+    </div>
+    <div class="other-trainers-swiper swiper">
+      <div class="swiper-wrapper">
+        {
+          trainersList.map((trainer) => (
+          <figure class="other-trainer swiper-slide">
+            <img src={trainer.img.src} alt="other trainer" />
+            <figcaption class="other-trainer__name">{trainer.name}</figcaption>
+          </figure>
+          ))
+        }
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
 
 <style>
+  :root {
+    --swiper-navigation-color: var(--color-primary);
+    --swiper-theme-color: var(--color-primary);
+    --swiper-pagination-color: var(--color-primary);
+  }
   .trainers {
     padding-top: 60px;
     padding-bottom: 90px;
     display: flex;
+    gap: 60px;
     /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px; */
@@ -171,7 +199,7 @@ import StarIcon from "./ui/Star-icon.astro";
     color: #ffffff;
   }
   .other-trainers {
-    display: grid;
+    display: none;
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     gap: 52px;
@@ -189,6 +217,7 @@ import StarIcon from "./ui/Star-icon.astro";
   .other-trainer {
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
@@ -203,6 +232,7 @@ import StarIcon from "./ui/Star-icon.astro";
     line-height: 30px;
     color: #2d2d2d;
     margin-bottom: 10px;
+    white-space: wrap;
   }
   .other-trainer__desc {
     font-weight: 400;
@@ -293,6 +323,9 @@ import StarIcon from "./ui/Star-icon.astro";
         padding-right: 0;
         gap: 50px;
       }
+      .other-trainers-swiper {
+        display: none ;
+      }
       .other-trainers {
         flex-wrap: nowrap;
         padding: 0 15px;
@@ -342,5 +375,21 @@ import StarIcon from "./ui/Star-icon.astro";
     }
   }
 </style>
-<script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline>
+var swiper = new Swiper(".other-trainers-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
 </script>
