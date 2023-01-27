@@ -15,7 +15,8 @@
     "gsap": "^3.11.1",
     "inputmask": "^5.0.7",
     "toastr": "^2.1.4",
-    "ymaps": "^0.2.1"
+    "ymaps": "^0.2.1",
+    "swiper": "^8.4.6"
   },
   "devDependencies": {
     "@astrojs/alpinejs": "^0.1.2",
