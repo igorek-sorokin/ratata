@@ -3,6 +3,9 @@ User-Agent: *
 Disallow: /rent/
 Disallow: /service/
 Disallow: /gift/
+Disallow: /application-1.pdf
+Disallow: /application-2.pdf
+Disallow: /application-3.pdf
 
 Host: https://ratata.ru
 Sitemap: https://ratata.ru/sitemap.xml
