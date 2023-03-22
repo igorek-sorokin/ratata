@@ -34,18 +34,17 @@ import LockIcon from "./ui/lock-icon.astro";
     </div>
     <div
       class="program program--third"
-      style={`background-image: url(${programDisabled.src});`}
+      style={`background-image: url(${programBlue.src});`}
     >
       <div class="program__header">
-        <h3 class="programs__title">Sport</h3>
+        <h3 class="programs__title">Drift</h3>
               </div>
       <div class="program__content">
         <ul class="program__list">
           <li>Меньше контраварийного вождения.<br> Меньше практичности.<br> Полная ратата</li>
         </ul>
       </div>
-      <div class="program__soon">
-        <span>Скоро</span><LockIcon />
+        <Button isModal={true} style={"contrast"}>Оставить заявку</Button>
       </div>
     </div>
     <!-- <div class="program program--second" style={`background-image: url(${programRed.src});`}>
