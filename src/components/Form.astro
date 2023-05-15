@@ -42,7 +42,7 @@
 
     <button type="submit" class="form__submit">Свяжитесь со мной</button>
     <span class="form__submit-subtitle"
-      >Оставляя заявку, вы соглашаетесь с&nbsp;<a href="/privacy/">политикой&nbsp;конфиденциальности</a><br>и <a href="/agreement/">пользовательским&nbsp;соглашением</a> </span
+      >Оставляя заявку, вы соглашаетесь с&nbsp;<a class="link" href="/privacy/">политикой&nbsp;конфиденциальности</a><br>и <a class="link" href="/agreement/">пользовательским&nbsp;соглашением</a> </span
     >
   </form>
 </div>
@@ -171,6 +171,12 @@
     margin-top: 20px;
     width: 75%;
   }
+  
+  .form__submit-subtitle .link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
 
   @media (max-width: 767px) {
     .form-wrapper {
