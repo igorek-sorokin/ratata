@@ -3,28 +3,22 @@ title: Как добраться
 layout: ../layouts/PageLayout.astro
 ---
 
-# Как добраться до полигона
+# Как добраться до площадки
 
-[Яндекс Карты](https://yandex.ru/maps/-/CCUfMEdElB)
+[Яндекс Карты](https://yandex.ru/maps/-/CCU9F2U-LA)
 
-[Яндекс Навигатор](https://yandex.ru/navi/?whatshere%5Bzoom%5D=18&whatshere%5Bpoint%5D=38.040172%2C55.621652&lang=ru&from=navi)
+[Яндекс Навигатор](https://yandex.ru/navi/?whatshere%5Bzoom%5D=18&whatshere%5Bpoint%5D=37.452866%2C56.031461&lang=ru&from=navi)
 
-55.621652, 38.040172
+56.031467, 37.452883 - рекомендуемый проезд в избежание пробок на переезде, через Северный обход Лобни.
 
-Подъезжай к логопарку за 15-20 минут до начала занятия. Тебя встретит тренер на фирменном Volkswagen Polo и отвезет на площадку.
+Первый шлагбаум.
 
-Припарковаться можно здесь:
+<img src="/shlagbaum.jpg" alt="logopark" style="height: auto; width: 100%;"/>
 
-<img src="/logopark.jpg" alt="logopark" style="height: auto; width: 100%;"/>
+Заезд на парковку.
 
-## Если ты опоздал
+<img src="/shlagbaum2.jpg" alt="logopark" style="height: auto; width: 100%;"/>
 
-Ничего страшного, но до площадки тебе придется добраться самому. 
+Оставьте автомобиль здесь. На площадку вас отвезет сотрудник на фирменном автомобиле.
 
-Чтобы попасть на территорию логопарка, тебе нужен код-пароль. Узнай его по телефону (+7 499 455-466-9), назови вахтеру и проезжай. 
-
-На видео — путь от проходной до полигона.
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/0rzA289Q9hY?autoplay=0" style="height: auto; width: 100%; aspect-ratio: 16/9;">
-</iframe>
+<img src="/plan.jpg" alt="logopark" style="height: auto; width: 100%;"/>
