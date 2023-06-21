@@ -1,4 +1,5 @@
 ---
+import Button from "./ui/Button.astro";
 const numbers: {
   value: string;
   text: string;
@@ -48,6 +49,7 @@ const numbers: {
           class="second-line">чем годы за&nbsp;рулем</span
         >
         <span class="title-line"></span>
+        <Button isModal={true} style={"accent"}>Оставить заявку</Button>
       </h2>
     </main>
   </section>
@@ -97,6 +99,7 @@ const numbers: {
 
   .second-line {
     padding-left: 144px;
+    margin-bottom: 2rem;
   }
 
   .numbers-screen {

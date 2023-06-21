@@ -203,6 +203,7 @@ position: relative;
 </style>
 
 <script>
+
   import toastr from "toastr";
   toastr.options = {
     "closeButton": true,
@@ -236,8 +237,17 @@ position: relative;
     "paymentFormClose"
   ) as HTMLElement;
 
+  const programSelect = document.getElementById('program') as HTMLSelectElement;
+
   btns.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
+      console.log(btn.classList);
+      const programs = ['Safety','Skill','Drift'];
+      programs.forEach(program => {
+        if(btn.classList.contains(program.toLowerCase())) {
+          programSelect.value = program;
+        }
+      });
       formModal.style.display = "flex";
     };
   });
