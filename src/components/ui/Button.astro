@@ -4,14 +4,15 @@ export interface Props {
   style?: "primary" | "accent" | "outline"  | "contrast" | "header";
   isModal?: boolean;
   id?: string;
+  program?: "none" | "safety" | "skill" | "drift"
 }
 
-const { href = "#", style = "primary", isModal = false, id} = Astro.props as Props;
+const { href = "#", style = "primary", isModal = false, id, program = "none"} = Astro.props as Props;
 ---
 
 {
   isModal ? (
-    <button id={id} class={`button button--${style} btn-fx-4 open-modal-js`}>
+    <button id={id} class={`button button--${style} btn-fx-4 open-modal-js ${program}`}>
       <span>
         <slot />
       </span>
@@ -99,3 +100,7 @@ const { href = "#", style = "primary", isModal = false, id} = Astro.props as Pro
     outline: none;
   }
 </style>
+
+<script>
+  
+</script>
