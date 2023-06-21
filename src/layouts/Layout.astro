@@ -241,7 +241,6 @@ position: relative;
 
   btns.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
-      console.log(btn.classList);
       const programs = ['Safety','Skill','Drift'];
       programs.forEach(program => {
         if(btn.classList.contains(program.toLowerCase())) {
