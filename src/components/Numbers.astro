@@ -45,10 +45,11 @@ const numbers: {
         }
       </div>
       <h2 class="numbers-screen__title">
-        <span class="first-line">откроют тебе больше,</span><span
-          class="second-line">чем годы за&nbsp;рулем</span
-        >
-        <span class="title-line"></span>
+        <div class="first-line">
+          <span class="first-line__text">откроют тебе больше,</span>
+          <div class="title-line"></div>
+        </div>
+        <span class="second-line">чем годы за&nbsp;рулем</span>
         <Button isModal={true} style={"accent"}>Оставить заявку</Button>
       </h2>
     </main>
@@ -84,6 +85,10 @@ const numbers: {
     position: relative;
     z-index: 1;
   }
+  .first-line__text {
+    position: relative;
+    z-index: 1;
+  }
 
   .title-line {
     z-index: 0;
@@ -94,7 +99,7 @@ const numbers: {
     width: 767px;
     left: calc(50% + 25px);
     transform: translateX(-50%);
-    top: 82px;
+    top: 50px;
   }
 
   .second-line {
@@ -104,7 +109,7 @@ const numbers: {
 
   .numbers-screen {
     /* padding: var(--container-padding); */
-    color: #3CA0FF;
+    color: #3ca0ff;
     display: flex;
     justify-content: flex-end;
   }
@@ -141,14 +146,13 @@ const numbers: {
 
   @media (max-width: 1023px) {
     .numbers-screen__title {
-      
       font-weight: 700;
       font-size: 40px;
       line-height: 120%;
       /* or 48px */
 
       text-align: center;
-      text-transform: uppercase;    
+      text-transform: uppercase;
     }
     .numbers-screen__title > span {
       white-space: inherit;
@@ -168,7 +172,7 @@ const numbers: {
 
     .title-line {
       width: 90%;
-      bottom: -40px;
+      top: 25px;
     }
 
     .second-line {
@@ -183,19 +187,18 @@ const numbers: {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  
   let pinWrap: HTMLElement = document.querySelector(".numbers");
 
-    gsap.from(pinWrap, {
-        scrollTrigger: {
-            scrub: true,
-            trigger: '.numbers-screen',
-            pin: true,
-            start: "center center",
-            end: `center+=${pinWrap.offsetWidth + 100} center`,
-        },
-        color: "#e4f2ff",
-        xPercent: 100,
-        ease: "none",
-    });
+  gsap.from(pinWrap, {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".numbers-screen",
+      pin: true,
+      start: "center center",
+      end: `center+=${pinWrap.offsetWidth + 100} center`,
+    },
+    color: "#e4f2ff",
+    xPercent: 100,
+    ease: "none",
+  });
 </script>
