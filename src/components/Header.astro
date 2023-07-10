@@ -234,21 +234,18 @@ const navList = [
       ease: "since.out",
     })
     .progress(1);
-    const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 1024px)', () => {
-        gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-        ScrollTrigger.create({
-          start: "top top-=" + 100,
-          end: 9999999,
-          onUpdate: (self) => {
-            if (self.direction === -1) {
-              showHideHeader.play();
-            } else {
-              showHideHeader.reverse();
-            }
-          },
-        });
+    ScrollTrigger.create({
+      start: "top top-=" + 100,
+      end: 9999999,
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          showHideHeader.play();
+        } else {
+          showHideHeader.reverse();
+        }
+      },
     });
 </script>
