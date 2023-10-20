@@ -12,6 +12,9 @@ import proshin from "../assets/img/proshin.png";
 import fogel from "../assets/img/fogel.png";
 import kulka from "../assets/img/kulka.png";
 import trifanov from "../assets/img/trifanov.png";
+import nikitin from "../assets/img/nikitin.png";
+import borisov from "../assets/img/borisov.png";
+import monahov from "../assets/img/monahov.png";
 import StarIcon from "./ui/Star-icon.astro";
   // Import Swiper styles
   import 'swiper/swiper-bundle.min.css';
@@ -58,6 +61,18 @@ const trainersList = [
     name: "Дмитрий Трифанов",
     img: trifanov,
   },
+  {
+    name: "Артём Никитин",
+    img: nikitin,
+  },
+  {
+    name: "Алексей Борисов",
+    img: borisov,
+  },
+  {
+    name: "Артем Монахов",
+    img: monahov,
+  },
 ];
 
 ---
@@ -65,7 +80,7 @@ const trainersList = [
 <section class="trainers-section" id="trainers">
   <h2 class="trainers-section__title">Лучшие тренеры</h2>
   <p class="trainers-section__subtitle">Партнёры компании «Ратата» —<br>
-    опытные водители, инструкторы<br>и даже мастера автоспорта</p>
+    опытные водители и даже мастера автоспорта</p>
   <div class="trainers">
     <div class="main-trainer--mobile">
       <figure class="main-trainer ">

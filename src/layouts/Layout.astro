@@ -6,7 +6,7 @@ import "@fontsource/overpass";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Form from "../components/Form.astro";
-import PaymentForm from "../components/Payment-form.astro";
+import PaymentForm from "../components/PaymentForm";
 export interface Props {
   title: string;
 }
@@ -276,6 +276,10 @@ position: relative;
 
   if(window.location.hash.includes('#payment_error')) {
     toastr.error('Платеж отклонен')
+  }
+
+  if(window.location.hash && window.location.hash === '#send_form') {
+    formModal.style.display = "flex";
   }
 
 </script>

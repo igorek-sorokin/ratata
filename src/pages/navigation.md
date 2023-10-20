@@ -11,7 +11,11 @@ layout: ../layouts/PageLayout.astro
 
 56.031467, 37.452883
 
-Рекомендуемый проезд в избежание пробок на переезде, через Северный обход Лобни.
+Рекомендуем ехать через Северный обход Лобни, чтобы избежать пробки на переезде ⛔️
+
+<img src="/maps.jpg" alt="maps" style="height: auto; width: 100%;"/>
+
+[Маршрут на Яндекс.Картах](https://yandex.ru/maps/-/CDaYeUoV)
 
 Первый шлагбаум.
 
@@ -23,4 +27,4 @@ layout: ../layouts/PageLayout.astro
 
 Оставьте автомобиль здесь. На площадку вас отвезет сотрудник на фирменном автомобиле.
 
-<img src="/plan.jpg" alt="logopark" style="height: auto; width: 100%;"/>
+<img src="/maps-parking.jpg" alt="maps-parking" style="height: auto; width: 100%;"/>
