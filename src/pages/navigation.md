@@ -7,8 +7,6 @@ layout: ../layouts/PageLayout.astro
 
 [Яндекс Карты](https://yandex.ru/maps/-/CCU9F2U-LA)
 
-[Яндекс Навигатор](https://yandex.ru/navi/?whatshere%5Bzoom%5D=18&whatshere%5Bpoint%5D=37.452866%2C56.031461&lang=ru&from=navi)
-
 56.031467, 37.452883
 
 Рекомендуем ехать через Северный обход Лобни, чтобы избежать пробки на переезде ⛔️
