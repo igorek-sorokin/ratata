@@ -120,7 +120,7 @@ const { title } = Astro.props;
             @media (max-width: 1023px) {
                 .content {
                     margin-top: 100px;
-                    padding: 50px 40px;
+                    padding: 50px 28px;
                 }
             }
 
@@ -182,6 +182,12 @@ const { title } = Astro.props;
                 margin-top: 2em;
             }
 
+            .content blockquote {
+                width: 740px;
+                padding: 0px 20px 0px 20px;
+                border-left: 10px solid #d5d5d5;
+            }
+
             @media (max-width: 1023px) {
                 .content h1 {
                     font-size: 30px;
@@ -210,6 +216,12 @@ const { title } = Astro.props;
                     font-size: 16px;
                     line-height: 20px;
                 }
+                .content blockquote {
+                width: 350px;
+                padding: 0px 10px 0px 10px;
+                font-size: 16px;
+                border-left: 10px solid #d5d5d5;
+            }
             }
         </style>
     </body>

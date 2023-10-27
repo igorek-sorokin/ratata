@@ -13,7 +13,7 @@ layout: ../layouts/PageLayout.astro
 
 <img src="/maps.jpg" alt="maps" style="height: auto; width: 100%;"/>
 
-[Маршрут на Яндекс.Картах](https://yandex.ru/maps/-/CDaYeUoV)
+[Маршрут на Яндекс.Картах](https://yandex.ru/maps/-/CDasfAYD)
 
 Первый шлагбаум.
 
