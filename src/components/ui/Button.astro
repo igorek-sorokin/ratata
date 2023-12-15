@@ -4,7 +4,7 @@ export interface Props {
   style?: "primary" | "accent" | "outline"  | "contrast" | "header";
   isModal?: boolean;
   id?: string;
-  program?: "none" | "safety" | "skill" | "drift"
+  program?: "none" | "safety" | "skill" | "drift" | "sport";
 }
 
 const { href = "#", style = "primary", isModal = false, id, program = "none"} = Astro.props as Props;

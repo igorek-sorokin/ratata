@@ -8,8 +8,8 @@ import LockIcon from "./ui/lock-icon.astro";
 ---
 
 <section class="programs-section" id="programs">
-  <h2 class="programs-section__title">Курс состоит из 3 программ</h2>
-  <p class="programs-section__subtitle">Пройди все три — получи максимум пользы и ра-та-та</p>
+  <h2 class="programs-section__title">Курс состоит из 4 программ</h2>
+  <p class="programs-section__subtitle">Пройди все четыре — получи максимум пользы и ра-та-та</p>
   <div class="programs">
     <div class="program program--first" style={`background-image: url(${programBlue.src});`}>
       <div class="program__header">
@@ -28,15 +28,13 @@ import LockIcon from "./ui/lock-icon.astro";
               </div>
       <div class="program__content">
         <ul class="program__list">
-          <li>3 часа боевого опыта, пара бонусных упражнений<br>и скоростной спринт<br>в конце</li>
+          <li>3 часа боевого опыта, пара бонусных упражнений<br>и скоростной спринт в конце</li>
         </ul>
       </div>
       <Button isModal={true} style={"contrast"} program="skill">Оставить заявку</Button>
     </div>
-    <div
-      class="program program--third"
-      style={`background-image: url(${programRed.src});`}
-    >
+
+    <div class="program program--second" style={`background-image: url(${programRed.src});`}>
       <div class="program__header">
         <h3 class="programs__title">Drift</h3>
               </div>
@@ -45,21 +43,22 @@ import LockIcon from "./ui/lock-icon.astro";
           <li>Меньше контраварийного вождения.<br> Полная ратата</li>
         </ul>
       </div>
-        <Button isModal={true} style={"contrast"} program="drift">Оставить заявку</Button>
+      <Button isModal={true} style={"contrast"} program="drift">Оставить заявку</Button>
+    </div>
+
+    <div class="program program--third" style={`background-image: url(${programRed.src});`}>
+      <div class="program__header">
+        <h3 class="programs__title">Sport</h3>
+             </div>
+      <div class="program__content">
+        <ul class="program__list">
+          <li>3 часа на настоящем гоночном треке!<br>Погрузись в автоспорт с RATATA Racing</li>
+        </ul>
+      </div>
+      <Button isModal={true} style={"contrast"} program="sport">Оставить заявку</Button>
       </div>
     </div>
-    <!-- <div class="program program--second" style={`background-image: url(${programRed.src});`}>
-            <div class="program__stars">
-                <StarIcon filled={true}></StarIcon>
-                <StarIcon filled={true}></StarIcon>
-                <StarIcon filled={true}></StarIcon>
-            </div>
-            <h3 class="programs__title">Для опытных</h3>
-            <ul class="wheel-list">
-                <li>Больше упражнений. Больше драйва. Три часа боевого опыта</li>
-            </ul>
-        </div> -->
-  </div>
+    </div>
 </section>
 
 <style is:global>
@@ -96,7 +95,7 @@ import LockIcon from "./ui/lock-icon.astro";
   .programs {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 400px;
     gap: 36px;
     margin-bottom: 40px;
@@ -188,13 +187,7 @@ import LockIcon from "./ui/lock-icon.astro";
 
   .program--third {
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-    background: linear-gradient(
-        128.5deg,
-        rgba(255, 255, 255, 0.5) -9.21%,
-        rgba(255, 255, 255, 0) 40.28%
-      ),
-      #c9c9c9;
-      background-repeat: no-repeat;
+    background-repeat: no-repeat;
   }
 
   .program__disabled-title {
