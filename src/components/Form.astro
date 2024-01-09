@@ -249,6 +249,7 @@ selector.addEventListener('input', function(e) {
         data.append('tel', inputs[1].value);
         data.append('email', inputs[2].value);
         data.append('program', program.value);
+        data.append('source', 'ratata');
         fetch('https://autopragmat.ru/api/v1/send-order/', {
         method: 'POST',
         body: data,
