@@ -222,6 +222,7 @@ selector.addEventListener('input', function(e) {
           data.append('failUrl', `${backUrl}#payment_error`);
           data.append('email', emailInput.value);
           data.append('amount', `${+amountInput.value}`);
+          data.append('source', 'ratata');
           const response = await fetch('https://autopragmat.ru/api/v2/send-pay/', {
           method: 'POST',
           body: data,
