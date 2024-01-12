@@ -28,7 +28,7 @@ layout: ../layouts/PageLayout.astro
 
 Наши занятия проходят на территории ADM Raceway. Точка сбора — бокс №4. Приехать туда необходимо за 10-15 минут до начала занятия.
 
-Схема проезда: [https://admraceway.ru/contactinformation/](https://admraceway.ru/contactinformation/)
+Схема проезда: просто введите название ADM Raceway в поисковую строку 
 
 ## КАК ПОДГОТОВИТЬСЯ
 
