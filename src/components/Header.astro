@@ -1,6 +1,6 @@
 ---
 import logo from "../assets/img/logo.svg";
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 import Button from "./ui/Button.astro";
 import BurgerIcon from "./ui/Burger-icon.astro";
 import BurgerCloseIcon from "./ui/burger-close-icon.astro";
@@ -25,7 +25,7 @@ const navList = [
 ];
 ---
 
-<div class="sticky">
+<div class="sticky bg-white bg-opacity-75">
   <header class="header-mobile" x-data="{ open: false }">
     <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
     <button class="nav-trigger nav-trigger--open" @click="open = ! open"
@@ -45,21 +45,23 @@ const navList = [
             </li>
           ))
         }
-        <li class="nav-mobile__li">     <Button isModal={true} style={"contrast"}>Оставь заявку</Button>
+        <li class="nav-mobile__li">
+        <Button isModal={true} style={"contrast"}>Оставь заявку</Button>
 </li>
-<li class="nav-mobile__li">                <button id="openPaymentButton" class={`button button--contrast btn-fx-4 open-payment-modal-js`}>
-          <span>
-            Оплатить
-          </span>
-        </button>
-</li>
+    <li class="nav-mobile__li">
+        <button id="openPaymentButton" class={`button button--contrast btn-fx-4 open-payment-modal-js`}>
+              <span>
+                Оплатить
+              </span>
+            </button>
+    </li>
 
       </ul>
       <a href="tel:+74994554669" class="nav-mobile__tel">+7 (499) 455-46-69</a>
 
     </nav>
   </header>
-  <header class="header-desktop" id="header-sticky">
+  <header class="container h-[66px] md:h-[100px] px-2 py-1 sm:p-0 mx-auto text-white flex items-center justify-between" id="header-sticky">
     <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
     <nav class="header_nav">
       <ul class="nav__ul">

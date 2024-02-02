@@ -1,0 +1,148 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const programItems = await getCollection('program');
+---
+
+<section class="pt-7 lg:pt-[150px]" id="program">
+  <h2
+class="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-bold uppercase font-display italic"
+>
+Мы покажем, как:
+</h2>
+</section>
+
+<div id="container" class="max-w-5xl mx-auto w-full px-2 py-7 flex lg:py-10 lg:px-0 lg:pt-[150px]">
+  <div class="lg:w-1/2 space-y-16 text-white text-2xl">
+    {
+      programItems.map((item, i) => (
+        <div
+          class="program-item lg:pb-10 lg:pr-3 group"
+          class:list={i === 0 ? "active-item" : ""}
+        >
+          <div class="flex items-center gap-5 mb-2 lg:mb-0">
+            <svg
+              width="64"
+              height="44"
+              viewBox="0 0 64 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="stroke-secondary group-[.active-item]:stroke-accent"
+            >
+              <path d="M2 18.5L24 40.5L62.5 2" stroke-width="4" />
+            </svg>
+            <span class="text-sm lg:text-[30px] font-bold text-secondary group-[.active-item]:text-accent">
+              {item.data.label}
+            </span>
+          </div>
+          <div class="bg-midnight program-content text-white grayscale transition lg:hidden group-[.active-item]:grayscale-0">
+            <Image src={item.data.img} alt={item.data.label} class="w-full mb-3"/>
+            <div class="p-3">
+              <p class="text-sm">{item.data.text}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div
+    id="text"
+    class="hidden lg:block lg:w-1/2 bg-midnight program-content text-white h-[400px]"
+  >
+    <Image src={programItems[0].data.img} alt={programItems[0]} class="w-full mb-3"/>
+    <div class="p-3">
+      <p class="text-sm">{programItems[0].data.text}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const mm = gsap.matchMedia();
+  let boxes = gsap.utils.toArray(".program-item");
+  let container = document.querySelector("#container");
+  let text = document.querySelector("#text");
+  let padding = gsap.getProperty(container, "paddingTop", "px");
+
+  mm.add("(min-width: 1024px)", () => {
+      // create a ScrollTrigger for each box that we can use to calculate snapping (we'll look at the "start" of each in the onRefresh)
+      let snapTriggers = boxes.map((box) =>
+        ScrollTrigger.create({
+          trigger: box,
+          start: "top " + padding + "px",
+        })
+      ),
+      snaps = []; // where we'll store the progress value for each box's ScrollTrigger (start)
+
+    ScrollTrigger.create({
+      trigger: "#container",
+      pin: "#text",
+      start: "top top",
+      end: () =>
+        "+=" +
+        (boxes[boxes.length - 1].getBoundingClientRect().top -
+          boxes[0].getBoundingClientRect().bottom),
+      onRefresh: (self) => {
+        // re-populate the "snaps" Array with the progress values for where each box hits the target spot.
+        // let distance = self.end - self.start;
+        // snapTriggers.forEach(
+        //   (trigger, i) => (snaps[i] = (trigger.start - self.start) / distance)
+        // );
+      },
+      snap: snaps,
+    });
+
+    // for swapping in the text for each section
+    boxes.forEach((box, i) => {
+      ScrollTrigger.create({
+        trigger: box,
+        start: "top center",
+        end: "bottom+=50 center",
+        onEnterBack: () => {
+          box.classList.add("active-item");
+        },
+        onEnter: () => {
+          box.classList.add("active-item");
+        },
+        onLeave: () => {
+          box.classList.remove("active-item");
+        },
+        onLeaveBack: () => {
+          box.classList.remove("active-item");
+        },
+        onToggle: (self) => {
+          if (self.isActive) {
+            // you could animate this in (fade it or whatever)
+            const content = box.children[1];
+            text.innerHTML = content.innerHTML;
+          }
+        },
+      });
+    });
+  });
+
+  mm.add("(max-width: 1023px)", () => {
+    boxes.forEach((item: HTMLElement) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top center",
+        end: "bottom center-=100",
+        onEnterBack: () => {
+          item.classList.add("active-item");
+        },
+        onEnter: () => {
+          item.classList.add("active-item");
+        },
+        onLeave: () => {
+          item.classList.remove("active-item");
+        },
+        onLeaveBack: () => {
+          item.classList.remove("active-item");
+        },
+      });
+    });
+  });
+</script>

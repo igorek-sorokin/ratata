@@ -13,6 +13,7 @@ import TwoDays from "../components/Two-days.astro";
 import FaqSection from "../components/Faq-section.astro";
 import WithUs from "../components/With-us.astro";
 import MapSection from "../components/Map-section.astro";
+import ProgramSection from "../components/ProgramSection.astro";
 ---
 
 <Layout title="Ратата — школа контраварийного вождения и дрифта в Москве и Московской области | Ratata">
@@ -23,7 +24,8 @@ import MapSection from "../components/Map-section.astro";
       <Screen4 />
       <Numbers />
       <Safety />
-      <LearnList />
+      <!--<LearnList />-->
+      <ProgramSection/>
       <Programs />
       <Trainers />
       <TwoDays />
@@ -114,4 +116,38 @@ import MapSection from "../components/Map-section.astro";
       }
     }
   });
+
+  import Lenis from "@studio-freight/lenis";
+
+  const lenis = new Lenis({
+    lerp: 0.1
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 </script>
+<style>
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+</style>
