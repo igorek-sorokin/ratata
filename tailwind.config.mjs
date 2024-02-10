@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: "#FF0C49",
-        primary: "#46A5FF",
+        accent: "rgb(226, 11, 65)",
+        primary: "#46a5ff",
         midnight: "#090B26",
         secondary: "#828282",
         success: "#008A0E",

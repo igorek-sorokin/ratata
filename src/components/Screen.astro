@@ -2,31 +2,83 @@
 import Button from "./ui/Button.astro";
 import screen from "../assets/img/screen.jpg";
 import screenMobile from "../assets/img/screen_mobile.jpg";
-import video from "../assets/video2.mp4";
+// import video from "../assets/video2.mp4";
+import video from "../assets/ratata.mp4";
 ---
 
 <section class="banner-section h-[100dvh]">
-   <video autoplay muted loop class="banner-section__video">
+  <div class="absolute left-0 top-0 z-[1] bg-gradient-to-r from-[rgba(0,0,0,0.5)] to-transparent w-full h-full">
+
+  </div>
+  <div class="h-[66px] md:h-[100px] mb-4"></div>
+   <video autoplay muted loop class="banner-section__video" aria-hidden="true">
     <source src={video} type="video/mp4" >
   </video> 
 <!--<div class="banner-section__background banner-section__background--desktop" style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screen.src});`}></div>-->
-  <div class="banner-section__background banner-section__background--mobile" style={`background-image: linear-gradient(180deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screenMobile.src});`}></div>
-  <main class="banner-section__main">
-    <h1 class="banner-section__title">
-      <span>Узнай, как&nbsp;ты&nbsp;реально умеешь водить
+  <div class="container mx-auto flex flex-col h-full items-center relative z-[1]">
+    <div class="banner-section__background banner-section__background--mobile" style={`background-image: linear-gradient(180deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screenMobile.src});`}></div>
+    <main class="banner-section__main h-full flex items-center">
+      <div class="lg:w-2/3 text-center lg:text-left text-white flex flex-col self-center lg:items-start">
+        <h1 class="banner-section__title">
+      <span>Узнай, как&nbsp;ты&nbsp;реально умеешь&nbsp;водить
       </span>
-    </h1>
-    <p class="banner-section__subtitle">
-      Курс&nbsp;контраварийного вождения&nbsp;и&nbsp;дрифта<br>от&nbsp;Стаса&nbsp;Асафьева
-    </p>
-    <div class="buttons">
-      <Button style={"accent"} isModal={true}>Хочу ратата</Button>
-      <Button href="/#screen2">Подробнее</Button>
-    </div>
-  </main>
-  <span class="banner-section__description">
+        </h1>
+        <p class="banner-section__subtitle">
+          Курс&nbsp;контраварийного вождения&nbsp;и&nbsp;дрифта<br>от&nbsp;Стаса&nbsp;Асафьева
+        </p>
+        <div class="buttons">
+          <Button style={"accent"} isModal={true}>Хочу ратата</Button>
+          <Button href="/#screen2">Подробнее</Button>
+        </div>
+      </div>
+      <div class="w-1/3">
+        <div class="w-full bg-black bg-opacity-75 backdrop-blur-md flex justify-between pt-5">
+          <div class=" pl-4 pb-5 flex flex-col justify-between text-white">
+            <div class="flex flex-col">
+              <span class="text-lg font-bold mb-1">Стас Асафьев</span>
+              <span class="text-sm">Автоблогер</span>
+              <span class="text-sm">основатель&nbsp;RATATA</span>
+            </div>
+            <div class="text-accent flex items-center gap-1">
+              <svg
+                  width="31"
+                  height="19"
+                  viewBox="0 0 31 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.91894 0.752138L26.0618 0.685412C27.9195 0.679569 29.4459 2.11226 29.5862 3.93515L29.5967 4.20922V14.7857C29.5967 16.7319 28.0191 18.3095 26.0729 18.3095H4.93006C2.98391 18.3095 1.40625 16.7319 1.40625 14.7857V4.27593C1.40625 2.33412 2.97715 0.758264 4.91894 0.752138Z"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.7383 13.0238L19.024 9.50001L13.7383 5.9762V13.0238Z"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+              </svg>
+              <a
+                  href="https://www.youtube.com/@AsafevStas"
+                  target="_blank"
+                  class="text-base underline">@AsafevStas</a
+              >
+            </div>
+          </div>
+          <img class="w-1/2 shrink-1" src="/img/stas.png" alt="Стас Асафьев" />
+        </div>
+      </div>
+
+    </main>
+    <span class="banner-section__description">
     Услугу предоставляют тренеры-партнеры ООО «Ратата»
   </span>
+  </div>
 </section>
 
 <style is:global>
@@ -34,7 +86,7 @@ import video from "../assets/video2.mp4";
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: var(--container-padding);
+    //padding: var(--container-padding);
     position: relative;
     flex-direction: column;
     display: flex;
@@ -50,10 +102,10 @@ import video from "../assets/video2.mp4";
   }
 
   .banner-section__main {
-    position: relative;
-    z-index: 2;
-    width: 60%;
-    padding-top: 118px;
+    //position: relative;
+    //z-index: 2;
+    //width: 60%;
+    //padding-top: 118px;
   }
 
   .banner-section__background {

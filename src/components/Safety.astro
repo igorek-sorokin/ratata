@@ -16,7 +16,7 @@ import { Image } from 'astro:assets';
   <div class="safety-blocks">
     <div class="safety-block">
       <div class="safety-block__icon">
-        <img src={safetyIcon1} width="44" height="44" alt="icon" />
+        <img src={safetyIcon1?.src} width="44" height="44" alt="icon" />
       </div>
       <span class="safety-block__text"
         >Тренер всегда с тобой в машине</span
@@ -24,7 +24,7 @@ import { Image } from 'astro:assets';
     </div>
     <div class="safety-block">
       <div class="safety-block__icon">
-        <img src={safetyIcon2} width="44" height="44" alt="icon" />
+        <img src={safetyIcon2?.src} width="44" height="44" alt="icon" />
       </div>
       <span class="safety-block__text"
         >Второй комплект педалей, как в автошколе</span
@@ -32,7 +32,7 @@ import { Image } from 'astro:assets';
     </div>
     <div class="safety-block">
       <div class="safety-block__icon">
-        <img src={safetyIcon4} width="44" height="44" alt="icon" />
+        <img src={safetyIcon4?.src} width="44" height="44" alt="icon" />
       </div>
       <span class="safety-block__text"
         >На специальном полигоне, без&nbsp;лишних людей и препятствий</span
@@ -40,7 +40,7 @@ import { Image } from 'astro:assets';
     </div>
     <div class="safety-block">
       <div class="safety-block__icon">
-        <img src={safetyIcon3} width="44" height="44" alt="icon" />
+        <img src={safetyIcon3?.src} width="44" height="44" alt="icon" />
       </div>
       <span class="safety-block__text"
         >На своем авто вышло бы дороже</span

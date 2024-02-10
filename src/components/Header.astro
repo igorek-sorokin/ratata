@@ -27,7 +27,8 @@ const navList = [
 
 <div class="sticky bg-white bg-opacity-75">
   <header class="header-mobile" x-data="{ open: false }">
-    <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
+
+    <a href="/"><img src={logo.src} class="logo" alt="ratata логотип"></a>
     <button class="nav-trigger nav-trigger--open" @click="open = ! open"
       ><BurgerIcon />
     </button>
@@ -61,10 +62,10 @@ const navList = [
 
     </nav>
   </header>
-  <header class="container h-[66px] md:h-[100px] px-2 py-1 sm:p-0 mx-auto text-white flex items-center justify-between" id="header-sticky">
-    <a href="/"><img src={logo} class="logo" alt="ratata логотип"></a>
+  <header class="container h-[66px] md:h-[100px] px-2 py-1 sm:p-0 hidden mx-auto text-white  lg:flex items-center justify-between" id="header-sticky">
+    <a href="/" class="inline-flex h-full max-h-6 lg:max-h-7"><img src={logo?.src} alt="ratata логотип"></a>
     <nav class="header_nav">
-      <ul class="nav__ul">
+      <ul class="flex items-center gap-[30px]">
         {
           navList.map((navItem) => (
             <li class="nav__li">
@@ -76,15 +77,17 @@ const navList = [
         }
       </ul>
     </nav>
-    <a href="tel:+74994554669" class="header__tel">+7 499 455-466-9</a>
-    <div class="header__buttons">
-      <button id="openPaymentButton" class={`button button--outline button--header open-payment-modal-js`}>
+      <div class="hidden md:flex flex-col lg:flex-row gap-1 items-center lg:gap-3 xl:gap-5 justify-end">
+          <a href="tel:+74994554669" class="header__tel">+7 499 455-466-9</a>
+          <div class="header__buttons">
+              <button id="openPaymentButton" class={`button button--outline button--header open-payment-modal-js`}>
           <span>
             Оплатить
           </span>
-        </button>
-    <Button isModal={true} style={"header"}>Оставить заявку</Button>
-    </div>
+              </button>
+              <Button isModal={true} style={"header"}>Оставить заявку</Button>
+          </div>
+      </div>
   </header>
 </div>
 <style>
@@ -116,12 +119,10 @@ const navList = [
   .header_nav {
     display: flex;
     align-items: center;
-    margin-left: 49px;
   }
   .nav__ul {
     display: flex;
     align-items: center;
-    gap: 30px;
   }
 
   .nav__li {
@@ -151,8 +152,6 @@ const navList = [
     line-height: 25px;
     color: var(--color-accent-dark);
     text-decoration: none;
-    margin-left: 58px;
-    margin-right: auto;
   }
 
   .header-mobile {

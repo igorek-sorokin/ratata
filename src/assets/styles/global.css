@@ -2,8 +2,8 @@
 :root {
   --color-primary: #46a5ff;
   --color-primary-dark: #148dff;
-  --color-accent: hsla(353, 70%, 53%, 1);
-  --color-accent-dark: hsla(353, 71%, 43%, 1);
+  --color-accent:  rgb(226, 11, 65);
+  --color-accent-dark: rgb(255, 12, 73);
   --color-main: #646464;
   --color-main-light: #546285;
   --color-contrast: #fff;
