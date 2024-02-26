@@ -61,6 +61,8 @@ import LockIcon from "./ui/lock-icon.astro";
     </div>
 </section>
 
+<a class="link" href="/ratata-training-program.pdf">Дополнительная общеобразовательная программа – дополнительная общеразвивающая программа «Вождение: Safety/Skill и Drift»</a>
+
 <style is:global>
   .programs-section__title {
     margin-bottom: 16px;
@@ -80,16 +82,22 @@ import LockIcon from "./ui/lock-icon.astro";
     justify-content: flex-end;
     color: hsla(0, 0%, 100%, 1);
   }
+
   .link {
-    margin-bottom: 36px;
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: center; /* Центрирует ссылку горизонтально */
+  align-items: center; /* Центрирует ссылку вертикально */
+  text-align: center; /* Центрирует текст внутри ссылки по горизонтали */
   }
+
   .programs-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 calc(50vw - 666px);
     padding-top: 90px;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
   }
 
   .programs {
