@@ -61,7 +61,7 @@ import LockIcon from "./ui/lock-icon.astro";
     </div>
 </section>
 
-<a class="link" href="/ratata-training-program.pdf">Дополнительная общеобразовательная программа – дополнительная общеразвивающая программа «Вождение: Safety/Skill и Drift»</a>
+<a class="link-pr" href="/ratata-training-program.pdf">Дополнительная общеобразовательная программа – дополнительная общеразвивающая программа «Вождение: Safety/Skill и Drift»</a>
 
 <style is:global>
   .programs-section__title {
@@ -85,10 +85,23 @@ import LockIcon from "./ui/lock-icon.astro";
 
   .link {
   margin-bottom: 36px;
+  }
+
+  .link-pr {
+  margin-bottom: 36px;
   display: flex;
-  justify-content: center; /* Центрирует ссылку горизонтально */
-  align-items: center; /* Центрирует ссылку вертикально */
-  text-align: center; /* Центрирует текст внутри ссылки по горизонтали */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  text-decoration-line: underline;
+  transition: all .28s ease-in-out;
+  color: #b0b0b0;
+  background: none;
+  border: none;
+  cursor: pointer;
   }
 
   .programs-section {
