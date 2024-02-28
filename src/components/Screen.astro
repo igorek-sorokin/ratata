@@ -2,262 +2,86 @@
 import Button from "./ui/Button.astro";
 import screen from "../assets/img/screen.jpg";
 import screenMobile from "../assets/img/screen_mobile.jpg";
-// import video from "../assets/video2.mp4";
 import video from "../assets/ratata.mp4";
 ---
 
-<section class="banner-section h-[100dvh]">
-  <div class="absolute left-0 top-0 z-[1] bg-gradient-to-r from-[rgba(0,0,0,0.5)] to-transparent w-full h-full">
+<section class="relative">
+    <div class="hidden md:block absolute left-0 top-0 w-full h-full z-[1] bg-cover bg-bottom" style={`background-image: url(${screen.src})`}></div>
+    <video autoplay muted loop aria-hidden="true" class="hidden md:block absolute left-0 z-[1] top-0 h-full w-full object-cover">
+        <source src={video} type="video/mp4" >
+        <img src={screen.src} alt="">
+    </video>
+    <div class="block md:hidden absolute left-0 top-0 w-full h-full z-[1] bg-cover bg-bottom" style={`background-image: url(${screenMobile.src})`}></div>
+    <div class="absolute left-0 top-0 z-[1] bg-gradient-to-r from-[rgba(0,0,0,0.5)] to-transparent w-full h-full"></div>
 
-  </div>
-  <div class="h-[66px] md:h-[100px] mb-4"></div>
-   <video autoplay muted loop class="banner-section__video" aria-hidden="true">
-    <source src={video} type="video/mp4" >
-  </video> 
-<!--<div class="banner-section__background banner-section__background--desktop" style={`background-image: linear-gradient(90deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screen.src});`}></div>-->
-  <div class="container mx-auto flex flex-col h-full items-center relative z-[1]">
-    <div class="banner-section__background banner-section__background--mobile" style={`background-image: linear-gradient(180deg, rgba(255,255,255, 80%) 0, rgba(255, 255, 255, 0) 100%), url(${screenMobile.src});`}></div>
-    <main class="banner-section__main h-full flex items-center">
-      <div class="lg:w-2/3 text-center lg:text-left text-white flex flex-col self-center lg:items-start">
-        <h1 class="banner-section__title">
-      <span>Узнай, как&nbsp;ты&nbsp;реально умеешь&nbsp;водить
-      </span>
-        </h1>
-        <p class="banner-section__subtitle">
-          Курс&nbsp;контраварийного вождения&nbsp;и&nbsp;дрифта<br>от&nbsp;Стаса&nbsp;Асафьева
-        </p>
-        <div class="buttons">
-          <Button style={"accent"} isModal={true}>Хочу ратата</Button>
-          <Button href="/#screen2">Подробнее</Button>
-        </div>
-      </div>
-      <div class="w-1/3">
-        <div class="w-full bg-black bg-opacity-75 backdrop-blur-md flex justify-between pt-5">
-          <div class=" pl-4 pb-5 flex flex-col justify-between text-white">
-            <div class="flex flex-col">
-              <span class="text-lg font-bold mb-1">Стас Асафьев</span>
-              <span class="text-sm">Автоблогер</span>
-              <span class="text-sm">основатель&nbsp;RATATA</span>
-            </div>
-            <div class="text-accent flex items-center gap-1">
-              <svg
-                  width="31"
-                  height="19"
-                  viewBox="0 0 31 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M4.91894 0.752138L26.0618 0.685412C27.9195 0.679569 29.4459 2.11226 29.5862 3.93515L29.5967 4.20922V14.7857C29.5967 16.7319 28.0191 18.3095 26.0729 18.3095H4.93006C2.98391 18.3095 1.40625 16.7319 1.40625 14.7857V4.27593C1.40625 2.33412 2.97715 0.758264 4.91894 0.752138Z"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M13.7383 13.0238L19.024 9.50001L13.7383 5.9762V13.0238Z"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-              </svg>
-              <a
-                  href="https://www.youtube.com/@AsafevStas"
-                  target="_blank"
-                  class="text-base underline">@AsafevStas</a
-              >
-            </div>
-          </div>
-          <img class="w-1/2 shrink-1" src="/img/stas.png" alt="Стас Асафьев" />
-        </div>
-      </div>
+    <!--<div class="h-[66px] md:h-[100px]"></div>-->
 
-    </main>
-    <span class="banner-section__description">
-    Услугу предоставляют тренеры-партнеры ООО «Ратата»
-  </span>
-  </div>
+    <div class="container mx-auto  pt-[124px] md:pt-0 px-2 2xl:px-0 relative z-[1] min-h-[100dvh] flex flex-col items-center">
+        <main class="flex flex-1 items-center flex-col md:flex-row gap-6 md:gap-2 h-full">
+            <div class="w-full lg:1/2 xl:w-2/3 text-center md:text-left text-white flex flex-col self-center lg:items-start gap-6">
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-display text-xl md:text-2xl xl:text-4xl text-primary">
+                        <span>Узнай, как&nbsp;ты&nbsp;реально умеешь&nbsp;водить</span>
+                    </h1>
+                    <p class="text-white">
+                        Курс&nbsp;контраварийного вождения&nbsp;и&nbsp;дрифта<br>от&nbsp;Стаса&nbsp;Асафьева
+                    </p>
+                </div>
+                <div class="flex gap-2 flex-col items-center xl:flex-row md:items-stretch ">
+                    <button
+                            class="open-modal-js text-sm bg-accent text-white flex justify-center items-center h-[60px] min-w-[300px] xl:min-w-[350px] transition hover:shadow-button hover:shadow-accent"
+                    >Хочу ратата</button
+                    >
+                    <button class="open-certificate-modal-js text-sm bg-black bg-opacity-0 border-[1px] border-accent text-white flex justify-center items-center h-[60px] min-w-[300px] xl:min-w-[350px] transition hover:bg-opacity-100 hover:bg-accent"
+                    >Подарить сертификат</button
+                    >
+                </div>
+            </div>
+            <div class="w-full lg:1/2 xl:w-1/3">
+                <div class="w-full bg-black bg-opacity-75 backdrop-blur-md flex justify-between pt-5 max-h-[300px]">
+                    <div class=" pl-4 pb-5 flex flex-col justify-between text-white">
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold mb-1">Стас Асафьев</span>
+                            <span class="text-sm">Автоблогер</span>
+                            <span class="text-sm">основатель&nbsp;RATATA</span>
+                        </div>
+                        <div class="text-accent flex items-center gap-1">
+                            <svg
+                                    width="31"
+                                    height="19"
+                                    viewBox="0 0 31 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M4.91894 0.752138L26.0618 0.685412C27.9195 0.679569 29.4459 2.11226 29.5862 3.93515L29.5967 4.20922V14.7857C29.5967 16.7319 28.0191 18.3095 26.0729 18.3095H4.93006C2.98391 18.3095 1.40625 16.7319 1.40625 14.7857V4.27593C1.40625 2.33412 2.97715 0.758264 4.91894 0.752138Z"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M13.7383 13.0238L19.024 9.50001L13.7383 5.9762V13.0238Z"
+                                        fill="currentColor"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                            </svg>
+                            <a
+                                    href="https://www.youtube.com/@AsafevStas"
+                                    target="_blank"
+                                    class="text-base underline">@AsafevStas</a
+                            >
+                        </div>
+                    </div>
+                    <img class="w-1/2 shrink-1 object-contain" src="/img/stas.png" alt="Стас Асафьев"/>
+                </div>
+            </div>
+        </main>
+        <span class="self-end mb-2 pt-2 text-white">
+            Услугу предоставляют тренеры-партнеры ООО «Ратата»
+        </span>
+    </div>
 </section>
-
-<style is:global>
-  .banner-section {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    //padding: var(--container-padding);
-    position: relative;
-    flex-direction: column;
-    display: flex;
-  }
-
-  .banner-section__video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .banner-section__main {
-    //position: relative;
-    //z-index: 2;
-    //width: 60%;
-    //padding-top: 118px;
-  }
-
-  .banner-section__background {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      background-size: cover;
-      background-position: center;
-  }
-
-  .banner-section__background--mobile {
-    display: none;
-  }
-
-
-  .banner-section__title {
-    font-family: var(--heading-font);
-    font-weight: bold;
-    font-size: 55px;
-    font-style: italic;
-    line-height: 73px;
-    margin-left: -2px;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    margin-bottom: 26px;
-    position: relative;
-  }
-
-  .banner-section__title > span {
-    position: relative;
-    z-index: 2;
-  }
-
-  .banner-section__title-mark {
-    display: inline-flex;
-    vertical-align: middle;
-    padding: 9px 19px;
-    margin-left: 23px;
-    font-style: normal;
-    padding-bottom: 5px;
-    margin-bottom: 14px;
-    color: var(--color-contrast);
-    background-color: var(--color-accent);
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 37px;
-  }
-  .banner-section__subtitle {
-    width: 75%;
-    padding-left: 5px;
-    line-height: 25px;
-    font-size: 18px;
-    letter-spacing: 1.1px;
-    margin-bottom: 46px;
-    color: #FFFFFF;
-  }
-
-  .buttons {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .banner-section__description {
-    z-index: 1;
-    position: relative;
-    margin-left: auto;
-    width: 100%;
-    display: block;
-    margin-top: auto;
-    text-align: right;
-    padding: 20px;
-    color: var(--color-contrast);
-  }
-
-  @media (max-width: 1023px) {
-        .banner-section__background--desktop {
-      display: none;
-    }
-    .banner-section__background.banner-section__background--mobile {
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        background-size: cover;
-        background-position: bottom center;
-    }
-    .banner-section {
-      background-position-y: 68%;
-      background-size: cover;
-      background-position-x: 72%;
-      /* margin-top: 300px; */
-      height: 780px;
-    }
-    .banner-section__main {
-      position: relative;
-      /* top: -350px; */
-    }
-    .banner-section__title {
-      font-size: 35px;
-      color: #46a5ff;
-      line-height: 40px;
-      text-align: center;
-      margin: 0 40px;
-    }
-    .buttons {
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .buttons .button {
-      width: 280px;
-    }
-
-    .banner-section__title::before {
-      display: block;
-      content: "";
-      position: absolute;
-      height: 18px;
-      top: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 335px;
-      background: #f3f3f3;
-      z-index: 1;
-    }
-
-    .banner-section__main {
-      width: 100%;
-    }
-
-    .banner-section__subtitle {
-      width: 100%;
-      color: #888;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .banner-section__main {
-      padding-top: 60px;
-    }
-  }
-
-  @media(max-width: 376px) {
-    .banner-section__title::before {
-        top: 60px;
-        width: 200px;
-    }
-  }
-</style>
-
-<script></script>

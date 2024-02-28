@@ -92,36 +92,6 @@ const trainersList = [
   <p class="trainers-section__subtitle">Партнёры компании «Ратата» —<br>
     опытные водители и даже мастера автоспорта</p>
   <div class="trainers container mx-auto py-20">
-    <div class="main-trainer--mobile">
-      <figure class="main-trainer ">
-      <img src={efim.src} alt="Efim" />
-      <div class="main-trainer__element"></div>
-      <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-    </figure>
-      <p class="main-trainer__sub-title">Автор методики</p>
-      <div class="main-trainer__sub-text">
-        <div class="main-trainer__sub-star">
-          <StarIcon  width={28} height={28} filled={true} />
-        </div>
-        <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
-      </div>
-    </div>
-    <div class="main-trainer__wrap">
-      <div class="main-trainer--desktop">
-        <figure class="main-trainer">
-          <img src={efim.src} alt="Efim" />
-          <div class="main-trainer__element"></div>
-          <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-        </figure>
-          <p class="main-trainer__sub-title">Автор методики</p>
-          <div class="main-trainer__sub-text">
-            <div class="main-trainer__sub-star">
-              <StarIcon  width={28} height={28} filled={true} />
-            </div>
-            <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
-          </div>
-      </div>
-    </div>
     <div class="other-trainers">
       {
         trainersList.map((trainer) => (
@@ -133,7 +103,7 @@ const trainersList = [
       }
     </div>
     <div class="other-trainers-swiper swiper">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper pb-8">
         {
           trainersList.map((trainer) => (
           <figure class="other-trainer swiper-slide">
@@ -280,7 +250,7 @@ const trainersList = [
   .other-trainer > img {
     margin-bottom: 20px;
     width: 100%;
-    max-height: 150px;
+    max-height: 300px;
     object-fit: contain;
   }
   .other-trainer__name {

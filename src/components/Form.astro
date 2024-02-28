@@ -1,120 +1,76 @@
 ---
 
 ---
-
-<div class="form-wrapper">
-  <h2 class="form__title">Оставьте заявку</h2>
-  <p class="form__subtitle">Время ответа на заявку может составить более 14 дней. Приносим извинения за столь долгое ожидание.</p>
-  <form id="form" class="form">
-    <div class="form__inputs">
-      <input
-      class="form__input form__input--name"
-      type="text"
-      name="name"
-      id="name"
-      required
-      placeholder="Как к вам обращаться"
-    />
-    <input
-      class="form__input form__input--tel"
-      type="tel"
-      name="tel"
-      id="tel"
-      required
-      placeholder="Телефон"
-    />
-    <div class="form__select-wrapper">
-      <select name="program" id="program" class="form__select">
-        <option value="" selected disabled hidden>Выберите программу</option>
-        <option value="Safety">Safety</option>
-        <option value="Skill">Skill</option>
-        <option value="Drift">Drift</option>
-        <option value="Sport">Sport</option>
-        <option value="All">Полный курс (4 занятия)</option>
-        <option value="Certificate">Подарочный сертификат</option>
-      </select>
-    </div>
-    <input
-      class="form__input form__input--email"
-      type="email"
-      name="email"
-      id="email"
-      placeholder="Электронная почта"
-    />
-    </div>
-
-    <button type="submit" class="form__submit">Свяжитесь со мной</button>
-    <span class="form__submit-subtitle"
-      >Оставляя заявку, я настоящим соглашаюсь с&nbsp;<a class="link" href="/privacy/">Политикой&nbsp;оператора в отношении обработки персональных данных и</a><br>и <a class="link" href="/agreement/">Пользовательским&nbsp;соглашением</a> </span
+<div class="max-w-2xl mx-auto bg-white px-16 py-12">
+    <h1
+            class="text-xl lg:text-2xl xl:text-3xl font-bold uppercase font-display italic"
     >
-  </form>
+        Оставьте заявку
+    </h1>
+    <p class="text-sm text-secondary mb-5">
+        Время ответа на заявку может составить более 7 дней. Приносим
+        извинения за столь долгое ожидание.
+    </p>
+    <form id="form" class="flex flex-col gap-5">
+        <div class="flex flex-col gap-3">
+            <input
+                    class="form__input form__input--name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder="Как к вам обращаться"
+            />
+            <input
+                    class="form__input form__input--tel"
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    required
+                    placeholder="Телефон"
+            />
+            <input
+                    class="form__input form__input--email"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Электронная почта"
+            />
+          <div class="form__select-wrapper">
+            <select name="program" id="program" class="form__select">
+              <option value="" selected disabled hidden>Выберите программу</option>
+              <option value="Safety">Safety</option>
+              <option value="Skill">Skill</option>
+              <option value="Drift">Drift</option>
+              <option value="Sport">Sport</option>
+              <option value="All">Полный курс (4 занятия)</option>
+              <option value="Certificate">Подарочный сертификат</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+            <button
+                    type="submit"
+                    class="text-sm bg-accent text-white flex justify-center items-center h-[60px] min-w-[300px] xl:min-w-[350px] transition hover:shadow-button hover:shadow-accent"
+            >Свяжитесь со мной
+            </button
+            >
+            <span class="text-sm text-secondary"
+            >Оставляя заявку, я настоящим соглашаюсь <br> с&nbsp;<a
+                    class="text-accent underline"
+                    href="/privacy/"
+            >Политикой&nbsp;оператора в&nbsp;отношении обработки
+                        персональных данных</a
+            > и&nbsp;<a class="text-accent underline" href="/agreement/"
+            >Пользовательским оглашением</a
+            >
+                </span>
+        </div>
+    </form>
 </div>
 <style>
-  .form-wrapper {
-    width: 509px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    z-index: 200;
-  }
-  .form__title {
-    font-family: "TT Mussels";
-    font-style: italic;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 130%;
-    text-align: center;
-    text-transform: uppercase;
-    color: #46a5ff;
-    margin-bottom: 10px;
-  }
-
-  .form__subtitle {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 160%;
-    text-align: center;
-    color: #767676;
-    margin-bottom: 30px;
-  }
-
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form__input {
-    padding-left: 64px;
-    padding-right: 30px;
-    height: 64px;
-    line-height: 64px;
-    font-weight: 400;
-    font-size: 16px;
-    background-repeat: no-repeat;
-    background-position: 30px center;
-
-    color: #767676;
-    background-color: #ebebeb!important;
-    border: 1px solid #ffffff;
-  }
-
   .form__select {
-    -webkit-appearance: none;
-    padding-left: 64px;
-    padding-right: 30px;
-    height: 64px;
-    line-height: 64px;
-    font-weight: 400;
-    font-size: 16px;
-    background-repeat: no-repeat;
-    background-position: 30px center;
-    color: #767676;
-    background-color: #ebebeb!important;
-    border: 1px solid #ffffff;
-    width: 100%;
+      @apply px-5 h-7 text-sm bg-no-repeat bg-input text-secondary bg-[#ebebeb] border border-solid border-white appearance-none w-full
   }
   .form__select-wrapper {
     width: 100%;
@@ -131,134 +87,54 @@
     border: 6px solid transparent;
     border-color: #46a6ff transparent transparent transparent;
   }
-
-  .form__input--name {
-    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 22h-16v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2Zm-8-9a6 6 0 1 1 0-12.002A6 6 0 0 1 12.5 13Z' fill='%2346A6FF'/%3E%3C/svg%3E")!important;
-  }
-
-  .form__input--tel {
-    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.999 16.674v3.34c0 .24-.096.47-.268.644a1.025 1.025 0 0 1-.662.299c-.437.028-.794.043-1.07.043C11.163 21 4 14.235 4 5.889c0-.26.015-.598.046-1.01a.924.924 0 0 1 .316-.625C4.547 4.09 4.79 4 5.044 4H8.58c.124 0 .243.043.335.122.092.078.15.186.163.303.023.217.044.39.064.521.198 1.31.606 2.584 1.208 3.78a.416.416 0 0 1-.147.535l-2.158 1.456c1.32 2.903 3.77 5.217 6.843 6.464l1.54-2.035a.463.463 0 0 1 .26-.168.487.487 0 0 1 .313.028 14.51 14.51 0 0 0 4 1.138c.139.019.322.04.55.06a.51.51 0 0 1 .32.154c.083.087.13.2.129.316h-.001Z' fill='%2346A6FF'/%3E%3C/svg%3E")!important;
-  }
-
-  .form__input--email {
-    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.798 4.5c1.177 0 2.084.274 2.721.821.654.53.981 1.435.981 2.712v7.737h-1.57l-.195-1.866c-.294.299-.695.614-1.202.946a8.231 8.231 0 0 1-1.716.796 5.939 5.939 0 0 1-1.962.323c-.637 0-1.2-.108-1.691-.323a2.755 2.755 0 0 1-1.128-.996c-.262-.447-.392-.995-.392-1.642V11.74c0-.796.237-1.418.71-1.866.475-.465 1.178-.697 2.11-.697h5.074v-1.07c0-.663-.147-1.136-.44-1.418-.295-.282-.85-.423-1.668-.423h-3.138c-1.063 0-1.913.05-2.55.15-.638.1-1.12.34-1.447.721-.327.382-.547.995-.662 1.841-.098.83-.147 1.982-.147 3.458 0 1.211.033 2.214.098 3.01.082.78.229 1.394.441 1.842.213.447.523.77.932.97.409.199.948.323 1.618.373.687.05 1.529.075 2.526.075h6.325v1.592a99.226 99.226 0 0 1-6.3.199c-1.374.017-2.518-.033-3.433-.15-.916-.099-1.66-.306-2.232-.621a2.836 2.836 0 0 1-1.25-1.344c-.278-.597-.466-1.376-.564-2.338-.098-.979-.147-2.181-.147-3.608 0-1.393.04-2.562.123-3.508.081-.945.245-1.708.49-2.288.261-.58.637-1.02 1.128-1.319.507-.315 1.169-.522 1.986-.622.817-.116 1.839-.182 3.065-.199h3.506Zm1.74 5.97-4.364.1c-.572.017-.98.141-1.226.373-.229.216-.343.565-.343 1.045v.647c0 .597.139 1.02.417 1.27.278.248.678.372 1.201.372.474 0 .973-.066 1.496-.199a8.331 8.331 0 0 0 1.52-.547 5.68 5.68 0 0 0 1.3-.896v-2.164Z' fill='%2346A6FF'/%3E%3C/svg%3E")!important;
-  }
-
-  .form__select {
-    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 97.7 122.88' fill='%235E9ED6'%3E%3Cpath d='M37.75 5.14v5.09a2.57 2.57 0 0 1-2.32 2.55 2.94 2.94 0 0 1-.91.13h-9.45v10.55h47.56V12.91h-9.46a3 3 0 0 1-.91-.13 2.57 2.57 0 0 1-2.32-2.55V5.14Zm32.55 45.3a10.26 10.26 0 0 1 7.26 3 10.27 10.27 0 1 1-14.53 0l.13-.12a10.23 10.23 0 0 1 7.13-2.89Zm4.22 6.05a6 6 0 0 0-8.34-.09l-.09.1a6 6 0 1 0 8.43 0ZM47.17 90.72l4.62-2.63-2.63-4.62L53.49 81l2.62 4.62L60.73 83l2.46 4.33L58.57 90l2.63 4.62L56.87 97l-2.62-4.61L49.63 95l-2.46-4.32ZM15.82 56.39l4.62-2.62-2.63-4.62 4.33-2.46 2.62 4.62 4.62-2.62L31.84 53l-4.62 2.62 2.63 4.62-4.33 2.46-2.62-4.61-4.62 2.63-2.46-4.33ZM32 84.26a7.08 7.08 0 1 1-5.66 1.06l.21-.14a24.58 24.58 0 0 1-.13-4.45 21.89 21.89 0 0 1 5.17-13.07 21.68 21.68 0 0 1 13.72-7.14c.64-.1 1.31-.17 2-.22l-3.39-2.83 3.54-4.23 11 9.15-9.92 10.19-4-3.82 2.84-2.93q-.69 0-1.35.15a15.58 15.58 0 0 0-14.12 15.08 19.06 19.06 0 0 0 .07 3.2Zm.45 5.41a2.59 2.59 0 0 0-1.65-1.06 2.54 2.54 0 0 0-1.91.41 2.59 2.59 0 0 0-1.06 1.64 2.52 2.52 0 0 0 .41 1.91 2.56 2.56 0 0 0 4.62-1 2.6 2.6 0 0 0-.41-1.92Zm-8.64-61a4 4 0 0 1-2.73-1.13c-.09-.1-.13-.19-.22-.28a3.93 3.93 0 0 1-.91-2.45v-5.17H5.68a.51.51 0 0 0-.41.19.67.67 0 0 0-.18.4v96.92a.46.46 0 0 0 .18.41.6.6 0 0 0 .41.18H92a.56.56 0 0 0 .41-.18.44.44 0 0 0 .19-.41V20.23a.68.68 0 0 0-.19-.4.49.49 0 0 0-.41-.19H77.77v5.19a3.93 3.93 0 0 1-.91 2.45c-.09.09-.14.18-.23.28a3.92 3.92 0 0 1-2.72 1.13ZM5.73 122.88A5.74 5.74 0 0 1 0 117.15V20.23a5.75 5.75 0 0 1 5.73-5.73H20v-2.81a3.89 3.89 0 0 1 3.87-3.87h8.82V4.27a4.25 4.25 0 0 1 1.27-3 4.25 4.25 0 0 1 3-1.27h23.8a4.22 4.22 0 0 1 3 1.27 4.22 4.22 0 0 1 1.28 3v3.55h8.82a3.88 3.88 0 0 1 3.86 3.87v2.81H92a5.77 5.77 0 0 1 5.73 5.73v96.92a5.74 5.74 0 0 1-5.73 5.73Z'/%3E%3C/svg%3E")!important;
-  }
-
-  .form__inputs {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form__inputs > * + * {
-    margin-top: 10px;
-  }
-  
-
-  .form__submit {
-    margin-top: 30px;
-    width: 409px;
-    height: 64px;
-    line-height: 64px;
-    text-align: center;
-
-    background: var(--color-primary);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    color: #ffffff;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .form__submit:hover {
-    background-color: var( --color-primary-dark);
-  }
-
-  .form__submit-subtitle {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    text-align: center;
-    color: #cfcfcf;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 75%;
-  }
-  
-  .form__submit-subtitle .link {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 140%;
-    }
-
-  @media (max-width: 767px) {
-    .form-wrapper {
-      width: 100%;
-      padding: 25px;
-    }
-
-    .form__title {
-      font-size: 32px;
-    }
-
-    .form__subtitle {
-      font-size: 16px;
-      line-height: 120%;
-    }
-  }
 </style>
 <script>
-  import Inputmask from 'inputmask';
-  import toastr from 'toastr'
-  var selector = document.getElementById("tel");
+    import Inputmask from 'inputmask';
+    import toastr from 'toastr'
 
-  var im = new Inputmask(); // Удаление применения маски
-im.mask(selector);
-var selector = document.getElementById("tel");
+    var selector = document.getElementById("tel");
 
-selector.addEventListener('input', function(e) {
-    var inputValue = e.target.value;
-    var numberPattern = /^\d*$/;
-    if (!numberPattern.test(inputValue)) {
-        e.target.value = inputValue.replace(/\D/g, '');
-    }
-    if (inputValue.length > 20) {
-        e.target.value = inputValue.slice(0, 20);
-    }
-});
+    var im = new Inputmask(); // Удаление применения маски
+    im.mask(selector);
+    var selector = document.getElementById("tel");
 
-  const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
-  const program = document.getElementById('program') as HTMLSelectElement;
-  const form = document.getElementById('form') as HTMLFormElement;
-  var modal = document.getElementById("formModal");
-  var formSubmit: HTMLElement = document.querySelector(
-    ".form__submit"
-  ) as HTMLElement;
-
-  form.onsubmit = function(e) {
-    e.preventDefault();
-    if (inputs.every(input => input?.checkValidity())) {
-        const data = new URLSearchParams();
-        data.append('name', inputs[0].value);
-        data.append('tel', inputs[1].value);
-        data.append('email', inputs[2].value);
-        data.append('program', program.value);
-        data.append('source', 'ratata');
-        fetch('https://autopragmat.ru/api/v1/send-order/', {
-        method: 'POST',
-        body: data,
-    })
-    .then(() => {
-      modal.style.display = "none";
-      toastr.success('Заявка успешно отправлена');
-      form.reset();
+    selector.addEventListener('input', function (e) {
+        var inputValue = e.target.value;
+        var numberPattern = /^\d*$/;
+        if (!numberPattern.test(inputValue)) {
+            e.target.value = inputValue.replace(/\D/g, '');
+        }
+        if (inputValue.length > 20) {
+            e.target.value = inputValue.slice(0, 20);
+        }
     });
-  }
-  };
+
+    const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
+    const program = document.getElementById('program') as HTMLSelectElement;
+    const form = document.getElementById('form') as HTMLFormElement;
+    var modal = document.getElementById("formModal");
+    var formSubmit: HTMLElement = document.querySelector(
+        ".form__submit"
+    ) as HTMLElement;
+
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        if (inputs.every(input => input?.checkValidity())) {
+            const data = new URLSearchParams();
+            data.append('name', inputs[0].value);
+            data.append('tel', inputs[1].value);
+            data.append('email', inputs[2].value);
+            data.append('program', program.value);
+            data.append('source', 'ratata');
+            fetch('https://autopragmat.ru/api/v1/send-order/', {
+                method: 'POST',
+                body: data,
+            })
+                .then(() => {
+                    modal.style.display = "none";
+                    toastr.success('Заявка успешно отправлена');
+                    form.reset();
+                });
+        }
+    };
 </script>
