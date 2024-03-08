@@ -2,10 +2,11 @@
 import { Image } from 'astro:assets';
 import carImage from "../assets/img/screen2_car.jpg";
 import deerImage from "../assets/img/screen2_deer.jpg";
+import Parallax from './ui/Paralax';
 ---
 
 <section class="screen2" id="screen2"> 
-    <main class="screen2__main">
+    <main class="screen2__main relative">
         <div class="first-option fade-in-right">
             <div class="first-option__content">
                 <h3 class="screen2__h3 accent-text ">
@@ -26,6 +27,51 @@ import deerImage from "../assets/img/screen2_deer.jpg";
                 <h3 class="screen2__h3">узнай, как управлять авто в любых ситуациях</h3>
                 <p class="screen2__text">и закрепи на практике</p>
             </div>
+        </div>
+        <div class="container h-full mx-auto absolute right-0 top-0">
+            <Parallax className="hidden sm:block absolute -left-[250px] top-0" speed={1.2} client:visible>
+                <svg width="250" height="320" viewBox="0 0 192 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.85" filter="url(#filter0_f_1647_405)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.9453 304.023L78.7355 267.45L73.7538 207.682L24.9636 244.254L29.9453 304.023ZM122.546 171.108L171.334 134.537L176.316 194.306L127.525 230.878L122.544 171.111L73.7559 207.682L68.7741 147.913L117.564 111.341L122.546 171.108ZM117.563 111.341L166.353 74.7686L161.371 14.9999L112.581 51.5722L117.563 111.341ZM68.7726 147.913L19.9824 184.485L15.0007 124.717L63.7909 88.1444L68.7726 147.913Z" fill="#FF0C49"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_1647_405" x="0" y="0" width="191.316" height="319.023" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1647_405"/>
+                        </filter>
+                    </defs>
+                </svg>
+            </Parallax>
+            <Parallax className="hidden sm:block absolute right-0 bottom-0" speed={1} client:visible>
+                <svg width="192" height="320" viewBox="0 0 192 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.75" filter="url(#filter0_f_1647_405)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.9453 304.023L78.7355 267.45L73.7538 207.682L24.9636 244.254L29.9453 304.023ZM122.546 171.108L171.334 134.537L176.316 194.306L127.525 230.878L122.544 171.111L73.7559 207.682L68.7741 147.913L117.564 111.341L122.546 171.108ZM117.563 111.341L166.353 74.7686L161.371 14.9999L112.581 51.5722L117.563 111.341ZM68.7726 147.913L19.9824 184.485L15.0007 124.717L63.7909 88.1444L68.7726 147.913Z" fill="#FF0C49"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_1647_405" x="0" y="0" width="191.316" height="319.023" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1647_405"/>
+                        </filter>
+                    </defs>
+                </svg>
+            </Parallax>
+
+            <Parallax className="hidden sm:block absolute right-0 bottom-0" speed={0.5} client:visible>
+                <svg width="302" height="664" viewBox="0 0 302 664" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.5" filter="url(#filter0_f_1647_267)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8906 648.471L99.1383 573.299L106.185 437.432L22.937 512.603L15.8906 648.471ZM189.435 362.256L272.677 287.089L265.631 422.957L182.383 498.128L189.429 362.265L106.187 437.432L113.233 301.564L29.9854 376.736L37.0317 240.868L120.279 165.697L113.233 301.564L196.481 226.393L189.435 362.256ZM196.478 226.393L279.726 151.221L286.772 15.3538L203.524 90.5252L196.478 226.393Z" fill="#FF0C49"/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_f_1647_267" x="0.890625" y="0.35376" width="300.883" height="663.117" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1647_267"/>
+                        </filter>
+                    </defs>
+                </svg>
+            </Parallax>
         </div>
     </main>
 </section>
