@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="apragmat.beget.tech" id="f5163b75-9cab-4e0f-ab7c-34749821056b" port="22" nameFormat="DESCRIPTIVE" username="apragmat_roman" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
