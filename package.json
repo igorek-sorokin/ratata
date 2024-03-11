@@ -1,28 +1,39 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
+  "name": "ratata",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.0",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
     "@fontsource/overpass": "^4.5.9",
-    "astro": "^1.1.5",
+    "@studio-freight/hamo": "^0.6.24",
+    "@studio-freight/lenis": "^1.0.29",
+    "@types/alpinejs": "^3.13.6",
+    "@types/react": "^18.2.60",
+    "@types/react-dom": "^18.2.19",
+    "alpinejs": "^3.13.5",
+    "astro": "^4.3.0",
     "gsap": "^3.11.1",
     "inputmask": "^5.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^8.4.6",
+    "tailwindcss": "^3.4.1",
     "toastr": "^2.1.4",
-    "ymaps": "^0.2.1",
-    "swiper": "^8.4.6"
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
-    "@astrojs/alpinejs": "^0.1.2",
-    "@astrojs/image": "^0.5.0",
-    "@astrojs/mdx": "^0.11.4",
-    "@types/alpinejs": "^3.7.0",
-    "alpinejs": "^3.10.3"
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

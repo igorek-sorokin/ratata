@@ -10,7 +10,7 @@ import LockIcon from "./ui/lock-icon.astro";
 <section class="programs-section" id="programs">
   <h2 class="programs-section__title">Курс состоит из 4 программ</h2>
   <p class="programs-section__subtitle">Пройди все четыре — получи максимум пользы и ра-та-та</p>
-  <div class="programs">
+  <div class="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:gap-6">
     <div class="program program--first" style={`background-image: url(${programBlue.src});`}>
       <div class="program__header">
         <h3 class="programs__title">Safety</h3>
@@ -20,7 +20,9 @@ import LockIcon from "./ui/lock-icon.astro";
           <li>Концентрат бесценных навыков, идеально собранный в 2-часовую программу</li>
         </ul>
       </div>
-      <Button isModal={true} style={"contrast"} program="safety">Оставить заявку</Button>
+      <div class="mt-auto">
+        <Button isModal={true} style={"contrast"} program="safety">Оставить заявку</Button>
+      </div>
     </div>
     <div class="program program--second" style={`background-image: url(${programBlue.src});`}>
       <div class="program__header">
@@ -58,7 +60,9 @@ import LockIcon from "./ui/lock-icon.astro";
       <Button isModal={true} style={"contrast"} program="sport">Оставить заявку</Button>
       </div>
     </div>
-    </div>
+  <div class="py-16 text-center">
+    <a href="/public/ratata-training-program.pdf" class="text-lg underline text-gray-600 hover:text-accent" target="_blank">Дополнительная общеобразовательная программа «Вождение:&nbsp;Safety/Skill и Drift»</a>
+  </div>
 </section>
 
 <a class="link-pr" href="/ratata-training-program.pdf">Дополнительная общеобразовательная программа – дополнительная общеразвивающая программа «Вождение: Safety/Skill и Drift»</a>
@@ -137,7 +141,7 @@ import LockIcon from "./ui/lock-icon.astro";
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 12px;
   }
 
   .program__soon {
@@ -158,6 +162,7 @@ import LockIcon from "./ui/lock-icon.astro";
       align-items: center;
       list-style: none;
       font-size: 22px;
+      line-height: 140%;
       color: inherit;
   }
 
@@ -178,8 +183,7 @@ import LockIcon from "./ui/lock-icon.astro";
 
   .program__content {
     /* padding-left: 80px; */
-    margin-bottom: 50px;
-    margin-bottom: auto;
+    margin-bottom: 24px;
    
   }
 

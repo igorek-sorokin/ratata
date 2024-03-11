@@ -88,40 +88,10 @@ const trainersList = [
 ---
 
 <section class="trainers-section" id="trainers">
-  <h2 class="trainers-section__title">Лучшие тренеры</h2>
   <p class="trainers-section__subtitle">Партнёры компании «Ратата» —<br>
     опытные водители и даже мастера автоспорта</p>
-  <div class="trainers">
-    <div class="main-trainer--mobile">
-      <figure class="main-trainer ">
-      <img src={efim.src} alt="Efim" />
-      <div class="main-trainer__element"></div>
-      <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-    </figure>
-      <p class="main-trainer__sub-title">Автор методики</p>
-      <div class="main-trainer__sub-text">
-        <div class="main-trainer__sub-star">
-          <StarIcon  width={28} height={28} filled={true} />
-        </div>
-        <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
-      </div>
-    </div>
-    <div class="main-trainer__wrap">
-      <div class="main-trainer--desktop">
-        <figure class="main-trainer">
-          <img src={efim.src} alt="Efim" />
-          <div class="main-trainer__element"></div>
-          <figcaption class="main-trainer__name">Ефим Гантмахер</figcaption>
-        </figure>
-          <p class="main-trainer__sub-title">Автор методики</p>
-          <div class="main-trainer__sub-text">
-            <div class="main-trainer__sub-star">
-              <StarIcon  width={28} height={28} filled={true} />
-            </div>
-            <span>Двукратный вице-чемпион <br>России по кольцевым гонкам</span>
-          </div>
-      </div>
-    </div>
+  <h2 class="trainers-section__title">Лучшие тренеры</h2>
+  <div class="trainers container mx-auto py-20">
     <div class="other-trainers">
       {
         trainersList.map((trainer) => (
@@ -133,7 +103,7 @@ const trainersList = [
       }
     </div>
     <div class="other-trainers-swiper swiper">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper pb-8">
         {
           trainersList.map((trainer) => (
           <figure class="other-trainer swiper-slide">
@@ -168,7 +138,7 @@ const trainersList = [
   .trainers-section__subtitle {
     text-align: center;
     font-size: 24px;
-    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .main-trainer {
     display: flex;
@@ -201,9 +171,6 @@ const trainersList = [
   .trainers-section {
     max-width: 100%;
     overflow-x: hidden;
-    padding: var(--container-padding);
-    padding-top: 90px;
-    padding-bottom: 90px;
     background-position: right top;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg width='150' height='360' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M703.505.768 342.08 565.812 0 .768h703.505Z' fill='%235AAFFF'/%3E%3C/svg%3E");
@@ -283,6 +250,8 @@ const trainersList = [
   .other-trainer > img {
     margin-bottom: 20px;
     width: 100%;
+    max-height: 300px;
+    object-fit: contain;
   }
   .other-trainer__name {
     font-weight: 400;
@@ -309,8 +278,6 @@ const trainersList = [
   @media (max-width: 1023px) {
     .trainers-section {
       background-image: none;
-      padding-top: 100px;
-      padding-bottom: 90px;
     }
     .trainers {
       grid-template-columns: repeat(2, 1fr);
@@ -349,7 +316,7 @@ const trainersList = [
       width: 100%;
       padding-left: 0;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       .main-trainer--mobile {
         display: flex;
         flex-direction: column;
@@ -443,6 +410,18 @@ var swiper = new Swiper(".other-trainers-swiper", {
       slidesPerGroup: 3,
       loop: true,
       loopFillGroupWithBlank: true,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          slidesPerGroup: 4,
+        },
+        1400: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+          slidesPerGroup: 5,
+        },
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
