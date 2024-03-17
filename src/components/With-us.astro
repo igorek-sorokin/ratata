@@ -11,15 +11,14 @@ import with_us_mobile from "../assets/img/with_us_mobile.jpg";
   <div class="with-us-section__background with-us-section__background--mobile"   style={`background-image: linear-gradient(180deg, rgba(255,255,255,75%), rgba(255, 255, 255, 40%) 64.04%), url(${with_us_mobile.src});`}></div>
 
   <div class="container mx-auto">
-    <p>
-      Проведи один день на полигоне,<br />
-      и ты снова влюбишься в вождение
+    <p class="text-black mb-2 md:pl-1">
+      Готов влюбиться в вождение заново?
     </p>
-    <h2 class="with-us-section__title">Ты с нами?</h2>
-    <div class="buttons">
-      <Button isModal={true} style={"accent"}>Погнали</Button>
-      <Button href="#programs">Программы</Button>
-    </div>
+    <h2 class="with-us-section__title text-accent max-w-2xl">Увидимся на&nbsp;полигоне!</h2>
+    <!--<div class="buttons">-->
+    <!--  <Button isModal={true} style={"accent"}>Погнали</Button>-->
+    <!--  <Button href="#programs">Программы</Button>-->
+    <!--</div>-->
   </div>
 </section>
 
@@ -64,7 +63,6 @@ import with_us_mobile from "../assets/img/with_us_mobile.jpg";
     font-size: 80px;
     line-height: 88px;
     text-transform: uppercase;
-    color: #46a5ff;
     margin-bottom: 20px;
   }
 
@@ -78,27 +76,27 @@ import with_us_mobile from "../assets/img/with_us_mobile.jpg";
     }
 
   @media (max-width: 1023px) {
-
     .with-us-section__background--desktop {
       display: none;
     }
 
     .with-us-section__background--mobile {
-      background-size: 970px;
+      background-repeat: no-repeat;
+      background-size: cover;
       display: block;
-      background-position: top center;
+      background-position: center center;
     }
 
     .with-us-section  {
       padding: 0 40px;
       text-align: center;
       justify-content: flex-start;
-      height: 1000px;
+      height: 100vh;
       padding-top: 120px;
     }
     .with-us-section__title {
-      font-size: 50px;
-      line-height: 55px;
+      font-size: 34px;
+      line-height: 120%;
     }
   }
 </style>
