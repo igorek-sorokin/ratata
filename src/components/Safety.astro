@@ -160,7 +160,6 @@ import Parallax from "./ui/Paralax";
   .safety-section__image {
     max-width: 100%;
     object-fit: contain;
-    transform: translateX(0);
   }
 
   @media (max-width: 1023px) {
@@ -203,21 +202,21 @@ import Parallax from "./ui/Paralax";
   }
 </style>
 <script>
-      import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const carImage: HTMLElement = document.querySelector(".safety-section__image");
-
-  gsap
-    .from(carImage, {
-      x: window.innerWidth,
-      ease: "ease-out",
-      scrollTrigger: {
-        trigger: carImage,
-        start: 'top bottom',
-        end: 'center center',
-        scrub: 1.5,
-      }
-    });
+  //     import { gsap } from "gsap";
+  // import { ScrollTrigger } from "gsap/ScrollTrigger";
+  // gsap.registerPlugin(ScrollTrigger);
+  //
+  // const carImage: HTMLElement = document.querySelector(".safety-section__image");
+  //
+  // gsap
+  //   .from(carImage, {
+  //     x: window.innerWidth,
+  //     ease: "ease-out",
+  //     scrollTrigger: {
+  //       trigger: carImage,
+  //       start: 'top bottom',
+  //       end: 'center center',
+  //       scrub: 1.5,
+  //     }
+  //   });
 </script>
