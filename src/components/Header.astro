@@ -1,6 +1,5 @@
 ---
 import logo from "../assets/img/logo.svg";
-import { Image } from 'astro:assets';
 import Button from "./ui/Button.astro";
 import BurgerIcon from "./ui/Burger-icon.astro";
 import BurgerCloseIcon from "./ui/burger-close-icon.astro";
@@ -25,7 +24,7 @@ const navList = [
 ];
 ---
 
-<div class="sticky bg-white bg-opacity-75">
+<div class="sticky bg-white shadow-2xl">
   <header class="header-mobile" x-data="{ open: false }">
 
     <a href="/"><img src={logo.src} class="logo" alt="ratata логотип"></a>
@@ -80,7 +79,7 @@ const navList = [
       <div class="hidden md:flex flex-col xl:flex-row gap-1 items-center xl:gap-3 xl:gap-5 justify-end">
           <a href="tel:+74994554669" class="header__tel">+7 499 455-466-9</a>
           <div class="header__buttons">
-              <button id="openPaymentButton" class={`button button--outline button--header open-payment-modal-js`}>
+              <button class={`button button--outline button--header open-payment-modal-js`}>
           <span>
             Оплатить
           </span>
