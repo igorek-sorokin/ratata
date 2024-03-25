@@ -6,7 +6,7 @@ import Parallax from "./ui/Paralax";
 const programItems = await getCollection('program');
 ---
 
-<section class="pt-7 lg:pt-[150px] relative" id="program">
+<section class="pt-2 md:pt-7 lg:pt-[150px] relative" id="program">
   <Parallax className="hidden sm:block absolute left-0 top-0" speed={1} client:visible>
     <svg width="192" height="320" viewBox="0 0 192 320" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.75" filter="url(#filter0_f_1647_405)">
@@ -36,6 +36,11 @@ const programItems = await getCollection('program');
       </defs>
     </svg>
   </Parallax>
+  <h2
+class="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center font-bold uppercase font-display italic"
+>
+    Приходи на ратата
+</h2>
   <h2
 class="text-lg md:text-xl lg:text-2xl xl:text-3xl text-center font-bold uppercase font-display italic"
 >

@@ -14,9 +14,9 @@ import screen4Red from "../assets/img/screen4_red.png";
                     class="first-section__content fade-in-left"
                     style={`background-image: url(${screen4Blue.src});`}
             >
-                <div class="pr-4">
+                <div class="sm:pl-4">
                     <h2 class="screen__title">Если ты:</h2>
-                    <ul class="wheel-list">
+                    <ul class="wheel-list text-sm md:text-lg">
                         <li><span>Не понимаешь, как ведет себя машина</span></li>
                         <li><span>Чувствуешь себя неуверенно за рулем</span></li>
                         <li><span>Боишься быстро ездить и маневрировать</span></li>
@@ -28,9 +28,9 @@ import screen4Red from "../assets/img/screen4_red.png";
         <section class="second-section">
             <Image src={wheelImg} alt="wheel" class="fade-in-left"/>
             <div class="second-section__content fade-in-right" style={`background-image: url(${screen4Red.src});`}>
-                <div class="pl-4">
+                <div class="sm:pl-4">
                     <h2 class="screen__title">Или наоборот</h2>
-                    <ul class="wheel-list">
+                    <ul class="wheel-list text-sm md:text-lg">
                         <li>Думаешь, что все знаешь и умеешь</li>
                         <li>Хочешь узнать пределы возможностей автомобиля</li>
                         <li>Ищешь, как попасть в автоспорт</li>
@@ -163,20 +163,18 @@ import screen4Red from "../assets/img/screen4_red.png";
     height: 100%;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 767px) {
     .first-section {
         grid-template-columns: 1fr;
-        grid-template-rows: 450px 350px;
+        grid-template-rows: min-content 350px;
     }
 
     .first-section__content  {
-        padding: 40px 40px;
+        padding: 80px 24px;
         justify-content: center;
         align-items: center;
         clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
         margin-right: 0;
-        padding-right: 0;
-        padding-top: 0;
         margin-bottom: -25%;
         position: relative;
         z-index: 1;
@@ -189,17 +187,15 @@ import screen4Red from "../assets/img/screen4_red.png";
 
     .second-section {
         grid-template-columns: 1fr;
-        grid-template-rows: 450px 350px;
+        grid-template-rows: min-content 350px;
     }
 
     .second-section__content  {
-        padding: 0 40px;
+        padding: 80px 24px;
         justify-content: center;
         align-items: center;
         clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
         margin-right: 0;
-        padding-right: 0;
-        padding-top: 0;
         margin-bottom: -25%;
         position: relative;
         z-index: 1;
