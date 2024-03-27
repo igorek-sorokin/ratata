@@ -8,7 +8,7 @@ import Footer from "../components/Footer.astro";
 import Form from "../components/Form.astro";
 import PaymentForm from "../components/PaymentForm.astro";
 import MapSection from "../components/MapSection.astro";
-import CertificateForm from "../components/CertificateForm.astro";
+import CertificateForm from "../components/CertificateForm";
 export interface Props {
   title: string;
 }
@@ -77,7 +77,7 @@ const { title } = Astro.props;
         <div id="certificateFormModal" class="modal">
           <div class="modal-content bg-white">
             <button class="close" id="certificateFormClose" type="button">&times;</button>
-            <CertificateForm />
+            <CertificateForm client:only="react" />
           </div>
         </div>
       </div>
