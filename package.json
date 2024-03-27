@@ -33,6 +33,8 @@
     "ymaps": "^0.2.1"
   },
   "devDependencies": {
+    "@types/inputmask": "^5.0.7",
+    "@types/toastr": "^2.1.43",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0"
   }
