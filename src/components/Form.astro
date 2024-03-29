@@ -102,6 +102,7 @@
             e.target.value = inputValue.slice(0, 20);
         }
     });
+    const wrapper = document.getElementById("body-el");
 
     const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
     const program = document.getElementById('program') as HTMLSelectElement;
@@ -123,6 +124,7 @@
             })
                 .then(() => {
                     modal.style.display = "none";
+                    wrapper.style.overflowY = 'inherit';
                     toastr.success('Заявка успешно отправлена');
                     form.reset();
                 });
