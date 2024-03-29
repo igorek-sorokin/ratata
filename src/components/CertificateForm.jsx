@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import toastr from 'toastr'
 import Inputmask from "inputmask";
 import { getTrafficSource } from '../scripts/getTrafficSource';
@@ -26,6 +26,8 @@ const CertificateForm = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        const wrapper = document.getElementById("body-el");
+        const modal = document.getElementById("certificateFormModal");
         const data = new URLSearchParams();
         data.append("name", formData.name);
         data.append("tel", formData.tel);
@@ -39,6 +41,9 @@ const CertificateForm = () => {
             body: data,
         }).then(() => {
             toastr.success("Заявка успешно отправлена");
+            modal.style.display = "none";
+            wrapper.style.overflowY = 'inherit';
+            e.target.reset();
         }).catch(() => {
             toastr.error("Произошла ошибка");
         });

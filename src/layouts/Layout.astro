@@ -37,7 +37,7 @@ const { title } = Astro.props;
 </script>
 <!-- Google tag (gtag.js) -->
   </head>
-  <body>
+  <body id="body-el">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -61,20 +61,20 @@ const { title } = Astro.props;
         <slot />
         <MapSection />
         <!-- <Footer /> -->
-        <div id="formModal" class="modal">
+        <div id="formModal" class="modal overflow-y-scroll">
           <div class="modal-content">
             <span class="close" id="formModalClose">&times;</span>
             <Form />
           </div>
         </div>
-        <div id="paymentFormModal" class="modal">
+        <div id="paymentFormModal" class="modal overflow-y-scroll">
           <div class="modal-content">
             <button class="close" id="paymentFormClose" type="button">&times;</button>
             <PaymentForm />
           </div>
         </div>
 
-        <div id="certificateFormModal" class="modal">
+        <div id="certificateFormModal" class="modal overflow-y-scroll">
           <div class="modal-content bg-white">
             <button class="close" id="certificateFormClose" type="button">&times;</button>
             <CertificateForm client:only="react" />
@@ -285,6 +285,8 @@ position: relative;
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
   }
+
+  const wrapper = document.getElementById("body-el");
   var formModal = document.getElementById("formModal");
   var paymentForm = document.getElementById("paymentFormModal");
   var certificateForm = document.getElementById("certificateFormModal");
@@ -317,6 +319,8 @@ position: relative;
         }
       });
       formModal.style.display = "flex";
+      wrapper.style.height = '100vh';
+      wrapper.style.overflowY = 'hidden';
     };
   });
 
@@ -324,25 +328,35 @@ position: relative;
   btnsPayment.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
       paymentForm.style.display = "flex";
+      wrapper.style.height = '100vh';
+      wrapper.style.overflowY = 'hidden';
     };
   });
 
   btnsCertificate.forEach((btn: HTMLElement) => {
     btn.onclick = function () {
       certificateForm.style.display = "flex";
+      wrapper.style.height = '100vh';
+      wrapper.style.overflowY = 'hidden';
     };
   });
 
   formModalClose.onclick = function () {
     formModal.style.display = "none";
+    wrapper.style.overflowY = 'inherit';
+    wrapper.style.height = 'inherit';
   };
 
   paymentFormClose.onclick = function () {
     paymentForm.style.display = "none";
+    wrapper.style.overflowY = 'inherit';
+    wrapper.style.height = 'inherit';
   };
 
   certificateFormClose.onclick = function () {
     certificateForm.style.display = "none";
+    wrapper.style.overflowY = 'inherit';
+    wrapper.style.height = 'inherit';
   };
 
   if(window.location.hash && window.location.hash === '#pay_form') {
