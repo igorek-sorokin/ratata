@@ -104,7 +104,7 @@ const CertificateForm = () => {
                         </a>
                         и&nbsp;
                         <a className="text-accent underline" href="/agreement/">
-                            Пользовательским оглашением
+                            Пользовательским соглашением
                         </a>
                     </span>
                 </div>
