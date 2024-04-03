@@ -57,29 +57,29 @@ const { title } = Astro.props;
     <!-- /Yandex.Metrika counter -->
     <div id="smooth-wrapper">
       <div id="smooth-container">
-        <Header />
-        <slot />
-        <MapSection />
-        <!-- <Footer /> -->
-        <div id="formModal" class="modal overflow-y-scroll">
+        <div id="formModal" class="modal overflow-y-scroll" data-lenis-prevent>
           <div class="modal-content">
             <span class="close" id="formModalClose">&times;</span>
             <Form />
           </div>
         </div>
-        <div id="paymentFormModal" class="modal overflow-y-scroll">
+        <div id="paymentFormModal" class="modal overflow-y-scroll" data-lenis-prevent>
           <div class="modal-content">
             <button class="close" id="paymentFormClose" type="button">&times;</button>
             <PaymentForm />
           </div>
         </div>
 
-        <div id="certificateFormModal" class="modal overflow-y-scroll">
+        <div id="certificateFormModal" class="modal overflow-y-scroll" data-lenis-prevent>
           <div class="modal-content bg-white">
             <button class="close" id="certificateFormClose" type="button">&times;</button>
             <CertificateForm client:only="react" />
           </div>
         </div>
+        <Header />
+        <slot />
+        <MapSection />
+        <!-- <Footer /> -->
       </div>
     </div>
     <style is:global>
@@ -154,7 +154,8 @@ const { title } = Astro.props;
 
 	  .modal-content {
 		position: relative;
-	  }
+	    max-height: 100%;
+      }
 
       /* The Close Button */
       .close {
