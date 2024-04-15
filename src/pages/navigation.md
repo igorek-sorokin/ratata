@@ -18,7 +18,7 @@ layout: ../layouts/PageLayout.astro
 
 [Маршрут на Яндекс.Картах](https://yandex.ru/maps/213/moscow/?ll=37.482671%2C55.903985&mode=routes&rtext=55.904727%2C37.480546~56.038892%2C37.544587~56.031462%2C37.452877&rtt=auto&ruri=~~ymapsbm1%3A%2F%2Forg%3Foid%3D122855470515&z=14)
 
-Первый шлагбаум.
+Первый шлагбаум. Здесь нужно обязательно остановиться и дождаться разрешения охраны на въезд.
 
 <img src="/shlagbaum.jpg" alt="logopark" style="height: auto; width: 100%;"/>
 
