@@ -154,6 +154,7 @@
 
   const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
   const form = document.getElementById('form') as HTMLFormElement;
+  const button = document.querySelector('button.form__submit') as HTMLElement;
   var modal = document.getElementById("formModal");
   var formSubmit: HTMLElement = document.querySelector(
     ".form__submit"
@@ -166,13 +167,17 @@
         data.append('name', inputs[0].value);
         data.append('tel', inputs[1].value);
         data.append('email', inputs[2].value);
-        fetch('https://autopragmat.ru/api/v1/send-order/', {
+    button.disabled = true;
+    fetch('https://autopragmat.ru/api/v1/send-order/', {
         method: 'POST',
         body: data,
     })
     .then(() => {
       modal.style.display = "none";
       toastr.success('Заявка успешно отправленна')
+    })
+    .catch(() => {
+      button.disabled = false;
     });
   }
   };
