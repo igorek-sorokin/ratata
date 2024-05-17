@@ -56,7 +56,7 @@ const CertificateForm = () => {
         <div className="md:max-w-2xl mx-auto bg-white px-2 py-8 xs:px-6 md:px-16 md:py-12 text-styles">
             <h1>Оставьте заявку на сертификат</h1>
             <p className="text-sm text-secondary mb-5">
-                Время ответа на заявку может составить более 7 дней. Приносим
+                Время ответа на заявку может составить более 2 дней. Приносим
                 извинения за столь долгое ожидание.
             </p>
             <form className="flex flex-col gap-5" onSubmit={handleFormSubmit}>
