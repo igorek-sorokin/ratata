@@ -107,6 +107,7 @@
     const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
     const program = document.getElementById('program-select') as HTMLSelectElement;
     const form = document.getElementById('form') as HTMLFormElement;
+    const button = document.querySelector('button.form__submit') as HTMLElement;
     const modal = document.getElementById("formModal");
 
     form.onsubmit = function (e) {
@@ -118,6 +119,7 @@
             data.append('email', inputs[2].value);
             data.append('program', program.value);
             data.append('source', 'ratata');
+            button.disabled = true;
             fetch('https://autopragmat.ru/api/v1/send-order/', {
                 method: 'POST',
                 body: data,
@@ -127,6 +129,9 @@
                     wrapper.style.overflowY = 'inherit';
                     toastr.success('Заявка успешно отправлена');
                     form.reset();
+                })
+                .catch(() => {
+                    button.disabled = false;
                 });
         }
     };
