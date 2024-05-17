@@ -29,6 +29,7 @@ const CertificateForm = () => {
         const wrapper = document.getElementById("body-el");
         const modal = document.getElementById("certificateFormModal");
         const data = new URLSearchParams();
+        const button = modal.querySelector('button[type="submit"]');
         data.append("name", formData.name);
         data.append("tel", formData.tel);
         data.append("email", formData.email);
@@ -36,6 +37,7 @@ const CertificateForm = () => {
         data.append('source', 'ratata');
         data.append('trafficSource', getTrafficSource());
 
+        button.disabled = true;
         fetch('https://autopragmat.ru/api/v1/send-order/', {
             method: 'POST',
             body: data,
@@ -46,6 +48,7 @@ const CertificateForm = () => {
             e.target.reset();
         }).catch(() => {
             toastr.error("Произошла ошибка");
+            button.disabled = false;
         });
     };
 

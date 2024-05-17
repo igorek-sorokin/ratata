@@ -107,7 +107,7 @@
     const inputs: HTMLInputElement[] = [document.getElementById('name') as HTMLInputElement, document.getElementById('tel') as HTMLInputElement, document.getElementById('email') as HTMLInputElement];
     const program = document.getElementById('program-select') as HTMLSelectElement;
     const form = document.getElementById('form') as HTMLFormElement;
-    const button = document.querySelector('button.form__submit') as HTMLElement;
+    const button = form.querySelector('button[type="submit"]') as HTMLElement;
     const modal = document.getElementById("formModal");
 
     form.onsubmit = function (e) {
