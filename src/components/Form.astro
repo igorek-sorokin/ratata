@@ -86,6 +86,7 @@
 <script>
     import Inputmask from 'inputmask';
     import toastr from 'toastr'
+    import {getTrafficSource} from "../scripts/getTrafficSource";
 
     const selector = document.getElementById("tel");
 
@@ -119,6 +120,7 @@
             data.append('email', inputs[2].value);
             data.append('program', program.value);
             data.append('source', 'ratata');
+            data.append('trafficSource', getTrafficSource());
             button.disabled = true;
             fetch('https://autopragmat.ru/api/v1/send-order/', {
                 method: 'POST',
