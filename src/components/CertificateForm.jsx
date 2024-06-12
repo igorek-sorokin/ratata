@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
+
 import toastr from 'toastr'
 import Inputmask from "inputmask";
-import { getTrafficSource } from '../scripts/getTrafficSource';
+import {getTrafficSource} from '../scripts/getTrafficSource';
 
 const CertificateForm = () => {
     const [formData, setFormData] = useState({
