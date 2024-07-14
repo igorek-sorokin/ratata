@@ -99,27 +99,39 @@ const {title} = Astro.props;
 </div>
 <style is:global>
     .text-styles h1 {
-        @apply text-2xl lg:text-3xl font-bold uppercase font-display italic;
+        @apply text-2xl lg:text-3xl font-bold uppercase font-display italic py-2;
     }
 
     .text-styles h2 {
-        @apply text-xl lg:text-2xl font-bold uppercase font-display italic;
+        @apply text-xl lg:text-2xl font-bold uppercase font-display italic py-2;
     }
 
     .text-styles h3 {
-        @apply text-lg lg:text-xl font-bold uppercase font-display italic;
+        @apply text-lg lg:text-xl font-bold uppercase font-display italic py-2;
     }
 
     .text-styles h4 {
-        @apply text-base lg:text-lg font-bold uppercase font-display italic;
+        @apply text-base lg:text-lg font-bold uppercase font-display italic py-2;
     }
 
     .text-styles p {
         @apply text-sm max-w-2xl
     }
 
-    .text-styles p + p {
+    .text-styles p + p, .text-styles ul + p  {
         @apply mt-2;
+    }
+
+    .text-styles * + h1, .text-styles * + h2, .text-styles * + h3 .text-styles * + h4 {
+        @apply mt-4
+    }
+
+    .text-styles ul {
+        list-style: disc inside;
+    }
+
+    .text-styles li {
+        @apply text-sm
     }
 
     .text-styles a {
