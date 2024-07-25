@@ -49,8 +49,8 @@ layout: ../layouts/PageLayout.astro
 
 Правила использования подарочных сертификатов — [https://ratata.ru/terms/](https://ratata.ru/terms/)
 
-Правила оказания услуг на специализированном гоночном треке — [https://ratata.ru/service-track/](https://ratata.ru/service-track/)
+Правила оказания услуг на специализированном гоночном треке — [https://ratata.ru/service-track.pdf](https://ratata.ru/service-track.pdf)
 
-Правила аренды автомобиля (транспортного средства) ООО «РАТАТА» — [https://ratata.ru/rent-track/](https://ratata.ru/rent-track/)
+Правила аренды автомобиля (транспортного средства) ООО «РАТАТА» — [https://ratata.ru/rent-track.pdf](https://ratata.ru/rent-track.pdf)
 
 ## ДО ВСТРЕЧИ НА ТРЕКЕ!

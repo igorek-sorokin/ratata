@@ -2,7 +2,7 @@ User-Agent: *
 
 Disallow: *?__cf_chl_tk=
 Disallow: /rent/
-Disallow: /service/
+Disallow: /service.pdf
 Disallow: /gift/
 Disallow: /application-1.pdf
 Disallow: /application-2.pdf

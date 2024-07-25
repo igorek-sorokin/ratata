@@ -58,6 +58,6 @@ layout: ../layouts/PageLayout.astro
 
 Правила оказания услуг по прохождению контраварийной подготовки — [https://ratata.ru/service/](https://ratata.ru/service/)
 
-Правила аренды автомобиля (транспортного средства) ООО «РАТАТА» — [https://ratata.ru/rent/](https://ratata.ru/rent/)
+Правила аренды автомобиля (транспортного средства) ООО «РАТАТА» — [https://ratata.ru/rent.pdf/](https://ratata.ru/rent.pdf/)
 
 ## До встречи на площадке!
