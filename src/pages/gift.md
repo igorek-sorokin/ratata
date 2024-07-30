@@ -54,9 +54,9 @@ layout: ../layouts/PageLayout.astro
 
 ## Информация
 
-Правила использования подарочных сертификатов — [https://ratata.ru/terms/](https://ratata.ru/terms/)
+Правила использования подарочных сертификатов — [https://ratata.ru/terms.pdf](https://ratata.ru/terms.pdf)
 
-Правила оказания услуг по прохождению контраварийной подготовки — [https://ratata.ru/service/](https://ratata.ru/service/)
+Правила оказания услуг по прохождению контраварийной подготовки — [https://ratata.ru/service.pdf](https://ratata.ru/service.pdf)
 
 Правила аренды автомобиля (транспортного средства) ООО «РАТАТА» — [https://ratata.ru/rent.pdf/](https://ratata.ru/rent.pdf/)
 

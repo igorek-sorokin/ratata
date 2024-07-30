@@ -47,7 +47,7 @@ layout: ../layouts/PageLayout.astro
 
 ## ИНФОРМАЦИЯ
 
-Правила использования подарочных сертификатов — [https://ratata.ru/terms/](https://ratata.ru/terms/)
+Правила использования подарочных сертификатов — [https://ratata.ru/terms.pdf](https://ratata.ru/terms.pdf)
 
 Правила оказания услуг на специализированном гоночном треке — [https://ratata.ru/service-track.pdf](https://ratata.ru/service-track.pdf)
 
