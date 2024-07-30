@@ -1,6 +1,6 @@
 ---
 title: Обладателям сертификатов
-layout: ../layouts/PageLayout.astro
+layout: ../layouts/PageLayout_adw.astro
 ---
 
 ## ОБЛАДАТЕЛЯМ СЕРТИФИКАТОВ
