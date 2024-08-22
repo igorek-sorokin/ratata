@@ -9,15 +9,15 @@ layout: ../layouts/PageLayout.astro
 
 [Яндекс Карты](https://yandex.ru/maps/-/CDgvrYmX)
 
+[Яндекс.Навигатор](https://yandex.ru/navi/org/ratata/200216146033?si=hdq4dyfcepr4e526pm3pe2mq68)
+
+55.162507, 37.950961
+
 ## На автомобиле
 
 <img src="/map2mikhnevo_aut.jpg" alt="mikhnevo" style="height: auto; width: 100%;"/>
 
 <br>
-
-[Яндекс.Навигатор](https://yandex.ru/navi/?whatshere[zoom]=18&whatshere[point]=37.950961,55.162507&lang=ru&from=navi)
-
-55.162507, 37.950961
 
 Чтобы точно успеть на занятие, воспользуйтесь трассой М-4.<br> 
 Сейчас проезд по ней обойдётся:<br><br>
