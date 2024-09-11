@@ -47,11 +47,11 @@
         .load("https://api-maps.yandex.ru/2.1/?lang=ru_RU")
         .then((maps) => {
             const map = new maps.Map("js-map", {
-                center: [55.162507, 37.950961],
+                center: [55.162727, 37.949368],
                 zoom: 17,
                 сontrols: ["zoomControl", "routeButtonControl"],
             });
-            let placemark = new maps.Placemark([55.162507, 37.950961], {}, {});
+            let placemark = new maps.Placemark([55.162727, 37.949368], {}, {});
             map.geoObjects.add(placemark);
         })
         .catch((error) => console.log("Failed to load Yandex Maps", error));

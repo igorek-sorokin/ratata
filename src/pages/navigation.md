@@ -11,11 +11,11 @@ layout: ../layouts/PageLayout.astro
 
 [Яндекс.Навигатор](https://yandex.ru/navi/org/ratata/200216146033?si=hdq4dyfcepr4e526pm3pe2mq68)
 
-55.162507, 37.950961
+55.162727, 37.949368
 
 ## На автомобиле
 
-<img src="/map2mikhnevo_aut.jpg" alt="mikhnevo" style="height: auto; width: 100%;"/>
+<img src="/map2mikhnevo_aut.jpg" alt="mikhnevo" style="height: auto; width: 70%;"/>
 
 <br>
 
@@ -29,7 +29,7 @@ layout: ../layouts/PageLayout.astro
 
 ## На общественном транспорте
 
-<img src="/map2mikhnevo_pub.jpg" alt="mikhnevo" style="height: auto; width: 100%;"/>
+<img src="/map2mikhnevo_pub.jpg" alt="mikhnevo" style="height: auto; width: 70%;"/>
 
 <br>
 
@@ -43,23 +43,23 @@ layout: ../layouts/PageLayout.astro
 
 ## Подъезд к полигону
 
-<img src="/azs.jpg" alt="logopark" style="height: auto; width: 100%;"/>
+<img src="/azs.jpg" alt="logopark" style="height: auto; width: 70%;"/>
 
 <br>
 
-<img src="/metal.jpg" alt="logopark" style="height: auto; width: 100%;"/>
+<img src="/metal.jpg" alt="logopark" style="height: auto; width: 70%;"/>
 
 <br>
 
-<img src="/kpp.jpg" alt="maps-parking" style="height: auto; width: 100%;"/>
+<img src="/kpp.jpg" alt="maps-parking" style="height: auto; width: 70%;"/>
 
 <br>
 
-<img src="/angar.jpg" alt="logopark" style="height: auto; width: 100%;"/>
+<img src="/angar.jpg" alt="logopark" style="height: auto; width: 70%;"/>
 
 <br>
 
-<img src="/vorota.jpg" alt="maps-parking" style="height: auto; width: 100%;"/>
+<img src="/vorota.jpg" alt="maps-parking" style="height: auto; width: 70%;"/>
 
 <br>
 
