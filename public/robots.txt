@@ -4,6 +4,8 @@ Disallow: *?__cf_chl_tk=
 Disallow: /rent.pdf
 Disallow: /service.pdf
 Disallow: /gift/
+Disallow: /gift-track/
+Disallow: /gift-track
 Disallow: /application-1.pdf
 Disallow: /application-2.pdf
 Disallow: /application-3.pdf
