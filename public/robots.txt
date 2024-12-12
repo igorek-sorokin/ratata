@@ -1,6 +1,11 @@
 User-Agent: *
 
-Disallow: *?__cf_chl_tk=
+Disallow: /?erid=*
+Disallow: /?clckid=*
+Disallow: /?yprqee=*
+Disallow: /?etext=*
+Disallow: /?__cf_chl_tk=*
+Disallow: *?__cf_chl_rt_tk=
 Disallow: /rent.pdf
 Disallow: /service.pdf
 Disallow: /gift/
