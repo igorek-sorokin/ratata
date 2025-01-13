@@ -1,5 +1,8 @@
 User-Agent: *
 
+Disallow: /?_ym_debug=*
+Disallow: /?sfnsn=*
+Disallow: /?utm_referer=*
 Disallow: /?erid=*
 Disallow: /?clckid=*
 Disallow: /?yprqee=*
