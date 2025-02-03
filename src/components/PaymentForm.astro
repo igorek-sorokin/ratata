@@ -36,7 +36,7 @@ import toastr from "toastr";
     />
 
       <div class="form__select-wrapper">
-        <select name="recipient" id="recipient-select" class="form__select">
+        <select name="recipient" id="recipient-select" class="form__select" required>
           <option value="" selected disabled hidden>Кому</option>
           <option value="Self">Себе</option>
           <option value="Gift">В подарок</option>
@@ -146,11 +146,9 @@ import toastr from "toastr";
         input?.checkValidity()
       )
     ) {
-      const description = `Ф.И.О: ${nameInput.value}, Телефон: ${telInput.value}, E-mail: ${emailInput.value}, Получатель: ${recipientSelect.value}${
-        recipientSelect.value === "Gift"
-          ? `, Ф.И.О получателя: ${giftNameInput.value}`
-          : ""
-      }`;
+const description = `${nameInput.value}, ${telInput.value}, ${emailInput.value}${
+  giftNameInput.value ? `, Кому: ${giftNameInput.value}` : ""
+}`;
       const backUrl = "https://ratata.ru/";
       const data = new URLSearchParams();
 
