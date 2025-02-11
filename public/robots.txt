@@ -18,6 +18,8 @@ Disallow: /application-1.pdf
 Disallow: /application-2.pdf
 Disallow: /application-3.pdf
 Disallow: /price/
+Disallow: /*?*
 
+Clean-param: all /*
 Host: https://ratata.ru
 Sitemap: https://ratata.ru/sitemap.xml
