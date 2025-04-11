@@ -112,29 +112,50 @@
     const modal = document.getElementById("formModal");
 
     form.onsubmit = function (e) {
-        e.preventDefault();
-        if (inputs.every(input => input?.checkValidity())) {
-            const data = new URLSearchParams();
-            data.append('name', inputs[0].value);
-            data.append('tel', inputs[1].value);
-            data.append('email', inputs[2].value);
-            data.append('program', program.value);
-            data.append('source', 'ratata');
-            data.append('trafficSource', getTrafficSource());
-            button.disabled = true;
-            fetch('https://autopragmat.ru/api/v1/send-order/', {
-                method: 'POST',
-                body: data,
+    e.preventDefault();
+    if (inputs.every(input => input?.checkValidity())) {
+        const data = new URLSearchParams();
+        data.append('name', inputs[0].value);
+        data.append('tel', inputs[1].value);
+        data.append('email', inputs[2].value);
+        data.append('program', program.value);
+        data.append('source', 'ratata');
+        data.append('trafficSource', getTrafficSource());
+        button.disabled = true;
+
+        fetch('https://autopragmat.ru/api/v1/send-order/', {
+            method: 'POST',
+            body: data,
+        })
+            .then(() => {
+                // Общая цель для всех заявок
+                if (typeof ym !== 'undefined') {
+                    ym(91212051, 'reachGoal', 'req');
+                }
+
+                // Цели для программ
+                const programGoals = {
+                    'Safety': 'req_safety',
+                    'Skill': 'req_skill',
+                    'Drift': 'req_drift',
+                    'Sport': 'req_sport',
+                    'All': 'req_kurs',      // Полный курс
+                    'Certificate': 'req_cert' // Сертификат
+                };
+
+                if (typeof ym !== 'undefined' && program.value in programGoals) {
+                    ym(91212051, 'reachGoal', programGoals[program.value]);
+                }
+
+                // Остальной код (уведомление, сброс формы)
+                modal.style.display = "none";
+                wrapper.style.overflowY = 'inherit';
+                toastr.success('Заявка успешно отправлена');
+                form.reset();
             })
-                .then(() => {
-                    modal.style.display = "none";
-                    wrapper.style.overflowY = 'inherit';
-                    toastr.success('Заявка успешно отправлена');
-                    form.reset();
-                })
-                .catch(() => {
-                    button.disabled = false;
-                });
-        }
-    };
+            .catch(() => {
+                button.disabled = false;
+            });
+    }
+};
 </script>
