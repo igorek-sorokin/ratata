@@ -44,6 +44,11 @@ const CertificateForm = () => {
             body: data,
         }).then(() => {
             toastr.success("Заявка успешно отправлена");
+             // 🎯 Яндекс Метрика цели
+    if (typeof ym === 'function') {
+        ym(91212051, 'reachGoal', 'req_cert');
+        ym(91212051, 'reachGoal', 'req');
+    }
             modal.style.display = "none";
             wrapper.style.overflowY = 'inherit';
             e.target.reset();
